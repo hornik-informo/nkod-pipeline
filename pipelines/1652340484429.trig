@@ -3,63 +3,65 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://etl.linkedpipes.com/ontology/tag> "0";
     <http://etl.linkedpipes.com/ontology/version> "2"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/profile/default>;
+    <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/2>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "00 - Cache" .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/profile/default>
-    a <http://linkedpipes.com/ontology/ExecutionProfile>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/2> a <http://linkedpipes.com/ontology/ExecutionProfile>;
     <http://linkedpipes.com/ontology/rdfRepositoryPolicy> <http://linkedpipes.com/ontology/repository/SingleRepository>;
     <http://linkedpipes.com/ontology/rdfRepositoryType> <http://linkedpipes.com/ontology/repository/MemoryStore> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/22e0-8ae9>
-    a <http://linkedpipes.com/ontology/Component>;
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/22e0-8ae9/configuration>;
-    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-httpGetFile/0.0.0>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/3> a <http://linkedpipes.com/ontology/Component>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/10>;
     <http://linkedpipes.com/ontology/x> 275;
     <http://linkedpipes.com/ontology/y> 118;
     <http://purl.org/dc/terms/description> "filetypes-skos.rdf";
-    <http://www.w3.org/2004/02/skos/core#prefLabel> "HTTP get" .
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "HTTP get";
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-httpGetFile/0.0.0> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/53e1-9cf0>
-    a <http://linkedpipes.com/ontology/Component>;
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/53e1-9cf0/configuration>;
-    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/l-filesToLocal/0.0.0>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/4> a <http://linkedpipes.com/ontology/Component>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/8>;
     <http://linkedpipes.com/ontology/x> 602;
     <http://linkedpipes.com/ontology/y> 146;
-    <http://www.w3.org/2004/02/skos/core#prefLabel> "Files to local" .
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Files to local";
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/l-filesToLocal/0.0.0> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/883c-95c1>
-    a <http://linkedpipes.com/ontology/Component>;
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/883c-95c1/configuration>;
-    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-httpGetFile/0.0.0>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/5> a <http://linkedpipes.com/ontology/Component>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/9>;
     <http://linkedpipes.com/ontology/x> 275;
     <http://linkedpipes.com/ontology/y> 218;
     <http://purl.org/dc/terms/description> "frequencies-skos.rdf";
-    <http://www.w3.org/2004/02/skos/core#prefLabel> "HTTP get" .
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "HTTP get";
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-httpGetFile/0.0.0> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/connection/50ee-8d2c>
-    a <http://linkedpipes.com/ontology/Connection>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/6> a <http://linkedpipes.com/ontology/Connection>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/883c-95c1>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/5>;
     <http://linkedpipes.com/ontology/targetBinding> "FilesInput";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/53e1-9cf0> .
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/4> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/connection/8035-a721>
-    a <http://linkedpipes.com/ontology/Connection>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/7> a <http://linkedpipes.com/ontology/Connection>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/22e0-8ae9>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/3>;
     <http://linkedpipes.com/ontology/targetBinding> "FilesInput";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/53e1-9cf0> .
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/4> .
 }
 
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/22e0-8ae9/configuration> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/22e0-8ae9/configuration>
-    a <http://plugins.linkedpipes.com/ontology/e-httpGetFile#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/8> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/8> a <http://plugins.linkedpipes.com/ontology/l-filesToLocal#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#directoryPermissionsControl>
+      <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#filePermissionsControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#path> "/data/lp-etl/cache";
+    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/9> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/9> a <http://plugins.linkedpipes.com/ontology/e-httpGetFile#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#encodeUrl> false;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#encodeUrlControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileName> "filetypes-skos.rdf";
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileName> "frequencies-skos.rdf";
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileUri> "https://publications.europa.eu/resource/distribution/file-type/rdf/skos_core/filetypes-skos.rdf";
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileUri> "http://publications.europa.eu/resource/distribution/frequency/rdf/skos_core/frequencies-skos.rdf";
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#hardRedirect> true;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#hardRedirectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -69,24 +71,13 @@
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#utf8RedirectControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/53e1-9cf0/configuration> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/53e1-9cf0/configuration>
-    a <http://plugins.linkedpipes.com/ontology/l-filesToLocal#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#directoryPermissionsControl>
-      <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#filePermissionsControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#path> "/data/nkod-sk/cache";
-    <http://plugins.linkedpipes.com/ontology/l-filesToLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
-}
-
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/883c-95c1/configuration> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/component/883c-95c1/configuration>
-    a <http://plugins.linkedpipes.com/ontology/e-httpGetFile#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/10> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1652340484429/10> a <http://plugins.linkedpipes.com/ontology/e-httpGetFile#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#encodeUrl> false;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#encodeUrlControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileName> "frequencies-skos.rdf";
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileName> "filetypes-skos.rdf";
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileUri> "http://publications.europa.eu/resource/distribution/frequency/rdf/skos_core/frequencies-skos.rdf";
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileUri> "https://publications.europa.eu/resource/distribution/file-type/rdf/skos_core/filetypes-skos.rdf";
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#fileUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#hardRedirect> true;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFile#hardRedirectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;

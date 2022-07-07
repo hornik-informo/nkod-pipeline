@@ -7,17 +7,20 @@
       <http://plugins.linkedpipes.com/resource/configuration/Force>;
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#checkSize> false;
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#checkSizeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#endpoint> "http://localhost:7200/repositories/nkod/rdf-graphs/service";
+    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#endpoint> "";
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#endpointControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#endpointSelectControl>
       <http://plugins.linkedpipes.com/resource/configuration/Force>;
+    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#endpointSubstitution>
+      "{LP_ETL_GRAPHDB_URL}";
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#graphControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-	<http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#password> "${SPARQL.PASSWORD}";
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
+    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#passwordSubstitution>
+      "{LP_ETL_GRAPHDB_PASS}";
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#replace> true;
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#replaceControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#repository> "GRAPHDB";
     <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#repositoryControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
-	<http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#user> "${SPARQL.USER}";
-    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#userControl> <http://plugins.linkedpipes.com/resource/configuration/Force> .
+    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#userControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
+    <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#userSubstitution> "{LP_ETL_GRAPHDB_USER}" .
 }
