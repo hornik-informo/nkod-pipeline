@@ -5,7 +5,7 @@
     <http://plugins.linkedpipes.com/ontology/x-graphStorePurger#endpoint> "";
     <http://plugins.linkedpipes.com/ontology/x-graphStorePurger#endpointControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
     <http://plugins.linkedpipes.com/ontology/x-graphStorePurger#endpointSubstitution>
-      "{LP_ETL_GRAPHDB_URL}";
+      "{LP_ETL_GRAPHDB_URL}/repositories/nodc/rdf-graphs/service";
     <http://plugins.linkedpipes.com/ontology/x-graphStorePurger#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
     <http://plugins.linkedpipes.com/ontology/x-graphStorePurger#passwordSubstitution>
       "{LP_ETL_GRAPHDB_PASS}";
