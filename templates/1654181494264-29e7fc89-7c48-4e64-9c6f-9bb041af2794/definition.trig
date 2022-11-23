@@ -1,7 +1,0 @@
-
-<https://sk-nkod.opendata.cz/etl/resources/components/1654181494264-29e7fc89-7c48-4e64-9c6f-9bb041af2794> {
-  <https://sk-nkod.opendata.cz/etl/resources/components/1654181494264-29e7fc89-7c48-4e64-9c6f-9bb041af2794>
-    a <http://linkedpipes.com/ontology/Template>;
-    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/x-graphStorePurger/0.0.0>;
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/components/1654181494264-29e7fc89-7c48-4e64-9c6f-9bb041af2794/configuration> .
-}

@@ -1,0 +1,22 @@
+
+<https://sk-nkod.opendata.cz/etl/resources/components/1652269941754-a555bcaa-2d36-4c42-b501-2fa46f3f6331> {
+  <https://sk-nkod.opendata.cz/etl/resources/components/1652269941754-a555bcaa-2d36-4c42-b501-2fa46f3f6331>
+    a <http://linkedpipes.com/ontology/Template>;
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "CORS origin";
+    <http://purl.org/dc/terms/description> "";
+    <http://www.w3.org/2002/07/owl#sameAs> <https://pod-test.mvcr.gov.cz/etl/resources/components/1612447860705-b7273275-f848-46ed-a4eb-b28e202a9a7d>;
+    <http://linkedpipes.com/ontology/pluginTemplate> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0>;
+    <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/components/1652269941754-a555bcaa-2d36-4c42-b501-2fa46f3f6331/configuration> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/components/1652269941754-a555bcaa-2d36-4c42-b501-2fa46f3f6331/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/components/1652269941754-a555bcaa-2d36-4c42-b501-2fa46f3f6331/configuration>
+    a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """@prefix nkod: <https://data.gov.sk/slovník/nkod/> .
+[] nkod:cors-origin \"https://sk-nkod.opendata.cz\" .""";
+    <http://plugins.linkedpipes.com/ontology/e-textHolder#contentControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
+    <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/Force>;
+    <http://plugins.linkedpipes.com/ontology/e-textHolder#fileName> "cors.ttl" .
+}
