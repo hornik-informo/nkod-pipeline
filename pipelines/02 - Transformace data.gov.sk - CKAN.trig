@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2022-11-23T11:18:11.314750442"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-27T16:26:06.113960842"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
@@ -212,7 +212,7 @@ na EU číselník""";
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/47> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct";
     <http://purl.org/dc/terms/description> """Příprava na tvorbu
-RDF TriG dumpu""";
+RDF Turtle záznamů""";
     <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/144>;
     <http://linkedpipes.com/ontology/x> "700"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1190"^^<http://www.w3.org/2001/XMLSchema#int>;
@@ -439,9 +439,9 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/8d05-a664> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/61c0-9a18> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/8d05-a664>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/61c0-9a18>
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
@@ -1452,28 +1452,31 @@ ORDER BY DESC(COUNT(?s))""";
 }
 
 <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/144> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/143> a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX srtfl: <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/47/configuration>
+    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX srtfl: <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 
 CONSTRUCT 
 {
-<https://localhost/nkod-task> a srtfl:Task ;
-    srtfl:fileName \"nkod.trig\" ;
-    srtfl:fileFormat \"application/trig\" ;
+?tIRI a srtfl:Task ;
+    srtfl:fileFormat \"text/turtle\" ;
+    srtfl:fileName ?filename ;
     srtfl:hasTaskQuery ?tqIRI .
 
 ?tqIRI a srtfl:TaskQuery ;
-    srtfl:outputGraph ?dataset ;
     srtfl:query ?query .
-} 
-
+}
 WHERE 
 { 
-?dataset a dcat:Dataset .
+  ?dataset a dcat:Dataset .
+  OPTIONAL { ?dataset dcterms:publisher ?publisher . }
 
-BIND(UUID() as ?tqIRI)
-  #Dataset is generated as a constant becasue using VALUES has way longer execution time
+  BIND(CONCAT(IF(BOUND(?publisher), STRAFTER(STR(?publisher), \"https://data.gov.sk/id/legal-subject/\"), \"\"), \"-\", STRAFTER(STR(?dataset), \"https://data.gov.sk/set/\"), \".ttl\") AS ?filename)
+  BIND(UUID() as ?tqIRI)
+  BIND(UUID() as ?tIRI)
+#Dataset is generated as a constant becasue using VALUES has way longer execution time
 BIND(CONCAT(\"\"\"
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
