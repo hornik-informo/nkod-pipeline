@@ -1,0 +1,41 @@
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002> a <http://linkedpipes.com/ontology/Pipeline>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "00 - Startovací pipeline";
+    <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/events/created> "2023-01-27T19:18:46.163326993"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-27T19:21:11.357267343"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://etl.linkedpipes.com/ontology/tag> "START";
+    <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002/profile/default> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002/profile/default>
+    a <http://linkedpipes.com/ontology/ExecutionProfile>;
+    <http://linkedpipes.com/ontology/rdfRepositoryPolicy> <http://linkedpipes.com/ontology/repository/SingleRepository>;
+    <http://linkedpipes.com/ontology/rdfRepositoryType> <http://linkedpipes.com/ontologyrepository/NativeStore>;
+    <http://etl.linkedpipes.com/ontology/logRetentionPolicy> <http://linkedpipes.com/resources/Keep> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002/component/4b77-b489>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Pipeline Executor";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002/component/4b77-b489/configuration>;
+    <http://linkedpipes.com/ontology/x> "695"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "216"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <https://sk-nkod.opendata.cz/etl/resources/components/1656480781728-b05d2c0f-8358-4b41-849b-e214af860a3f> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002/component/4b77-b489/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1674843526096-0002/component/4b77-b489/configuration>
+    a <http://plugins.linkedpipes.com/ontology/x-pipeline#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#deleteWorkingData> false;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#deleteWorkingDataControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#instance> <http://localhost:9080>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#instanceControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#logLevel> "INFO";
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#logLevelControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#logPolicy> <http://plugins.linkedpipes.com/ontology/x-pipeline#PreserveLogs>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#logPolicyControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#pipeline> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#pipelineControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#saveDebugData> true;
+    <http://plugins.linkedpipes.com/ontology/x-pipeline#saveDebugDataControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
+}
