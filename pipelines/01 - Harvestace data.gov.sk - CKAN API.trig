@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "01 - Harvestace data.gov.sk - CKAN API";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-17T09:33:35.002423506"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-02-07T08:54:57.767140675"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "1";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959/profile/default> .
   
@@ -323,25 +323,27 @@
 }
 
 <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959/graph/51> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959/50> a <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#Configuration>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959/18/configuration>
+    a <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#detailLog> false;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#detailLogControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#encodeUrl> false;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#encodeUrlControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#hardRedirect> true;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#hardRedirectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#retryCount> 5;
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#retryCount> 3;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#retryCountControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#skipOnError> true;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#skipOnErrorControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#threads> 2;
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#threads> 1;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#threadsPerGroup> 2;
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#threadsPerGroup> 1;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#threadsPerGroupControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#timeout> 60000;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#timeoutControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#utf8Redirect> false;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#utf8RedirectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#waitTime> 2000;
     <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#waitTimeControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
