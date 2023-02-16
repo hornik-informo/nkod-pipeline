@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "05 - Statistika dostupnosti distribucí, schémat, podmínek užití a dokumentace - CORS";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T14:49:38.076"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-26T08:52:21.870833509"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-02-16T18:00:44.201398614"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "4";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087778076/profile/default> .
   
@@ -847,7 +847,7 @@ u specifikací datových sad""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 CONSTRUCT { 
   ?dataset a dcat:Dataset;
@@ -862,13 +862,13 @@ CONSTRUCT {
     dcat:compressFormat ?compressFormat ;
     dcterms:conformsTo ?schema .
 
-#  ?distribution law:termsOfUse ?pu .
+#  ?distribution leg:termsOfUse ?pu .
 #
-#  ?pu a law:TermsOfUse ;
-#    law:authorsWorkType ?touGeneral ;
-#    law:originalDatabaseType ?touDatabase ;
-#    law:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-#    law:personalDataContainmentType ?touPersonalData .
+#  ?pu a leg:TermsOfUse ;
+#    leg:authorsWorkType ?touGeneral ;
+#    leg:originalDatabaseType ?touDatabase ;
+#    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+#    leg:personalDataContainmentType ?touPersonalData .
 
   ?distribution dcat:accessService ?service .
 
@@ -891,13 +891,13 @@ WHERE {
     OPTIONAL { ?distribution dcat:compressFormat ?compressFormat . }
     OPTIONAL { ?distribution dcterms:conformsTo ?schema. }
 #    OPTIONAL { 
-#      ?distribution law:termsOfUse ?pu .
+#      ?distribution leg:termsOfUse ?pu .
 #
-#  	  ?pu a law:TermsOfUse ;
-#    	law:authorsWorkType ?touGeneral ;
-#		law:originalDatabaseType ?touDatabase ;
-#    	law:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-#		law:personalDataContainmentType ?touPersonalData .
+#  	  ?pu a leg:TermsOfUse ;
+#    	leg:authorsWorkType ?touGeneral ;
+#		leg:originalDatabaseType ?touDatabase ;
+#    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+#		leg:personalDataContainmentType ?touPersonalData .
 #    }
     OPTIONAL {
       ?distribution dcat:accessService ?service .
@@ -992,7 +992,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 
 PREFIX request: <http://plugins.linkedpipes.com/ontology/x-httpRequest#>
 PREFIX nkod:    <https://data.gov.sk/slovník/nkod/>
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 CONSTRUCT {
 ?autorskéDílo a request:Task ;
@@ -1041,12 +1041,12 @@ WHERE
 [] nkod:cors-origin ?origin .
 ?dataset a dcat:Dataset;
       dcat:distribution ?distribution .
-?distribution law:termsOfUse ?podmínky_užití.
+?distribution leg:termsOfUse ?podmínky_užití.
     
-?podmínky_užití law:authorsWorkType ?autorskéDílo ;
-                law:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
-                law:originalDatabaseType ?databáze ;
-                law:personalDataContainmentType ?osobní_údaje .
+?podmínky_užití leg:authorsWorkType ?autorskéDílo ;
+                leg:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
+                leg:originalDatabaseType ?databáze ;
+                leg:personalDataContainmentType ?osobní_údaje .
 
   BIND (REPLACE(STR(?autorskéDílo), \"[^:]+://([^/]+)/.*\", \"$1\") AS ?adgroup)
   BIND (REPLACE(STR(?zvláštníPrávo), \"[^:]+://([^/]+)/.*\", \"$1\") AS ?zpgroup)
@@ -2153,7 +2153,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
 PREFIX report: <https://vocabulary.etl.linkedpipes.com/report/>
 PREFIX httpRequest: <http://plugins.linkedpipes.com/ontology/x-httpRequest#>
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
 
 CONSTRUCT {
@@ -2196,13 +2196,13 @@ WHERE {
   ?s a dcat:Dataset;
              dcat:distribution ?distribution ;
              dcterms:publisher ?publisher .
-  ?distribution law:termsOfUse ?spec .
+  ?distribution leg:termsOfUse ?spec .
   ?spec ?p ?podmínky_užití .
 
     VALUES (?p ?metrika) {
-      (law:authorsWorkType :metrikaDostupnostiCORSPodmínekUžitíAutorskéDílo )
-      (law:originalDatabaseType :metrikaDostupnostiCORSPodmínekUžitíAutorskáDatabáze )
-      (law:databaseProtectedBySpecialRightsType :metrikaDostupnostiCORSPodmínekUžitíZvláštníPrávoPořizovateleDatabáze )
+      (leg:authorsWorkType :metrikaDostupnostiCORSPodmínekUžitíAutorskéDílo )
+      (leg:originalDatabaseType :metrikaDostupnostiCORSPodmínekUžitíAutorskáDatabáze )
+      (leg:databaseProtectedBySpecialRightsType :metrikaDostupnostiCORSPodmínekUžitíZvláštníPrávoPořizovateleDatabáze )
     }
 
   
@@ -2571,7 +2571,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
 PREFIX report: <https://vocabulary.etl.linkedpipes.com/report/>
 PREFIX httpRequest: <http://plugins.linkedpipes.com/ontology/x-httpRequest#>
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
 
 CONSTRUCT {
@@ -2614,7 +2614,7 @@ WHERE {
   ?s a dcat:Dataset;
           dcat:distribution ?distribution ;
           dcterms:publisher ?publisher .
-  ?distribution law:termsOfUse ?spec .
+  ?distribution leg:termsOfUse ?spec .
   ?spec ?p ?podmínky_užití .
   ?report report:task ?podmínky_užití;
           report:status report:Success ;
@@ -2627,9 +2627,9 @@ WHERE {
   FILTER(LCASE(?requestName) = \"access-control-allow-origin\")
 
     VALUES (?p ?metrika) {
-      (law:authorsWorkType :metrikaDostupnostiCORSPodmínekUžitíAutorskéDílo )
-      (law:originalDatabaseType :metrikaDostupnostiCORSPodmínekUžitíAutorskáDatabáze )
-      (law:databaseProtectedBySpecialRightsType :metrikaDostupnostiCORSPodmínekUžitíZvláštníPrávoPořizovateleDatabáze )
+      (leg:authorsWorkType :metrikaDostupnostiCORSPodmínekUžitíAutorskéDílo )
+      (leg:originalDatabaseType :metrikaDostupnostiCORSPodmínekUžitíAutorskáDatabáze )
+      (leg:databaseProtectedBySpecialRightsType :metrikaDostupnostiCORSPodmínekUžitíZvláštníPrávoPořizovateleDatabáze )
     }
 
   {

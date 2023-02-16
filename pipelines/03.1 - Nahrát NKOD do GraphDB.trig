@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "03.1 - Nahrát NKOD do GraphDB";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T08:42:39.929"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-26T08:52:00.835414833"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-02-16T18:00:25.283007585"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "3";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654065759929/profile/default> .
   
@@ -402,7 +402,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX locn: <http://www.w3.org/ns/locn#>
 
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 CONSTRUCT {
 ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> ;
@@ -454,15 +454,15 @@ CONSTRUCT {
     dcat:compressFormat ?dcompressFormat ;
     dcat:packageFormat ?dpackageFormat ;
     dcterms:title ?dtitle ;
-	law:termsOfUse ?pu .
+	leg:termsOfUse ?pu .
 
-?pu a law:TermsOfUse ;
-    law:authorsWorkType ?touGeneral ;
-	law:originalDatabaseType ?touDatabase ;
-    law:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-	law:personalDataContainmentType ?touPersonalData ;
-	law:authorName ?touGeneralAuthor ;
-	law:originalDatabaseAuthorName ?touDatabaselAuthor .
+?pu a leg:TermsOfUse ;
+    leg:authorsWorkType ?touGeneral ;
+	leg:originalDatabaseType ?touDatabase ;
+    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+	leg:personalDataContainmentType ?touPersonalData ;
+	leg:authorName ?touGeneralAuthor ;
+	leg:originalDatabaseAuthorName ?touDatabaselAuthor .
 
 ?distribution dcat:accessService ?dataService . 
   
@@ -492,16 +492,16 @@ WHERE {
         dcat:accessURL ?daURL .
 
 	OPTIONAL {
-	  ?distribution law:termsOfUse ?pu .
+	  ?distribution leg:termsOfUse ?pu .
 
-  	  ?pu a law:TermsOfUse ;
-    	law:authorsWorkType ?touGeneral ;
-		law:originalDatabaseType ?touDatabase ;
-    	law:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-		law:personalDataContainmentType ?touPersonalData .
+  	  ?pu a leg:TermsOfUse ;
+    	leg:authorsWorkType ?touGeneral ;
+		leg:originalDatabaseType ?touDatabase ;
+    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+		leg:personalDataContainmentType ?touPersonalData .
       
-      	OPTIONAL { ?pu law:authorName ?touGeneralAuthor . }
-      	OPTIONAL { ?pu law:originalDatabaseAuthorName ?touDatabaselAuthor .}
+      	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
+      	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
     }
 
     OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }

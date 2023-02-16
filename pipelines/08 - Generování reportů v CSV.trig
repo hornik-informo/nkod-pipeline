@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "08 - Generování reportů v CSV";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-05-31T14:56:11.941"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-26T08:52:42.92247924"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-02-16T18:01:00.031983517"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "6";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654001771941/profile/default> .
   
@@ -1447,7 +1447,7 @@ ORDER BY ?jméno_poskytovatele""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat:    <http://www.w3.org/ns/dcat#>
 
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 SELECT (count (distinct ?distribuce) as ?počet_distribucí) ?autorskéDílo ?databáze ?zvláštníPrávo ?osobní_údaje
 WHERE 
@@ -1455,13 +1455,13 @@ WHERE
   ?datová_sada a dcat:Dataset ; 
   dcat:distribution ?distribuce . 
 
-?distribuce law:termsOfUse ?pu .
+?distribuce leg:termsOfUse ?pu .
 
-    ?pu a law:TermsOfUse ;
-                law:authorsWorkType ?autorskéDílo ;
-                law:originalDatabaseType ?databáze ;
-                law:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
-                law:personalDataContainmentType ?osobní_údaje .
+    ?pu a leg:TermsOfUse ;
+                leg:authorsWorkType ?autorskéDílo ;
+                leg:originalDatabaseType ?databáze ;
+                leg:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
+                leg:personalDataContainmentType ?osobní_údaje .
 }
 GROUP BY ?autorskéDílo ?databáze ?zvláštníPrávo ?osobní_údaje
 ORDER BY DESC(?počet_distribucí) ?autorskéDílo ?databáze ?zvláštníPrávo ?osobní_údaje""";
@@ -1812,7 +1812,7 @@ WHERE
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat:    <http://www.w3.org/ns/dcat#>
 
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 SELECT (count(distinct ?poskytovatel) as ?počet_poskytovatelů) ?autorskéDílo ?databáze ?zvláštníPrávo ?osobní_údaje
 WHERE 
 {
@@ -1821,13 +1821,13 @@ WHERE
   dcterms:publisher ?poskytovatel ;
   dcat:distribution ?distribuce . 
 
-    ?distribuce law:termsOfUse ?pu .
+    ?distribuce leg:termsOfUse ?pu .
 
-    ?pu a law:TermsOfUse ;
-                law:authorsWorkType ?autorskéDílo ;
-                law:originalDatabaseType ?databáze ;
-                law:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
-                law:personalDataContainmentType ?osobní_údaje .
+    ?pu a leg:TermsOfUse ;
+                leg:authorsWorkType ?autorskéDílo ;
+                leg:originalDatabaseType ?databáze ;
+                leg:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
+                leg:personalDataContainmentType ?osobní_údaje .
   }
 }
 GROUP BY ?autorskéDílo ?databáze ?zvláštníPrávo ?osobní_údaje
@@ -1889,7 +1889,7 @@ ORDER BY DESC(?procento_nedostupných) DESC(?počet_nedostupných) ?jméno_posky
 PREFIX dcat:    <http://www.w3.org/ns/dcat#>
 PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
 
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 SELECT ?jméno_poskytovatele (count (distinct ?distribuce) as ?počet_distribucí) ?autorskéDílo ?databáze ?zvláštníPrávo ?osobní_údaje
 WHERE 
@@ -1899,13 +1899,13 @@ WHERE
   dcterms:publisher ?poskytovatel ;
   dcat:distribution ?distribuce . 
 
-    ?distribuce law:termsOfUse ?pu .
+    ?distribuce leg:termsOfUse ?pu .
 
-    ?pu a law:TermsOfUse ;
-                law:authorsWorkType ?autorskéDílo ;
-                law:originalDatabaseType ?databáze ;
-                law:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
-                law:personalDataContainmentType ?osobní_údaje .
+    ?pu a leg:TermsOfUse ;
+                leg:authorsWorkType ?autorskéDílo ;
+                leg:originalDatabaseType ?databáze ;
+                leg:databaseProtectedBySpecialRightsType ?zvláštníPrávo ;
+                leg:personalDataContainmentType ?osobní_údaje .
 
     ?poskytovatel foaf:name ?jméno_poskytovatele .
   }

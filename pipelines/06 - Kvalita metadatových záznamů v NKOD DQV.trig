@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "06 - Kvalita metadatových záznamů v NKOD DQV";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T14:49:44.547"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2023-01-26T08:52:30.084798127"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2023-02-16T18:00:52.09657339"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "4";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/profile/default> .
   
@@ -1114,7 +1114,7 @@ PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 
 PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
 PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 CONSTRUCT {
   :PočetDatovýchSadSDistribucíBezPodmínekUžití
@@ -1159,7 +1159,7 @@ WHERE {
                  dcat:distribution ?distribuce .
           nkod: dcat:dataset ?datová_sada .
           FILTER NOT EXISTS {
-            ?distribuce law:termsOfUse ?license.
+            ?distribuce leg:termsOfUse ?license.
           }        
         }
         GROUP BY ?poskytovatel
@@ -1892,7 +1892,7 @@ PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 
 PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
 PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
-PREFIX law: <https://data.gov.sk/def/ontology/law/>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 CONSTRUCT {
   :PočetDistribucíDatovýchSadBezPodmínekUžití
@@ -1937,7 +1937,7 @@ WHERE {
                  dcat:distribution ?distribuce .
           nkod: dcat:dataset ?datová_sada .
           FILTER NOT EXISTS {
-            ?distribuce law:termsOfUse ?license.
+            ?distribuce leg:termsOfUse ?license.
           }        
         }
         GROUP BY ?poskytovatel
