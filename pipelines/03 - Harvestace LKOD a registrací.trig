@@ -855,7 +855,7 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#fileReference> false;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#fileReferenceControl>
       <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeType> "text/turtle";
+    <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeType> "";
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeTypeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#softFail> true;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1205,7 +1205,7 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#fileReference> false;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#fileReferenceControl>
       <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeType> "text/turtle";
+    <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeType> "";
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeTypeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#softFail> true;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -2579,7 +2579,7 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#fileReference> false;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#fileReferenceControl>
       <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeType> "text/turtle";
+    <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeType> "";
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#mimeTypeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#softFail> true;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
