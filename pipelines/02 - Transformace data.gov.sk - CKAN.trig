@@ -1,763 +1,670 @@
 
-<http://localhost:8080/resources/pipelines/1704315924673-0006> {
-  <http://localhost:8080/resources/pipelines/1704315924673-0006> a <http://linkedpipes.com/ontology/Pipeline>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-03T22:28:39.433586807"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-08T16:11:53.108984429"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
-    <http://linkedpipes.com/ontology/profile> <http://localhost:8080/resources/pipelines/1704315924673-0006/profile/default> .
+    <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-0006/profile/default> a <http://linkedpipes.com/ontology/ExecutionProfile>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default>
+    a <http://linkedpipes.com/ontology/ExecutionProfile>;
     <http://linkedpipes.com/ontology/rdfRepositoryPolicy> <http://linkedpipes.com/ontology/repository/PerInputRepository>;
     <http://linkedpipes.com/ontology/rdfRepositoryType> <http://linkedpipes.com/ontology/repository/NativeStore>;
     <http://etl.linkedpipes.com/ontology/logRetentionPolicy> <http://linkedpipes.com/resources/Keep> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006100>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/100> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Used spatials";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006100/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/119>;
     <http://linkedpipes.com/ontology/x> "681"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "225"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006101>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/101> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Tabular";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006101/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/138>;
     <http://linkedpipes.com/ontology/x> "-706"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "882"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-tabular/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000611>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/11> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Text holder";
     <http://purl.org/dc/terms/description> "Datasety -> Série";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000611/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/137>;
     <http://linkedpipes.com/ontology/x> "-901"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1170"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000612>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/12> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Tabular";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000612/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/133>;
     <http://linkedpipes.com/ontology/x> "-691"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1171"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-tabular/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Chunked merger";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/135>;
     <http://linkedpipes.com/ontology/x> "454"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "804"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000614>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/14> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Files from local";
     <http://purl.org/dc/terms/description> "JSONy z data.gov.sk";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000614/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/125>;
     <http://linkedpipes.com/ontology/x> "-484"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "278"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-filesFromLocal/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000615>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/15> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Text holder";
     <http://purl.org/dc/terms/description> "Mapování CKAN formátů";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000615/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/168>;
     <http://linkedpipes.com/ontology/x> "-248"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "910"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000616>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/16> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Missing licenses";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000616/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/163>;
     <http://linkedpipes.com/ontology/x> "685"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "815"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000617>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/17> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Files to RDF single graph";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000617/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/160>;
     <http://linkedpipes.com/ontology/x> "-126"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1102"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-filesToRdfGraph/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000618>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/18> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Used data correctness";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000618/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/108>;
     <http://linkedpipes.com/ontology/x> "670"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "639"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000619>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/19> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Multiple periodicities";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000619/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/167>;
     <http://linkedpipes.com/ontology/x> "675"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "731"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000620>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/20> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Used formats";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000620/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/123>;
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "308"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000621>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/21> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
     <http://purl.org/dc/terms/description> "Odstranění starých formátů";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000621/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/146>;
     <http://linkedpipes.com/ontology/x> "154"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "970"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/22> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL linker chunked";
     <http://purl.org/dc/terms/description> """Mapování CKAN formátů
 na EU číselník""";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/148>;
     <http://linkedpipes.com/ontology/x> "163"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "861"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000623>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/23> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Missing media types";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000623/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/145>;
     <http://linkedpipes.com/ontology/x> "688"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "980"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000625>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/25> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
     <http://purl.org/dc/terms/description> "Mapování periodicity";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000625/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/151>;
     <http://linkedpipes.com/ontology/x> "142"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "768"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/27> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL linker chunked";
     <http://purl.org/dc/terms/description> "Přidání media-typů";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/152>;
     <http://linkedpipes.com/ontology/x> "166"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1060"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000629>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/29> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
     <http://purl.org/dc/terms/description> "Připojit datasety na NKOD";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000629/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/142>;
     <http://linkedpipes.com/ontology/x> "159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1174"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00063>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/3> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Used licenses";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00063/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/112>;
     <http://linkedpipes.com/ontology/x> "683"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "548"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Chunked merger";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/121>;
     <http://linkedpipes.com/ontology/x> "450"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "694"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000634>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/34> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Used periodicities";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000634/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/124>;
     <http://linkedpipes.com/ontology/x> "683"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "468"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct to file list";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/132>;
     <http://linkedpipes.com/ontology/x> "922"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1114"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlConstructToFileList/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000640>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/40> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "JSON to JSON-LD";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000640/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/147>;
     <http://linkedpipes.com/ontology/x> "-472"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "346"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-jsonToJsonLd/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000645>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/45> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Unknown formats";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000645/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/107>;
     <http://linkedpipes.com/ontology/x> "684"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "896"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000647>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/47> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct";
     <http://purl.org/dc/terms/description> """Příprava na tvorbu
 RDF Turtle záznamů""";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000647/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/144>;
     <http://linkedpipes.com/ontology/x> "700"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1190"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlConstruct/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000649>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/49> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Tabular";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000649/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/115>;
     <http://linkedpipes.com/ontology/x> "-3"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "909"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-tabular/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/5> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL linker chunked";
     <http://purl.org/dc/terms/description> "Mapovat poskytovatele";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/111>;
     <http://linkedpipes.com/ontology/x> "-486"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "679"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/55> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct chunked";
     <http://purl.org/dc/terms/description> "Transformace na DCAT-AP-SK";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/158>;
     <http://linkedpipes.com/ontology/x> "86"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "685"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlConstructChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000662>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/62> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Pipeline Executor";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000662/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/166>;
     <http://linkedpipes.com/ontology/x> "1220"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1178"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/template> <http://localhost:8080/resources/components/1704314764734-0003> .
+    <http://linkedpipes.com/ontology/template> <https://sk-nkod.opendata.cz/etl/resources/components/1656480781728-b05d2c0f-8358-4b41-849b-e214af860a3f> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/63> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Files to local";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/136>;
     <http://linkedpipes.com/ontology/x> "1232"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1027"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/l-filesToLocal/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000664>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/64> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Text holder";
     <http://purl.org/dc/terms/description> "Datasety -> Série";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000664/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/153>;
     <http://linkedpipes.com/ontology/x> "-934"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1023"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000665>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/65> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL select";
     <http://purl.org/dc/terms/description> "Used organizations";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000665/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/149>;
     <http://linkedpipes.com/ontology/x> "682"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "386"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlSelect/0.0.0>;
     <http://linkedpipes.com/ontology/disabled> true .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000666>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/66> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000666/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/139>;
     <http://linkedpipes.com/ontology/x> "-508"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1263"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000667>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/67> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Files from local";
     <http://purl.org/dc/terms/description> "Cache datových formátů";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000667/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/156>;
     <http://linkedpipes.com/ontology/x> "-116"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1032"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-filesFromLocal/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000668>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/68> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Delete directory";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000668/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/154>;
     <http://linkedpipes.com/ontology/x> "978"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1028"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/x-deleteDirectory/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000669>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/69> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Text holder";
     <http://purl.org/dc/terms/description> "Mapování IRI poskytovatelů";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000669/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/126>;
     <http://linkedpipes.com/ontology/x> "-1002"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "709"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000670>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/70> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Tabular";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000670/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/162>;
     <http://linkedpipes.com/ontology/x> "-719"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "701"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-tabular/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/71> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL linker chunked";
     <http://purl.org/dc/terms/description> "Udělat série z distribucí";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/140>;
     <http://linkedpipes.com/ontology/x> "-499"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1151"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000673>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/73> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Tabular";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000673/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/128>;
     <http://linkedpipes.com/ontology/x> "-700"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1027"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-tabular/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/74> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL linker chunked";
     <http://purl.org/dc/terms/description> "Přidat série nad datasety";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/113>;
     <http://linkedpipes.com/ontology/x> "-491"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1004"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000676>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/76> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
     <http://purl.org/dc/terms/description> "Změnit bn organizace na IRI";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000676/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/150>;
     <http://linkedpipes.com/ontology/x> "-503"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "787"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000677>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/77> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
     <http://purl.org/dc/terms/description> "Přidělit URL datasetům";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000677/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/165>;
     <http://linkedpipes.com/ontology/x> "-492"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "598"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00068>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/8> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Files to RDF Chunked";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00068/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/110>;
     <http://linkedpipes.com/ontology/x> "-479"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "428"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-filesToRdfChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00069>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/9> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL update chunked";
     <http://purl.org/dc/terms/description> "Opravit URL lokálního datastore";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00069/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/169>;
     <http://linkedpipes.com/ontology/x> "-513"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "522"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000698>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/98> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Text holder";
     <http://purl.org/dc/terms/description> """Mapování
 Polygon -> NUTS&LAU""";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000698/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/161>;
     <http://linkedpipes.com/ontology/x> "-989"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "886"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/e-textHolder/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699>
-    a <http://linkedpipes.com/ontology/Component>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/99> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL linker chunked";
     <http://purl.org/dc/terms/description> "Mapovat polygony";
-    <http://linkedpipes.com/ontology/configurationGraph> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699/configuration>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/118>;
     <http://linkedpipes.com/ontology/x> "-488"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "869"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000610>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000611>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/10> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/11>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000612>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/12>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006102>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/102> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/99>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/74>;
     <http://linkedpipes.com/ontology/targetBinding> "DataRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006103>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006101>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/103> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/101>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/99>;
     <http://linkedpipes.com/ontology/targetBinding> "ReferenceRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006104>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/104> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006100>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/100>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006105>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000698>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/105> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/98>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006101>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/101>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006106>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000676>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/106> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/76>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/99>;
     <http://linkedpipes.com/ontology/targetBinding> "DataRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000626>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000617>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/26> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/17>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/27>;
     <http://linkedpipes.com/ontology/targetBinding> "ReferenceRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000628>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000629>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/28> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/29>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000632>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/32> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000634>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/34>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000635>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/35> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <http://localhost:8080/resources/pipelines/1704315924673-0006/vertex/fee6-b17c> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/06d7-a633> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-0006/vertex/fee6-b17c> <http://linkedpipes.com/ontology/x>
-      "686"^^<http://www.w3.org/2001/XMLSchema#int>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/06d7-a633>
+    <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000638>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/38> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000618>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/18>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000639>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000640>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/39> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/40>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputFiles";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00068>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/8>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000641>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000625>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/41> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/25>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/22>;
     <http://linkedpipes.com/ontology/targetBinding> "DataRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000642>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/42> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000620>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/20>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000643>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/43> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00063>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/3>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000644>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/44> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000645>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/45>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000646>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/46> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000647>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/47>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000648>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000649>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/48> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/49>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/22>;
     <http://linkedpipes.com/ontology/targetBinding> "ReferenceRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000650>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/50> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000616>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/16>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000651>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/51> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000623>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/23>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000652>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000614>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/52> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/14>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000640>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/40>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000653>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000621>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/53> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/21>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/27>;
     <http://linkedpipes.com/ontology/targetBinding> "DataRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000654>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/54> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/55>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000656>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000615>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/56> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/15>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000649>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/49>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000657>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/57> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/13>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000619>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/19>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000658>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/58> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/22>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000621>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/21>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000660>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000647>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/60> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/47>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "Tasks" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000661>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/61> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/27>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000629>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/29>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00067>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00068>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/7> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/8>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00069>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/9>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000678>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/78> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/74>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/71>;
     <http://linkedpipes.com/ontology/targetBinding> "DataRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000681>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000670>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/81> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/70>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/5>;
     <http://linkedpipes.com/ontology/targetBinding> "ReferenceRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000682>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/82> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/33>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000665>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/65>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000683>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000666>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/83> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/66>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/55>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000684>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000677>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/84> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/77>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/5>;
     <http://linkedpipes.com/ontology/targetBinding> "DataRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000687>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/87> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputFiles";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/63>;
     <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000688>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000667>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/88> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/67>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000617>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/17>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000689>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000664>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/89> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/64>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000673>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/73>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000690>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000612>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/90> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/12>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/71>;
     <http://linkedpipes.com/ontology/targetBinding> "ReferenceRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000691>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/91> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/5>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000676>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/76>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000692>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000673>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/92> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/73>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/74>;
     <http://linkedpipes.com/ontology/targetBinding> "ReferenceRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000693>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/93> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/71>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000666>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/66>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000694>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00069>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/94> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/9>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000677>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/77>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000696>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000669>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/96> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/69>;
     <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000670>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/70>;
     <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000697>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655>;
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/97> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/55>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000625>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/25>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000679>
-    a <http://linkedpipes.com/ontology/RunAfter>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636>;
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000668> .
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/79> a <http://linkedpipes.com/ontology/RunAfter>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/68> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000686>
-    a <http://linkedpipes.com/ontology/RunAfter>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663>;
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000662> .
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/86> a <http://linkedpipes.com/ontology/RunAfter>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/63>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/62> .
   
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000695>
-    a <http://linkedpipes.com/ontology/RunAfter>;
-    <http://linkedpipes.com/ontology/sourceComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000668>;
-    <http://linkedpipes.com/ontology/targetComponent> <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663> .
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/95> a <http://linkedpipes.com/ontology/RunAfter>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/68>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/63> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006100/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006100/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/119> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/119> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -773,9 +680,8 @@ GROUP BY ?geometry""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006101/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-0006101/1>
-    a <http://www.w3.org/ns/csvw#Table>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/138> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/127> a <http://www.w3.org/ns/csvw#Table>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUri> "urn:";
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#dialectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -808,9 +714,8 @@ GROUP BY ?geometry""";
     <http://www.w3.org/ns/csvw#aboutUrl> "" .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000611/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000611/1>
-    a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/137> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/137> a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """Dataset,IČO ,Organizácia
 https://data.gov.sk/dataset/05b4e1af-0dfd-4723-aa44-a0a9b3663a56,,
 https://data.gov.sk/dataset/6110f988-1fb5-49ab-bcdf-cfbb4d6ee4b7,,
@@ -1049,9 +954,8 @@ https://data.gov.sk/dataset/4e126e26-92b8-4b4a-b39e-235b4eedae3f,166073,Minister
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000612/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000612/1>
-    a <http://www.w3.org/ns/csvw#Table>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/133> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/127> a <http://www.w3.org/ns/csvw#Table>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUri> "urn:";
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#dialectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1084,20 +988,19 @@ https://data.gov.sk/dataset/4e126e26-92b8-4b4a-b39e-235b4eedae3f,166073,Minister
     <http://www.w3.org/ns/csvw#aboutUrl> "" .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000613/1>
-    a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/135> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/120> a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000614/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000614/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/125> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/14/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/lp-etl/data.gov.sk/ckan/json";
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000615/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000615/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/168> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/15/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """old,new
 XML,XML
@@ -1192,9 +1095,8 @@ xmlx,XLSX
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000616/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000616/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/163> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/163> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
@@ -1208,9 +1110,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000617/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000617/1>
-    a <http://plugins.linkedpipes.com/ontology/t-filesToRdfGraph#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/160> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/159> a <http://plugins.linkedpipes.com/ontology/t-filesToRdfGraph#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfGraph#commitSize> 50000;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfGraph#commitSizeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfGraph#mimeType> "";
@@ -1219,9 +1120,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfGraph#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000618/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000618/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/108> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/108> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
@@ -1235,9 +1135,8 @@ ORDER BY DESC(COUNT(?s))""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000619/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000619/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/167> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/167> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -1251,9 +1150,8 @@ HAVING(COUNT(DISTINCT ?periodicity) > 1)""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000620/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000620/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/123> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/123> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
@@ -1267,8 +1165,8 @@ ORDER BY DESC(COUNT(?s))""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000621/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000621/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/146> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/21/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
@@ -1287,8 +1185,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000622/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/148> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/22/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputMode> <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#addToChunk>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputModeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1314,9 +1212,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000623/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000623/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/145> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/145> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
@@ -1330,8 +1227,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000625/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000625/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/151> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/25/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
@@ -1366,8 +1263,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000627/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/152> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/27/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputMode> <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#addToChunk>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputModeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1403,8 +1300,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000629/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000629/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/142> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/29/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -1425,9 +1322,8 @@ WHERE
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00063/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00063/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/112> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/112> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
@@ -1441,14 +1337,12 @@ ORDER BY DESC(COUNT(?s))""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000633/1>
-    a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/121> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/120> a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000634/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000634/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/124> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/124> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
@@ -1462,9 +1356,8 @@ ORDER BY DESC(COUNT(?s))""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000636/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/132> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/131> a <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#deduplication>
       true;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#deduplicationControl>
@@ -1488,8 +1381,8 @@ ORDER BY DESC(COUNT(?s))""";
       <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000640/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000640/configuration>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/147> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/40/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-jsonToJsonLd#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-jsonToJsonLd#context> """{
     \"dcat\": \"http://www.w3.org/ns/dcat#\",
@@ -1550,9 +1443,8 @@ ORDER BY DESC(COUNT(?s))""";
     <http://plugins.linkedpipes.com/ontology/t-jsonToJsonLd#typeControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000645/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000645/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/107> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/107> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
@@ -1566,8 +1458,8 @@ ORDER BY DESC(COUNT(?s))""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000647/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000647/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/144> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/47/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX srtfl: <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
@@ -1736,9 +1628,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000649/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000649/1>
-    a <http://www.w3.org/ns/csvw#Table>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/115> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/114> a <http://www.w3.org/ns/csvw#Table>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUri> "urn:";
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#dialectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1771,8 +1662,8 @@ WHERE {
     <http://www.w3.org/ns/csvw#aboutUrl> "" .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00065/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/111> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/5/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputMode> <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#addToChunk>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputModeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1800,8 +1691,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000655/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/158> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/55/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlConstructChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstructChunked#deduplication> true;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstructChunked#deduplicationControl>
@@ -1946,9 +1837,8 @@ WHERE {
       <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000662/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000662/1>
-    a <http://plugins.linkedpipes.com/ontology/x-pipeline#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/166> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/166> a <http://plugins.linkedpipes.com/ontology/x-pipeline#Configuration>;
     <http://plugins.linkedpipes.com/ontology/x-pipeline#deleteWorkingData> false;
     <http://plugins.linkedpipes.com/ontology/x-pipeline#deleteWorkingDataControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/x-pipeline#instance> <http://localhost:9080>;
@@ -1963,8 +1853,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/x-pipeline#saveDebugDataControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000663/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/136> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/63/configuration>
     a <http://plugins.linkedpipes.com/ontology/l-filesToLocal#Configuration>;
     <http://plugins.linkedpipes.com/ontology/l-filesToLocal#directoryPermissionsControl>
       <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -1973,9 +1863,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/l-filesToLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000664/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000664/1>
-    a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/153> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/153> a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """Dataset,Série,Názov,Organizácia
 https://data.gov.sk/dataset/mirri-objednavky-2021-06-16,mirri-objednavky,MIRRI Objednávky,
 https://data.gov.sk/dataset/mirri-objednavky-2022-03-15,mirri-objednavky,MIRRI Objednávky,
@@ -2326,9 +2215,8 @@ https://data.gov.sk/dataset/5d8333c3-7b21-43e2-82b8-e3c49577da38,mz-dotacne sche
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000665/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000665/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/149> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/149> a <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileName> "table.csv";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -2343,9 +2231,8 @@ ORDER BY DESC(?organization)""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlSelect#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000666/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000666/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/139> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/139> a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
 DELETE WHERE { 
   ?dataset nkod:resources ?resources ;
@@ -2358,22 +2245,21 @@ DELETE WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000667/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000667/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/156> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/67/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/lp-etl/cache/filetypes-skos.rdf";
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000668/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000668/1>
-    a <http://plugins.linkedpipes.com/ontology/x-deleteDirectory#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/154> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/154> a <http://plugins.linkedpipes.com/ontology/x-deleteDirectory#Configuration>;
     <http://plugins.linkedpipes.com/ontology/x-deleteDirectory#directory> "/data/lp-etl/data.gov.sk/migrated";
     <http://plugins.linkedpipes.com/ontology/x-deleteDirectory#directoryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000669/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000669/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/126> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/69/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """Názov poskytovateľa,Kód,URL,IČO,URI
 Štátny Ústav pre kontrolu liečiv,c5b9db2e-b973-4537-90f1-34b1875720b6,https://data.gov.sk/organization/c5b9db2e-b973-4537-90f1-34b1875720b6,00165221,https://data.gov.sk/id/legal-subject/00165221
@@ -2472,9 +2358,8 @@ Výskumný ústav vodného hospodárstva,9dd86a9b-2825-4782-89e7-e3f8e901ebf8,ht
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000670/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000670/1>
-    a <http://www.w3.org/ns/csvw#Table>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/162> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/127> a <http://www.w3.org/ns/csvw#Table>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUri> "urn:";
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#dialectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -2507,9 +2392,8 @@ Výskumný ústav vodného hospodárstva,9dd86a9b-2825-4782-89e7-e3f8e901ebf8,ht
     <http://www.w3.org/ns/csvw#aboutUrl> "" .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000671/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/140> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/140> a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputMode> <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#addToChunk>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputModeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX xs: <http://www.w3.org/2001/XMLSchema#>
@@ -2555,9 +2439,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000673/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000673/1>
-    a <http://www.w3.org/ns/csvw#Table>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/graph/128> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/127> a <http://www.w3.org/ns/csvw#Table>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUri> "urn:";
     <http://plugins.linkedpipes.com/ontology/t-tabular#baseUriControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-tabular#dialectControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -2590,9 +2473,8 @@ WHERE {
     <http://www.w3.org/ns/csvw#aboutUrl> "" .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000674/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/113> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/113> a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputMode> <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#addToChunk>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputModeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -2634,9 +2516,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000676/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000676/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/150> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/150> a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX urn: <http://fliqz.com/>
 PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
 DELETE {
@@ -2664,29 +2545,28 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000677/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000677/configuration>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/165> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/77/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
+PREFIX dct: <http://purl.org/dc/terms/>
 
-DELETE {
-  ?old ?p ?o .
-  ?s2 ?p2 ?old .
-}
-INSERT {
+construct {
   ?dataset ?p ?o .
+  ?dataset dct:replaces ?dataset2 .
   ?s2 ?p2 ?dataset .
 }
 WHERE {
   ?old nkod:type \"dataset\" ;
+       nkod:id ?id ;
        nkod:name ?name ;
        ?p ?o .
 
   ?s2 ?p2 ?old .
 
-  BIND(IRI(CONCAT(\"https://data.gov.sk/dataset/\", ?name)) AS ?dataset)
-}
-""";
+  BIND(IRI(CONCAT(\"https://data.gov.sk/dataset/\", ?id)) AS ?dataset)
+  BIND(IRI(CONCAT(\"https://data.gov.sk/dataset/\", ?name)) AS ?dataset2) 
+}""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#softFail> false;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
@@ -2694,9 +2574,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00068/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00068/1>
-    a <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/110> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/110> a <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#commitSize> 1;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#commitSizeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#filePredicateControl>
@@ -2712,8 +2591,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-filesToRdfChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00069/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-00069/1>
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/169> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/9/configuration>
     a <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
 
@@ -2734,9 +2613,8 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000698/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000698/1>
-    a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/161> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/161> a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """NUTS,geometry
 https://data.gov.sk/def/nuts1/SK0,\"{\"\"type\"\": \"\"Polygon\"\", \"\"coordinates\"\": [[[16.841311, 48.360932], [16.83342, 48.381541], [16.850472, 48.383162], [16.855954, 48.396243], [16.850572, 48.410028], [16.86375, 48.419343], [16.850008, 48.449159], [16.863119, 48.453035], [16.859476, 48.459367], [16.880601, 48.477399], [16.889987, 48.47636], [16.895645, 48.496473], [16.916857, 48.495347], [16.913914, 48.511954], [16.92215, 48.51343], [16.921267, 48.520117], [16.943554, 48.521706], [16.940435, 48.527232], [16.953612, 48.54228], [16.935799, 48.570849], [16.933648, 48.601119], [16.969175, 48.644944], [16.967876, 48.668566], [16.997321, 48.691747], [16.997792, 48.708834], [17.012429, 48.718231], [17.043736, 48.764703], [17.08911, 48.786001], [17.105537, 48.806874], [17.111268, 48.831481], [17.154114, 48.844807], [17.201998, 48.878149], [17.277958, 48.860306], [17.306008, 48.843589], [17.321665, 48.845298], [17.32475, 48.836248], [17.361321, 48.813516], [17.378461, 48.819187], [17.396854, 48.813324], [17.453191, 48.846744], [17.477487, 48.841325], [17.509805, 48.8196], [17.519061, 48.829299], [17.515962, 48.817816], [17.528483, 48.81216], [17.553021, 48.81976], [17.548251, 48.827435], [17.554571, 48.831557], [17.588887, 48.825187], [17.601852, 48.840898], [17.620949, 48.842023], [17.632981, 48.85489], [17.703336, 48.860022], [17.782665, 48.91669], [17.781318, 48.925275], [17.885311, 48.927677], [17.903038, 48.964181], [17.903066, 48.98262], [17.914474, 48.996422], [17.913837, 49.010906], [17.9243, 49.019966], [17.9909, 49.028494], [18.024472, 49.02123], [18.057123, 49.028505], [18.095471, 49.059243], [18.09165, 49.067435], [18.115548, 49.090081], [18.11027, 49.113551], [18.122208, 49.118005], [18.106749, 49.134187], [18.118772, 49.15276], [18.136714, 49.16102], [18.129921, 49.168448], [18.130844, 49.188791], [18.154911, 49.216151], [18.156272, 49.22954], [18.144406, 49.229235], [18.146972, 49.24793], [18.184264, 49.269833], [18.184026, 49.286996], [18.298379, 49.304665], [18.378918, 49.330546], [18.415567, 49.367549], [18.403661, 49.396691], [18.449956, 49.393502], [18.475691, 49.408546], [18.481947, 49.423907], [18.494108, 49.428183], [18.489964, 49.433178], [18.547951, 49.467862], [18.534666, 49.490188], [18.572363, 49.508286], [18.597253, 49.510236], [18.602816, 49.497085], [18.617747, 49.495062], [18.677825, 49.507628], [18.754482, 49.488383], [18.812371, 49.516377], [18.941662, 49.5189], [18.972772, 49.502608], [18.960451, 49.48275], [18.970198, 49.476808], [18.960783, 49.454705], [18.973874, 49.451654], [18.988972, 49.431299], [18.968705, 49.413315], [18.979857, 49.395213], [19.035026, 49.395714], [19.053913, 49.415153], [19.070191, 49.412386], [19.072734, 49.417972], [19.091472, 49.415973], [19.107287, 49.403682], [19.137516, 49.409956], [19.153381, 49.403772], [19.197168, 49.413714], [19.185737, 49.43472], [19.198581, 49.448161], [19.225311, 49.454314], [19.228263, 49.463736], [19.220465, 49.473491], [19.235511, 49.495656], [19.233425, 49.510794], [19.260689, 49.531204], [19.3623, 49.536088], [19.371361, 49.567441], [19.399964, 49.574099], [19.409983, 49.592167], [19.442018, 49.598501], [19.446232, 49.613301], [19.467363, 49.613725], [19.474699, 49.603377], [19.468434, 49.59651], [19.478469, 49.588031], [19.529303, 49.572978], [19.530429, 49.535804], [19.581463, 49.455407], [19.5974, 49.458614], [19.611446, 49.446873], [19.641115, 49.45756], [19.637791, 49.440544], [19.648596, 49.435365], [19.631728, 49.408797], [19.685373, 49.403584], [19.717643, 49.386422], [19.746277, 49.407934], [19.790591, 49.410685], [19.79113, 49.38351], [19.803816, 49.364814], [19.79472, 49.344528], [19.804964, 49.322768], [19.792474, 49.29974], [19.809879, 49.295397], [19.822802, 49.276794], [19.792472, 49.267969], [19.785023, 49.246663], [19.76677, 49.236595], [19.766943, 49.222612], [19.758411, 49.215993], [19.763105, 49.207581], [19.784254, 49.199287], [19.807521, 49.205652], [19.829461, 49.201691], [19.841, 49.192616], [19.869438, 49.195797], [19.902332, 49.213313], [19.903635, 49.230762], [19.932244, 49.236449], [19.981552, 49.231785], [20.008629, 49.22005], [20.00647, 49.213158], [20.020529, 49.201505], [20.079021, 49.178476], [20.088154, 49.179659], [20.087177, 49.207608], [20.101624, 49.222659], [20.100887, 49.25034], [20.125144, 49.270926], [20.134205, 49.305921], [20.145504, 49.317513], [20.151863, 49.318446], [20.157718, 49.302815], [20.175803, 49.314082], [20.170584, 49.327734], [20.184156, 49.327807], [20.193215, 49.340977], [20.220823, 49.35179], [20.268657, 49.345693], [20.292815, 49.351555], [20.316487, 49.344529], [20.326216, 49.365861], [20.321378, 49.378384], [20.331276, 49.391429], [20.31751, 49.388727], [20.325081, 49.403028], [20.362271, 49.398262], [20.375681, 49.40786], [20.38243, 49.391026], [20.393036, 49.390576], [20.412285, 49.395203], [20.416875, 49.40579], [20.43327, 49.396615], [20.432295, 49.417581], [20.47196, 49.415436], [20.504894, 49.403284], [20.509936, 49.393446], [20.575525, 49.376106], [20.613598, 49.401824], [20.614934, 49.417845], [20.646988, 49.40067], [20.691722, 49.419777], [20.72292, 49.419656], [20.743119, 49.415142], [20.742269, 49.403833], [20.758027, 49.400395], [20.747534, 49.391002], [20.761363, 49.384246], [20.76143, 49.371605], [20.785406, 49.3744], [20.782476, 49.361031], [20.798112, 49.363262], [20.809318, 49.359372], [20.80688, 49.353151], [20.797871, 49.358704], [20.79738, 49.343172], [20.811836, 49.347687], [20.825903, 49.334404], [20.83733, 49.33402], [20.865549, 49.347484], [20.882386, 49.333097], [20.872738, 49.319789], [20.903575, 49.323535], [20.924084, 49.295969], [20.969607, 49.309888], [20.986545, 49.306621], [20.994138, 49.31268], [20.989065, 49.328446], [21.008091, 49.334852], [21.011312, 49.347564], [21.042547, 49.364881], [21.075331, 49.359316], [21.094111, 49.365056], [21.104106, 49.376401], [21.054315, 49.404219], [21.047543, 49.418339], [21.096388, 49.429488], [21.11373, 49.42394], [21.124024, 49.43658], [21.192127, 49.400992], [21.208195, 49.402482], [21.227256, 49.416952], [21.223459, 49.425518], [21.232749, 49.436545], [21.265921, 49.446984], [21.267344, 49.457186], [21.277525, 49.46094], [21.307181, 49.447995], [21.344682, 49.450424], [21.37275, 49.432644], [21.402017, 49.433418], [21.434082, 49.412283], [21.473695, 49.413584], [21.49267, 49.429493], [21.517046, 49.417802], [21.530272, 49.435083], [21.55208, 49.433114], [21.563984, 49.441261], [21.590556, 49.433815], [21.630943, 49.447307], [21.658904, 49.4168], [21.721735, 49.41226], [21.726893, 49.398105], [21.763385, 49.383467], [21.766244, 49.367195], [21.777994, 49.356048], [21.789214, 49.355488], [21.787839, 49.367715], [21.802993, 49.382176], [21.838317, 49.391672], [21.858997, 49.368555], [21.887327, 49.368977], [21.903766, 49.349964], [21.961952, 49.348548], [21.983179, 49.310366], [22.03402, 49.278546], [22.030318, 49.262671], [22.041885, 49.257161], [22.030419, 49.22517], [22.061963, 49.211585], [22.143804, 49.200514], [22.143102, 49.192744], [22.189902, 49.174017], [22.22246, 49.184459], [22.235799, 49.170076], [22.225713, 49.152541], [22.31765, 49.135551], [22.334605, 49.146472], [22.367261, 49.146594], [22.391817, 49.118052], [22.422654, 49.09949], [22.456065, 49.103764], [22.49702, 49.085889], [22.539422, 49.094692], [22.565705, 49.087994], [22.553237, 49.079483], [22.551079, 49.030161], [22.53799, 49.021321], [22.545495, 49.006765], [22.477309, 48.991182], [22.475609, 48.976279], [22.424921, 48.929329], [22.431548, 48.919252], [22.42074, 48.903483], [22.421124, 48.884602], [22.394663, 48.877087], [22.383536, 48.86504], [22.375913, 48.834026], [22.387648, 48.80004], [22.345697, 48.766147], [22.342667, 48.750679], [22.362227, 48.74], [22.361795, 48.7302], [22.350692, 48.72032], [22.339611, 48.683893], [22.302546, 48.676376], [22.250294, 48.647399], [22.240504, 48.627708], [22.188822, 48.609754], [22.171379, 48.587537], [22.160979, 48.567329], [22.137691, 48.432685], [22.142326, 48.405255], [22.155294, 48.399341], [22.131056, 48.391233], [22.135909, 48.380519], [22.093243, 48.378552], [22.086743, 48.371564], [22.076486, 48.387241], [22.054605, 48.377528], [22.021326, 48.392749], [21.994463, 48.377323], [21.949198, 48.378728], [21.926806, 48.370899], [21.928186, 48.361597], [21.899796, 48.370223], [21.897883, 48.36256], [21.884843, 48.367539], [21.884298, 48.356047], [21.881419, 48.362586], [21.862968, 48.355208], [21.855087, 48.366068], [21.837213, 48.363253], [21.83533, 48.334853], [21.822332, 48.332582], [21.798397, 48.342488], [21.764221, 48.338993], [21.724435, 48.349682], [21.711871, 48.357617], [21.714266, 48.366307], [21.705367, 48.366054], [21.701741, 48.380695], [21.664561, 48.392164], [21.663549, 48.417961], [21.620188, 48.469826], [21.613933, 48.509416], [21.54202, 48.508395], [21.52523, 48.522631], [21.514091, 48.551065], [21.440068, 48.585237], [21.422665, 48.578821], [21.41545, 48.558951], [21.319384, 48.561201], [21.316078, 48.555294], [21.326875, 48.554129], [21.313377, 48.550841], [21.321444, 48.547671], [21.317739, 48.53926], [21.309829, 48.540179], [21.316035, 48.533156], [21.302762, 48.526893], [21.305488, 48.522249], [21.269192, 48.52533], [21.239041, 48.539723], [21.221061, 48.537497], [21.179634, 48.518232], [21.160875, 48.521499], [21.133938, 48.495422], [21.117448, 48.491055], [21.094978, 48.499713], [21.098018, 48.510465], [21.090169, 48.517478], [21.066321, 48.525894], [21.053353, 48.52214], [21.015114, 48.532313], [20.981585, 48.517767], [20.976103, 48.524498], [20.956198, 48.521666], [20.955882, 48.533963], [20.940982, 48.534535], [20.941726, 48.542892], [20.934635, 48.538341], [20.922323, 48.559453], [20.868155, 48.551818], [20.855241, 48.566815], [20.84533, 48.566505], [20.850436, 48.581633], [20.8378, 48.57421], [20.836359, 48.58284], [20.728106, 48.56448], [20.713132, 48.570391], [20.679502, 48.559516], [20.653874, 48.561413], [20.644056, 48.551977], [20.586595, 48.535759], [20.546494, 48.544292], [20.537471, 48.527878], [20.5191, 48.537519], [20.504226, 48.531934], [20.507929, 48.489363], [20.463948, 48.463966], [20.469911, 48.45244], [20.446125, 48.444974], [20.416228, 48.418536], [20.420535, 48.403858], [20.402532, 48.382565], [20.409835, 48.365857], [20.384077, 48.351181], [20.367629, 48.332187], [20.374279, 48.326989], [20.365658, 48.316606], [20.337465, 48.301667], [20.325711, 48.272794], [20.307711, 48.273067], [20.310963, 48.265591], [20.286858, 48.26164], [20.234947, 48.279933], [20.22798, 48.277232], [20.235381, 48.2713], [20.228466, 48.262779], [20.20383, 48.261906], [20.206162, 48.250979], [20.133188, 48.253982], [20.139631, 48.242869], [20.134091, 48.225182], [20.070037, 48.191702], [20.078844, 48.183739], [20.072986, 48.179606], [20.049449, 48.1672], [20.029038, 48.177685], [19.988706, 48.162168], [19.974394, 48.166005], [19.963565, 48.152021], [19.951557, 48.151548], [19.937383, 48.131118], [19.898298, 48.124902], [19.914536, 48.146863], [19.898745, 48.166312], [19.860131, 48.169409], [19.855173, 48.178431], [19.845282, 48.162742], [19.821331, 48.169081], [19.806584, 48.162061], [19.806471, 48.154145], [19.794812, 48.153529], [19.782415, 48.165039], [19.805283, 48.183733], [19.798733, 48.19482], [19.787163, 48.19253], [19.74618, 48.216512], [19.721125, 48.201473], [19.691219, 48.203894], [19.674662, 48.219739], [19.669857, 48.239212], [19.644524, 48.239172], [19.630826, 48.250073], [19.577502, 48.216015], [19.526044, 48.20313], [19.528967, 48.190358], [19.504518, 48.173443], [19.512822, 48.154663], [19.492377, 48.139664], [19.49442, 48.109906], [19.468313, 48.092037], [19.467354, 48.083933], [19.451796, 48.09173], [19.454053, 48.101436], [19.400018, 48.082304], [19.386597, 48.091914], [19.369607, 48.085913], [19.303112, 48.088711], [19.255782, 48.071556], [19.241368, 48.053653], [19.212823, 48.064362], [19.181172, 48.06127], [19.135289, 48.074146], [19.107402, 48.065596], [19.084362, 48.072781], [19.058525, 48.057353], [19.014864, 48.078179], [18.98161, 48.053601], [18.943904, 48.058865], [18.908982, 48.051139], [18.886674, 48.058682], [18.874937, 48.047071], [18.833268, 48.048239], [18.819998, 48.039676], [18.82662, 48.032019], [18.815567, 48.021423], [18.821275, 48.006299], [18.815743, 47.993442], [18.75525, 47.976347], [18.776746, 47.955092], [18.774048, 47.932347], [18.75776, 47.919722], [18.762917, 47.903926], [18.756858, 47.896838], [18.76353, 47.871605], [18.813575, 47.85555], [18.828014, 47.834291], [18.855876, 47.826077], [18.848542, 47.816722], [18.792001, 47.823087], [18.741179, 47.813825], [18.726069, 47.789041], [18.646087, 47.759092], [18.559076, 47.765996], [18.493155, 47.752755], [18.454068, 47.765123], [18.290799, 47.731429], [18.087196, 47.756574], [18.034115, 47.757269], [18.002711, 47.746325], [17.970871, 47.757839], [17.946867, 47.744668], [17.89449, 47.739207], [17.866096, 47.74575], [17.781238, 47.739289], [17.762956, 47.749363], [17.711332, 47.75558], [17.608402, 47.821886], [17.566709, 47.815636], [17.525172, 47.866445], [17.497512, 47.867603], [17.45392, 47.885258], [17.432506, 47.920862], [17.402993, 47.947849], [17.376398, 47.958646], [17.334651, 47.993125], [17.257955, 47.998655], [17.241769, 48.022465], [17.226627, 48.016229], [17.200051, 48.019806], [17.160776, 48.006657], [17.11006, 48.031224], [17.089866, 48.019783], [17.067423, 48.031428], [17.08779, 48.045676], [17.06825, 48.055395], [17.086791, 48.065356], [17.072234, 48.070447], [17.078914, 48.078236], [17.071626, 48.081055], [17.093145, 48.091424], [17.087769, 48.096557], [17.092707, 48.099638], [17.062786, 48.12148], [17.068816, 48.124208], [17.057195, 48.143724], [17.026909, 48.14087], [16.976233, 48.172165], [16.976529, 48.18881], [16.96178, 48.220827], [16.946121, 48.235881], [16.957066, 48.263818], [16.922511, 48.272205], [16.907216, 48.288897], [16.894541, 48.311242], [16.908545, 48.32619], [16.871656, 48.337952], [16.872974, 48.348845], [16.844908, 48.349946], [16.841311, 48.360932]]]}\"
 https://data.gov.sk/def/lau1/SK0417,\"{\"\"type\"\": \"\"Polygon\"\", \"\"coordinates\"\": [[[20.870515, 49.006901], [20.883642, 49.023519], [20.882629, 49.040447], [20.895421, 49.049931], [20.902754, 49.075558], [20.920124, 49.093732], [20.936502, 49.077535], [20.96553, 49.076705], [20.972766, 49.087736], [20.992638, 49.087109], [20.988058, 49.081285], [21.008037, 49.076875], [21.018689, 49.059518], [21.042591, 49.045171], [21.04124, 49.038925], [21.054354, 49.040961], [21.084161, 49.02075], [21.073011, 49.038476], [21.076389, 49.044196], [21.099847, 49.039404], [21.11, 49.051452], [21.123128, 49.045262], [21.13719, 49.051292], [21.150709, 49.06516], [21.177936, 49.063585], [21.164995, 49.085004], [21.182981, 49.074711], [21.203705, 49.074102], [21.203804, 49.087592], [21.22623, 49.087058], [21.218707, 49.097334], [21.224103, 49.105451], [21.163848, 49.165942], [21.163464, 49.178307], [21.176786, 49.185032], [21.228264, 49.157383], [21.290722, 49.147403], [21.294887, 49.127156], [21.310416, 49.119264], [21.317183, 49.132471], [21.341972, 49.124458], [21.351133, 49.113467], [21.374183, 49.116332], [21.411813, 49.106986], [21.445727, 49.093024], [21.444847, 49.081737], [21.46532, 49.077623], [21.456295, 49.071142], [21.462822, 49.067178], [21.456031, 49.056648], [21.417034, 49.036589], [21.404373, 49.01947], [21.42476, 49.004382], [21.408443, 48.990809], [21.469062, 48.943303], [21.464618, 48.932074], [21.482139, 48.921277], [21.477385, 48.909838], [21.485393, 48.884573], [21.449014, 48.871368], [21.428687, 48.873796], [21.420533, 48.894163], [21.414258, 48.871857], [21.394337, 48.885109], [21.377199, 48.881906], [21.38368, 48.858071], [21.367257, 48.838087], [21.316799, 48.837154], [21.301204, 48.828214], [21.313646, 48.815064], [21.279754, 48.810789], [21.246059, 48.828852], [21.250703, 48.833543], [21.24384, 48.851816], [21.266667, 48.859716], [21.260105, 48.873688], [21.236349, 48.868942], [21.236004, 48.876196], [21.225854, 48.878858], [21.223719, 48.871003], [21.196982, 48.884542], [21.181519, 48.870619], [21.156307, 48.89516], [21.13541, 48.901366], [21.098652, 48.893926], [21.058221, 48.905685], [21.017679, 48.906531], [21.013514, 48.923802], [20.990168, 48.936031], [20.985472, 48.959187], [20.95467, 48.955341], [20.949972, 48.947396], [20.91969, 48.963711], [20.888456, 48.967482], [20.877237, 48.97538], [20.886877, 48.978509], [20.876996, 48.988645], [20.886756, 48.99842], [20.881675, 48.998513], [20.870515, 49.006901]]]}\"
@@ -2781,9 +2659,8 @@ https://data.gov.sk/def/lau1/SK0315,\"{\"\"type\"\": \"\"Polygon\"\", \"\"coordi
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699/configuration> {
-  <http://localhost:8080/resources/pipelines/1704315924673-00061704315924673-000699/1>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/118> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/118> a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputMode> <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#addToChunk>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#outputModeControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcterms: <http://purl.org/dc/terms/>
