@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-11T16:01:07.292823718"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-12T09:19:33.633982995"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
@@ -439,9 +439,9 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/b26f-a9d5> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/07a1-a9aa> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/b26f-a9d5>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/07a1-a9aa>
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
@@ -1465,7 +1465,7 @@ ORDER BY DESC(COUNT(?s))""";
 PREFIX srtfl: <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 
-CONSTRUCT 
+CONSTRUCT
 {
 ?tIRI a srtfl:Task ;
     srtfl:fileFormat \"text/turtle\" ;
@@ -1475,8 +1475,8 @@ CONSTRUCT
 ?tqIRI a srtfl:TaskQuery ;
     srtfl:query ?query .
 }
-WHERE 
-{ 
+WHERE
+{
   ?dataset a dcat:Dataset .
   OPTIONAL { ?dataset dcterms:publisher ?publisher . }
 
@@ -1501,6 +1501,9 @@ CONSTRUCT {
 <\"\"\",STR(?dataset),\"\"\"> a dcat:Dataset ;
     dcterms:title ?title ;
     dcterms:description ?description ;
+    dcterms:issued ?issued ;
+    dcterms:modified ?modified ;
+    dcterms:replaces ?replaces ;
 	dcat:theme ?theme ;
 	dcterms:accrualPeriodicity ?accrualPeriodicity ;
 	dcat:keyword ?keyword ;
@@ -1517,14 +1520,14 @@ CONSTRUCT {
 	dcterms:identifier ?identifier ;
 	dcat:distribution ?distribution .
 
-?cp a ?cptype; 
+?cp a ?cptype;
     vcard:fn ?cpfn ;
     vcard:hasEmail ?cpemail .
 
-?publisher a foaf:Agent; 
+?publisher a foaf:Agent;
 	foaf:name ?name .
 
-?temporal a dcterms:PeriodOfTime; 
+?temporal a dcterms:PeriodOfTime;
     dcat:startDate ?startDate ;
     dcat:endDate ?endDate .
 
@@ -1541,8 +1544,8 @@ CONSTRUCT {
     dcterms:title ?dtitle ;
 	dcterms:license ?license .
 
-?distribution dcat:accessService ?dataService . 
-  
+?distribution dcat:accessService ?dataService .
+
 ?dataService a dcat:DataService ;
     dcterms:title ?sTitle ;
     dcterms:conformsTo ?sConformsTo ;
@@ -1562,8 +1565,14 @@ WHERE {
         dcterms:title ?title .
   } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:description ?description .
-  } UNION { 
+  } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcat:distribution ?distribution .
+  } UNION {
+    <\"\"\",STR(?dataset),\"\"\"> dcterms:issued ?issued .
+  } UNION {
+    <\"\"\",STR(?dataset),\"\"\"> dcterms:modified ?modified .
+  } UNION {
+    <\"\"\",STR(?dataset),\"\"\"> dcterms:replaces ?replaces .
 
     ?distribution a dcat:Distribution ;
         dcat:accessURL ?daURL .
@@ -1577,15 +1586,15 @@ WHERE {
     OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
     OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
     OPTIONAL { ?distribution dcterms:title ?dtitle . }
-    OPTIONAL { 
-        ?distribution dcat:accessService ?dataService . 
+    OPTIONAL {
+        ?distribution dcat:accessService ?dataService .
         ?dataService a dcat:DataService ;
                     dcterms:title ?sTitle ;
                     dcat:endpointURL ?sEndpointURL .
         OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
         OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
     }
-  } UNION { ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> . 
+  } UNION { ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> .
   } UNION {
     ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> ;
             dcat:record ?record .
@@ -1599,32 +1608,33 @@ WHERE {
 <\"\"\",STR(?dataset),\"\"\"> dcterms:hasPart ?lowerDataset .
   } UNION {
 <\"\"\",STR(?dataset),\"\"\"> dcterms:hasPart ?lowerDataset .
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:accrualPeriodicity ?accrualPeriodicity .   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:keyword ?keyword . 
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:accrualPeriodicity ?accrualPeriodicity .   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:keyword ?keyword .
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:spatial ?spatial .
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> foaf:page ?page . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:conformsTo ?conformsTo . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:spatialResolutionInMeters ?spatialResolution . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:temporalResolution ?temporalResolution . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:isPartOf ?topDataset . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:identifier ?identifier . 
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> foaf:page ?page .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:conformsTo ?conformsTo .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:spatialResolutionInMeters ?spatialResolution .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:temporalResolution ?temporalResolution .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:isPartOf ?topDataset .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:identifier ?identifier .
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:theme ?theme .
 	OPTIONAL { ?theme skos:inScheme ?scheme . }
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:temporal ?temporal . 
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:temporal ?temporal .
     OPTIONAL { ?temporal dcat:startDate ?startDate . }
     OPTIONAL { ?temporal dcat:endDate ?endDate . }
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:contactPoint ?cp . 
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:contactPoint ?cp .
 ?cp a ?cptype.
     OPTIONAL { ?cp vcard:fn ?cpfn . }
     OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
-  } UNION { 
-    <\"\"\",STR(?dataset),\"\"\"> dcterms:publisher ?publisher . 
-	
-    ?publisher a foaf:Agent; 
+  } UNION {
+    <\"\"\",STR(?dataset),\"\"\"> dcterms:publisher ?publisher .
+
+    ?publisher a foaf:Agent;
         foaf:name ?name .
     }
 }
 \"\"\") as ?query)
-}""";
+}
+""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
