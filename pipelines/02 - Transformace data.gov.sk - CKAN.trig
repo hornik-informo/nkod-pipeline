@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-12T09:19:33.633982995"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-18T19:37:37.03986999"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
@@ -439,9 +439,9 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/07a1-a9aa> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/b40b-8983> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/07a1-a9aa>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/b40b-8983>
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
@@ -1565,15 +1565,15 @@ WHERE {
         dcterms:title ?title .
   } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:description ?description .
-  } UNION {
-    <\"\"\",STR(?dataset),\"\"\"> dcat:distribution ?distribution .
-  } UNION {
+ } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:issued ?issued .
   } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:modified ?modified .
   } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:replaces ?replaces .
-
+  } UNION {
+    <\"\"\",STR(?dataset),\"\"\"> dcat:distribution ?distribution .
+ 
     ?distribution a dcat:Distribution ;
         dcat:accessURL ?daURL .
 
