@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-29T21:13:07.685080043"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-30T21:16:16.392879417"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
@@ -380,28 +380,12 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/y> "869"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlLinkerChunked/0.0.0> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/02d4-95cb>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/d2fa-9943>
     a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Chunked merger";
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/02d4-95cb/configuration>;
-    <http://linkedpipes.com/ontology/x> "-121"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/y> "1228"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0> .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/5627-8c81>
-    a <http://linkedpipes.com/ontology/Component>;
-    <http://www.w3.org/2004/02/skos/core#prefLabel> "Chunked merger";
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/5627-8c81/configuration>;
-    <http://linkedpipes.com/ontology/x> "-169"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/y> "1321"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0> .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/ab0d-85c5>
-    a <http://linkedpipes.com/ontology/Component>;
-    <http://www.w3.org/2004/02/skos/core#prefLabel> "Chunked merger";
-    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/ab0d-85c5/configuration>;
-    <http://linkedpipes.com/ontology/x> "-174"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/y> "1433"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/d2fa-9943/configuration>;
+    <http://linkedpipes.com/ontology/x> "449"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "539"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0> .
   
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/10> a <http://linkedpipes.com/ontology/Connection>;
@@ -463,9 +447,9 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/3f38-8e27> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/3ae2-bd52> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/3f38-8e27>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/3ae2-bd52>
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
@@ -674,25 +658,11 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/25>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/connection/11ff-9006>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/connection/056c-b477>
     a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/66>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/55>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/ab0d-85c5>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/connection/14dc-8557>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/71>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/5627-8c81>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/connection/a604-a4cd>
-    a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/74>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/02d4-95cb>;
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/d2fa-9943>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/79> a <http://linkedpipes.com/ontology/RunAfter>;
@@ -2461,7 +2431,7 @@ CONSTRUCT {
   
   ?newDataset ?p ?o ;
     nkod:id ?newDatasetId ;
-    dcterms:title ?resourceName ;
+    dcterms:title ?resourceLabel ;
     dcterms:description ?description ;
     dcterms:issued ?resourceCreated ;
     dcterms:modified ?resourceCreated ;
@@ -2477,6 +2447,8 @@ WHERE {
   ?resource nkod:id ?resourceId ;
             nkod:name ?resourceName ;
             nkod:created ?resourceCreated ;
+            dcterms:description ?resourceDescription ;
+            
             OPTIONAL {?resource nkod:position ?position . }
 
   ?row <urn:Dataset> ?mappedDataset .
@@ -2487,8 +2459,10 @@ WHERE {
 
   BIND(MD5(CONCAT(?datasetId, ?resourceId)) AS ?newDatasetId)
   BIND(IRI(CONCAT(?base, ?newDatasetId)) AS ?newDataset)
-#  BIND(STRLANG(CONCAT(STR(?title), IF(BOUND(?position), CONCAT(\" (\", STR(xs:integer(?position) + 1), \")\"), \"\")), \"sk\") AS ?newDatasetTitle)
-    
+  BIND(STRLANG(CONCAT(STR(?title), IF(BOUND(?position), CONCAT(\" (\", STR(xs:integer(?position) + 1), \")\"), \"\")), \"sk\") AS ?resourceNameAndIndex)
+  
+  BIND (IF(STRLEN(?resourceName)>0, ?resourceName, IF(STRLEN(?resourceDescription)>0, ?resourceDescription, ?resourceNameAndIndex)) as ?resourceLabel) 
+  
   VALUES ?p {
 #    nkod:owner_org 
     nkod:organization nkod:tags nkod:type 
@@ -2753,17 +2727,7 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threadsControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/02d4-95cb/configuration> {
-  <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0/configuration/1>
-    a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
-}
-
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/5627-8c81/configuration> {
-  <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0/configuration/1>
-    a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
-}
-
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/ab0d-85c5/configuration> {
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/component/d2fa-9943/configuration> {
   <http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0/configuration/1>
     a <http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration> .
 }
