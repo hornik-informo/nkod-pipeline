@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-02-05T14:02:29.962977172"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-02-05T18:15:19.814133949"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
@@ -475,9 +475,9 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/98be-9eea> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/4c50-8ae0> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/98be-9eea>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/4c50-8ae0>
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
@@ -720,23 +720,22 @@ GROUP BY ?geometry""";
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/11/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-textHolder#Configuration>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#content> """Dataset,IČO,Organizácia
-https://data.gov.sk/dataset/05b4e1af-0dfd-4723-aa44-a0a9b3663a56,,
-https://data.gov.sk/dataset/6110f988-1fb5-49ab-bcdf-cfbb4d6ee4b7,,
+https://data.gov.sk/dataset/6110f988-1fb5-49ab-bcdf-cfbb4d6ee4b7,00156582,Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave
 https://data.gov.sk/dataset/3069495d-5423-4798-b9ab-c24e34e44354,165387,Národné centrum zdravotníckych informácií
 https://data.gov.sk/dataset/3c140c76-4252-4dea-ae9f-2fb030a50171,00165387,Národné centrum zdravotníckych informácií
 https://data.gov.sk/dataset/044f06e2-bb8c-431f-b08b-520cbcff9be9,165387,Národné centrum zdravotníckych informácií
 https://data.gov.sk/dataset/044f06e2-bb8c-431f-b08b-520cbcff9be9,165387,Národné centrum zdravotníckych informácií
-https://data.gov.sk/dataset/b7fdaa35-4fc1-4b59-b035-04fe7148bf29,30810710,\"Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky\"
-https://data.gov.sk/dataset/144377c9-861f-421f-b023-cb2d7ea98ea6,30810710,\"Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky\"
-https://data.gov.sk/dataset/88b70b30-95ce-4acf-94b7-b689cf541b58,30810710,\"Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky\"
-https://data.gov.sk/dataset/e0cd11c1-2b37-40d9-b803-0696d2221ca1,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/5688a9c6-1998-4709-85e5-b452bc8148f2,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/d26a855f-fded-48d3-9ff7-4c767f77c67f,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/268335d8-ed2a-45f1-aadf-970e7921f587,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/79f7bc91-de57-4995-b5fa-925d9cf85186,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/799ef84d-8800-4ec9-a9d0-53493106182a,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/f5b72536-5632-4a4b-ab98-69c62f9a5f7d,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
-https://data.gov.sk/dataset/b3e776d2-4175-4560-9a52-96dfbb70b23e,36038351,\"Lesy Slovenskej republiky, štátny podnik\"
+https://data.gov.sk/dataset/b7fdaa35-4fc1-4b59-b035-04fe7148bf29,30810710,Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky
+https://data.gov.sk/dataset/144377c9-861f-421f-b023-cb2d7ea98ea6,30810710,Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky
+https://data.gov.sk/dataset/88b70b30-95ce-4acf-94b7-b689cf541b58,30810710,Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky
+https://data.gov.sk/dataset/e0cd11c1-2b37-40d9-b803-0696d2221ca1,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/5688a9c6-1998-4709-85e5-b452bc8148f2,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/d26a855f-fded-48d3-9ff7-4c767f77c67f,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/268335d8-ed2a-45f1-aadf-970e7921f587,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/79f7bc91-de57-4995-b5fa-925d9cf85186,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/799ef84d-8800-4ec9-a9d0-53493106182a,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/f5b72536-5632-4a4b-ab98-69c62f9a5f7d,36038351,Lesy Slovenskej republiky, štátny podnik
+https://data.gov.sk/dataset/b3e776d2-4175-4560-9a52-96dfbb70b23e,36038351,Lesy Slovenskej republiky, štátny podnik
 https://data.gov.sk/dataset/75c85eff-d881-4a39-bc7b-c30ecfbc5c37,151513,Úrad vlády SR
 https://data.gov.sk/dataset/545da0d2-3ded-42e8-8dae-d270b6fd47ae,151513,Úrad vlády SR
 https://data.gov.sk/dataset/b32df1d8-a606-4f14-9309-ef4dfc29c3bf,151513,Úrad vlády SR
@@ -809,12 +808,12 @@ https://data.gov.sk/dataset/2b3257ad-368c-4f31-bd0b-38f2bc101c67,30810787,Úrad 
 https://data.gov.sk/dataset/e28f0597-7128-4ad1-ab7b-a70806336bd3,30810787,Úrad priemyselného vlastníctva Slovenskej republiky
 https://data.gov.sk/dataset/105a8609-9625-456f-a224-d1524b33306f,17335787,Regionálny úrad verejného zdravotníctva Vranov nad Topľou
 https://data.gov.sk/dataset/14ac98c8-ea25-4481-8fb0-852972613cf4,17335787,Regionálny úrad verejného zdravotníctva Vranov nad Topľou
-https://data.gov.sk/dataset/fc6f5cf8-6e14-4151-8fa0-6a13cf92d6c1,17335434,\"Regionálny úrad verejného zdravotníctva pre 
-územný obvod okresov Senica a Skalica\"
-https://data.gov.sk/dataset/d1250b04-0603-4a73-b208-96a3c850fbcc,17335434,\"Regionálny úrad verejného zdravotníctva pre 
-územný obvod okresov Senica a Skalica\"
-https://data.gov.sk/dataset/407bf3e6-2ba5-4243-8c92-204ad03cc724,17335434,\"Regionálny úrad verejného zdravotníctva pre 
-územný obvod okresov Senica a Skalica\"
+https://data.gov.sk/dataset/fc6f5cf8-6e14-4151-8fa0-6a13cf92d6c1,17335434,Regionálny úrad verejného zdravotníctva pre
+územný obvod okresov Senica a Skalica
+https://data.gov.sk/dataset/d1250b04-0603-4a73-b208-96a3c850fbcc,17335434,Regionálny úrad verejného zdravotníctva pre
+územný obvod okresov Senica a Skalica
+https://data.gov.sk/dataset/407bf3e6-2ba5-4243-8c92-204ad03cc724,17335434,Regionálny úrad verejného zdravotníctva pre
+územný obvod okresov Senica a Skalica
 https://data.gov.sk/dataset/cf47aec6-0e14-4602-a1d7-3c24f6cf2e35,17335434,Regionálny úrad verejného zdravotníctva Trebišov
 https://data.gov.sk/dataset/68756995-7a64-481f-af25-5c60db30d5ea,17335434,Regionálny úrad verejného zdravotníctva Trebišov
 https://data.gov.sk/dataset/e9dbd484-c01a-4251-b3b3-7b9ad846e8f8,17335434,Regionálny úrad verejného zdravotníctva Trebišov
@@ -915,9 +914,9 @@ https://data.gov.sk/dataset/621de6a8-2497-42da-b123-4488fe506b4d,30845572,Minist
 https://data.gov.sk/dataset/3bac883e-ac4f-4d2e-a987-62d2b201f4e7,699021,Ministerstvo zahraničných vecí a európskych záležitostí SR
 https://data.gov.sk/dataset/4a2b090f-ba13-40f6-b161-4462d7f9a036,699021,Ministerstvo zahraničných vecí a európskych záležitostí SR
 https://data.gov.sk/dataset/ba34772d-666f-4a4f-ae51-256bedc27b02,699021,Ministerstvo zahraničných vecí a európskych záležitostí SR
-https://data.gov.sk/dataset/138bf045-a752-478c-b7de-b9d5f356a7be,165387,\"Hydromeliorácie, štátny podnik\"
-https://data.gov.sk/dataset/f70eb985-c3d8-4ab0-b652-41d850149b35,165387,\"Hydromeliorácie, štátny podnik\"
-https://data.gov.sk/dataset/67724193-2b12-4f9b-84e6-ac73bb3a33fe,165387,\"Hydromeliorácie, štátny podnik\"
+https://data.gov.sk/dataset/138bf045-a752-478c-b7de-b9d5f356a7be,165387,Hydromeliorácie, štátny podnik
+https://data.gov.sk/dataset/f70eb985-c3d8-4ab0-b652-41d850149b35,165387,Hydromeliorácie, štátny podnik
+https://data.gov.sk/dataset/67724193-2b12-4f9b-84e6-ac73bb3a33fe,165387,Hydromeliorácie, štátny podnik
 https://data.gov.sk/dataset/d751e9f5-c252-4647-b639-623bac6b6658,35985135,Múzeum vo Svätom Antone
 https://data.gov.sk/dataset/2f0b2a00-7f5a-4e79-b9bc-fb5652993e61,35985135,Múzeum vo Svätom Antone
 https://data.gov.sk/dataset/9dfa6d97-1e77-4cbc-b85b-90ac9f7a1aa8,35985135,Múzeum vo Svätom Antone
@@ -948,10 +947,56 @@ https://data.gov.sk/dataset/0c463d7e-a45f-4e8c-8264-ba03fe00e21c,151866,Minister
 https://data.gov.sk/dataset/0c463d7e-a45f-4e8c-8264-ba03fe00e21c,151866,Ministerstvo vnútra SR
 https://data.gov.sk/dataset/ced0b811-673e-4975-811d-93f32c6a0264,151866,Ministerstvo vnútra SR
 https://data.gov.sk/dataset/6a81933d-2871-46b9-a26e-8ca980f83e99,151866,Ministerstvo vnútra SR
-https://data.gov.sk/dataset/edaa29fb-8f22-4416-b43d-8f433a8cfe25,165565,Ministerstvo zdravotníctva SR
+https://data.gov.sk/dataset/7c196993-fcd2-407c-ac6c-f4a4ca68cef5,151866,Ministerstvo vnútra SR
+https://data.gov.sk/dataset/06607a41-d13a-4ae3-9fb2-32138c368aae,151866,Ministerstvo vnútra SR
 https://data.gov.sk/dataset/31c0513b-0c95-480d-8aff-f5f63a66ea12,166073,Ministerstvo spravodlivosti SR
 https://data.gov.sk/dataset/daf3d70d-d473-4813-9bc5-13464fa96d41,166073,Ministerstvo spravodlivosti SR
-https://data.gov.sk/dataset/4e126e26-92b8-4b4a-b39e-235b4eedae3f,166073,Ministerstvo spravodlivosti SR""";
+https://data.gov.sk/dataset/4e126e26-92b8-4b4a-b39e-235b4eedae3f,166073,Ministerstvo spravodlivosti SR
+https://data.gov.sk/dataset/edaa29fb-8f22-4416-b43d-8f433a8cfe25,165565,Ministerstvo zdravotníctva SR
+https://data.gov.sk/set/https---opendata.mzv.sk-api-3-action-package_show-id-registracia-obcanov-vo-svete,165565,Ministerstvo zdravotníctva SR
+https://data.gov.sk/set/https---opendata.mzv.sk-api-3-action-package_show-id-staty-sveta-covid-info,165565,Ministerstvo zdravotníctva SR
+https://data.gov.sk/set/https---opendata.mzv.sk-api-3-action-package_show-id-staty-sveta-podmienky-cestovania-a-pobytu,165565,Ministerstvo zdravotníctva SR
+https://data.gov.sk/dataset/05b4e1af-0dfd-4723-aa44-a0a9b3663a56,30794323,Pôdohospodárska platobná agentúra
+https://data.gov.sk/dataset/348ed5b2-a54d-44e0-9c4f-80c1f118a79e,30794323,Pôdohospodárska platobná agentúra
+https://data.gov.sk/dataset/65974bde-e6d1-4ad2-99c2-7c36af4982fa,00156582,Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave
+https://data.gov.sk/dataset/53769ea3-1fd9-42cc-9c99-362670eb6a01,00156582,Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave
+https://data.gov.sk/dataset/91a4285c-2bbf-46fe-88fc-3f390f750316,00156582,Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave
+https://data.gov.sk/dataset/8086b171-1bb2-4df6-8cd6-305f0c7691df,00156582,Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave
+https://data.gov.sk/dataset/0e11a79e-d6f2-48e5-9cb3-2b029b871004,00699063,Protimonopolný úrad Slovenskej republiky
+https://data.gov.sk/dataset/4eb72e51-e4c7-4074-b6f3-74a1be2bc1a1,00699063,Protimonopolný úrad Slovenskej republiky
+https://data.gov.sk/dataset/806fb6df-f6d1-4ffc-b0dd-bbc7ad52f7ed,00699063,Protimonopolný úrad Slovenskej republiky
+https://data.gov.sk/dataset/c88dd6ae-085b-4a5a-89e4-f86bba98e66a,00699063,Protimonopolný úrad Slovenskej republiky
+https://data.gov.sk/dataset/823e5c55-d0c5-4de1-807f-46da160ca061,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/1e4c311e-c3bb-4ce6-b95d-7318a1de1ae7,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/30264a05-7f37-4979-b280-63b4b17788d1,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/5a45799a-02b8-4f7e-9a41-a54a91f25685,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/e46462c9-04bb-42e0-99da-bcf2f1acb2c0,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/7132244c-b1f8-4c5e-abab-7657abcea8ae,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/05d53fee-c87c-4de7-9552-b527b73f6acb,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/3d1df177-ed20-48d3-9e7c-d772484f12b5,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/4305feb3-d81f-465e-b90c-34d746010133,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/556f696c-67e1-4edd-a483-1bf30353e8c8,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/670177fe-4756-4551-9ba7-452b8515ccc5,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/fc1f8912-13fc-421d-9322-2039ac2f9734,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/05f41f3c-57a6-46f4-9f14-e02ccba09031,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/a3bea979-b616-412e-ada9-947a11ae6c02,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/d7c81c43-6ced-4b29-bf7c-791a75ecc211,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/d8ae0f5d-97f3-4ad3-99ad-b3e09fd43fc4,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/0c386be1-fc81-4ba6-a5d5-4cc6b513f909,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/38440313-a3fe-43cd-a0fd-c7f6dc69b161,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/5b2b13ab-c97a-429a-a4a2-6550e8871297,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/b2bad1a0-9a37-4e1f-8abc-2c95f01d81dc,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/b5ae20c0-3214-4d5c-8769-02839c0b351a,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/baf05cc7-16c5-4660-9efc-79210f67433e,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/bbd58326-fe2b-488d-8658-2993cd9871a2,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/a2116af8-0dfe-4883-8680-08fa724eb3bc,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/f430acb9-069c-454a-b119-1a50bde16003,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/0564ae1d-b071-4a90-bb55-b19a64dbd562,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/0cd7ca36-32d9-4277-9dd3-8534a4e2d4de,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/26820255-2a46-435b-a616-85df8cb2fddb,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/479b033e-e73a-49ab-911b-3cffa8b08f39,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/567b831c-746b-4853-918b-2dc9ca5dae4e,31797903,Úrad pre verejné obstarávanie
+https://data.gov.sk/dataset/5c6bd403-29e4-435c-ac96-4455c4d217be,31797903,Úrad pre verejné obstarávanie""";
     <http://plugins.linkedpipes.com/ontology/e-textHolder#contentControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileName> "dist-serie.csv";
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
