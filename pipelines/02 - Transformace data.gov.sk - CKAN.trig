@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "02 - Transformace data.gov.sk - CKAN";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-02-07T20:15:04.941182368"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-02-08T12:14:01.26773676"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "2";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/profile/default> .
   
@@ -459,9 +459,9 @@ Polygon -> NUTS&LAU""";
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/36>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf";
-    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/d0f9-9e27> .
+    <http://linkedpipes.com/ontology/vertex> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/3e8f-bfe3> .
   
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/d0f9-9e27>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823993742/vertex/3e8f-bfe3>
     <http://linkedpipes.com/ontology/x> "686"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/y> "1159"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/order> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
@@ -1008,7 +1008,10 @@ https://data.gov.sk/dataset/e3b16084-a8e5-4c68-90d3-c96d71511bcc,151866,Minister
 https://data.gov.sk/dataset/fdf7a94c-6ce6-490a-a9a7-b979823735b8,151866,Ministerstvo vnútra SR
 https://data.gov.sk/dataset/7c196993-fcd2-407c-ac6c-f4a4ca68cef5,151866,Ministerstvo vnútra SR
 https://data.gov.sk/dataset/6a81933d-2871-46b9-a26e-8ca980f83e99,151866,Ministerstvo vnútra SR
-https://data.gov.sk/dataset/de3dd18f-9124-4acb-ae00-705555332256,151866,Ministerstvo vnútra SR""";
+https://data.gov.sk/dataset/de3dd18f-9124-4acb-ae00-705555332256,151866,Ministerstvo vnútra SR
+https://data.gov.sk/dataset/4fd13a04-5895-4734-8877-bd523ec0881d,00151491,Kancelária Národnej rady SR
+https://data.gov.sk/dataset/9e2b3d50-4a11-4ea3-a8ee-1207fec30994,00151491,Kancelária Národnej rady SR
+https://data.gov.sk/dataset/c33a7617-8e79-4446-b7af-9c012f9ba94b,00151491,Kancelária Národnej rady SR""";
     <http://plugins.linkedpipes.com/ontology/e-textHolder#contentControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileName> "dist-serie.csv";
     <http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
