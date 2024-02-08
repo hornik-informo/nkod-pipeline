@@ -3,7 +3,7 @@
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959> a <http://linkedpipes.com/ontology/Pipeline>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "01 - Harvestace data.gov.sk - CKAN API";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-01-30T09:50:47.295852919"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2024-02-08T11:52:44.468980202"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "1";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1651823973959/profile/default> .
   
@@ -538,16 +538,31 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#query> """PREFIX nkod: <https://data.gov.sk/slovník/nkod/>
 PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
 
-delete where
+delete
+{
+  ?dataset nkod:organization ?organization .
+  ?dataset nkod:resources ?distribution .
+  ?dataset nkod:tags ?tags .
+  ?dataset ?p ?o .
+
+  ?organization ?o1 ?o2 .
+  ?distribution ?d1 ?d2 .
+  ?tags ?t1 ?t2 .
+}
+where
 {
   ?dataset nkod:owner_org \"2137B75B-83A9-45B1-B60B-20522174AE10\" .
   ?dataset nkod:organization ?organization .
-  ?dataset nkod:tags ?tags .
+
+    optional {
+        ?dataset nkod:tags ?tags .
+        ?tags ?t1 ?t2 .
+    }
+
   ?dataset nkod:resources ?distribution .
   ?dataset ?p ?o .
 
   ?organization ?o1 ?o2 .
-  ?tags ?t1 ?t2 .
   ?distribution ?d1 ?d2 .
 }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
