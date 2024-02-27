@@ -12,6 +12,6 @@
 <https://sk-nkod.opendata.cz/etl/resources/components/1673253515769-0001/configuration> {
   <https://sk-nkod.opendata.cz/etl/resources/components/1673253515769-0001/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/registration/repository/datasety";
+    <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/registration/public/dataset_registration/";
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/Force> .
 }

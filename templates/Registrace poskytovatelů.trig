@@ -12,6 +12,6 @@
 <https://sk-nkod.opendata.cz/etl/resources/components/1673253518377-0002/configuration> {
   <https://sk-nkod.opendata.cz/etl/resources/components/1673253518377-0002/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/registration/repository/poskytovatelé";
+    <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/registration/public/publisher_registration/";
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/Force> .
 }

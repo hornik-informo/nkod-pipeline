@@ -12,6 +12,6 @@
 <https://sk-nkod.opendata.cz/etl/resources/components/1673253521182-0003/configuration> {
   <https://sk-nkod.opendata.cz/etl/resources/components/1673253521182-0003/configuration>
     a <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/registration/repository/lkody";
+    <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path> "/data/registration/public/local_catalog_registration/";
     <http://plugins.linkedpipes.com/ontology/e-filesFromLocal#pathControl> <http://plugins.linkedpipes.com/resource/configuration/Force> .
 }
