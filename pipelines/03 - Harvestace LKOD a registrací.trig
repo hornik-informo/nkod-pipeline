@@ -902,6 +902,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX dcatap: <http://data.europa.eu/r5r/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
@@ -910,74 +911,87 @@ CONSTRUCT {
          dcat:record ?record.
 
 <\"\"\",STR(?dataset),\"\"\"> a dcat:Dataset ;
-    dcterms:title ?title ;
-    dcterms:description ?description ;
-	dcterms:issued ?issued ;
-    dcterms:modified ?modified ;
-    dcat:landingPage ?landingPage ;
-    dcterms:type ?type ;
-	dcat:theme ?theme ;
-	dcterms:accrualPeriodicity ?accrualPeriodicity ;
-	dcat:keyword ?keyword ;
-    dcterms:spatial ?spatial ;
-    dcterms:temporal ?temporal ;
-	dcat:contactPoint ?cp ;
-	foaf:page ?page ;
-    dcterms:conformsTo ?conformsTo ;
-    dcat:spatialResolutionInMeters ?spatialResolution ;
-    dcat:temporalResolution ?temporalResolution ;
-    dcterms:isPartOf ?topDataset ;
-    dcterms:hasPart ?lowerDataset ;
-    dcterms:publisher ?publisher ;
-	dcterms:identifier ?identifier ;
-	dcat:distribution ?distribution .
+dcterms:title ?title ;
+dcterms:description ?description ;
+dcterms:issued ?issued ;
+dcterms:modified ?modified ;
+dcat:landingPage ?landingPage ;
+dcterms:type ?type ;
+dcat:theme ?theme ;
+dcterms:accrualPeriodicity ?accrualPeriodicity ;
+dcat:keyword ?keyword ;
+dcterms:spatial ?spatial ;
+dcterms:temporal ?temporal ;
+dcat:contactPoint ?cp ;
+foaf:page ?page ;
+dcterms:conformsTo ?conformsTo ;
+dcat:spatialResolutionInMeters ?spatialResolution ;
+dcat:temporalResolution ?temporalResolution ;
+dcat:inSeries ?topDataset ;
+dcterms:hasPart ?lowerDataset ;
+dcterms:publisher ?publisher ;
+dcterms:identifier ?identifier ;
+dcterms:relation ?relation ;
+dcatap:applicableLegislation ?applicableLegislation ;
+dcatap:hvdCategory ?hvdCategory ;
+dcat:landingPage ?landingPage ;
+dcat:distribution ?distribution .
 
-?cp a ?cptype; 
-    vcard:fn ?cpfn ;
-    vcard:hasEmail ?cpemail .
+?cp a ?cptype;
+vcard:fn ?cpfn ;
+vcard:hasEmail ?cpemail .
 
-?publisher a foaf:Agent; 
-	foaf:name ?name ;
-    <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
+?publisher a foaf:Agent;
+foaf:name ?name ;
+<https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
 
-?temporal a dcterms:PeriodOfTime; 
-    dcat:startDate ?startDate ;
-    dcat:endDate ?endDate .
+?temporal a dcterms:PeriodOfTime;
+dcat:startDate ?startDate ;
+dcat:endDate ?endDate .
 
 ?theme skos:inScheme ?scheme .
 
 ?distribution a dcat:Distribution ;
-    dcat:downloadURL ?ddURL ;
-    dcat:accessURL ?daURL ;
-    dcterms:format ?dformat ;
-	dcat:mediaType ?dmimeType ;
-	dcterms:conformsTo ?dconformsTo ;
-    dcat:compressFormat ?dcompressFormat ;
-    dcat:packageFormat ?dpackageFormat ;
-    dcterms:title ?dtitle ;
-	dcterms:license ?license .
+dcat:downloadURL ?ddURL ;
+dcat:accessURL ?daURL ;
+dcterms:format ?dformat ;
+dcat:mediaType ?dmimeType ;
+dcterms:conformsTo ?dconformsTo ;
+dcat:compressFormat ?dcompressFormat ;
+dcatap:applicableLegislation ?distributionApplicableLegislation ;
+dcat:packageFormat ?dpackageFormat ;
+dcterms:title ?dtitle ;
+dcterms:license ?license .
 
 ?distribution leg:termsOfUse ?pu .
 
 ?pu a leg:TermsOfUse ;
-    leg:authorsWorkType ?touGeneral ;
-	leg:originalDatabaseType ?touDatabase ;
-    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-	leg:personalDataContainmentType ?touPersonalData ;
-	leg:authorName ?touGeneralAuthor ;
-	leg:originalDatabaseAuthorName ?touDatabaselAuthor .
+leg:authorsWorkType ?touGeneral ;
+leg:originalDatabaseType ?touDatabase ;
+leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+leg:personalDataContainmentType ?touPersonalData ;
+leg:authorName ?touGeneralAuthor ;
+leg:originalDatabaseAuthorName ?touDatabaselAuthor .
 
-?distribution dcat:accessService ?dataService . 
-  
+?distribution dcat:accessService ?dataService .
+
 ?dataService a dcat:DataService ;
-    dcterms:title ?sTitle ;
-    dcterms:conformsTo ?sConformsTo ;
-    dcat:endpointURL ?sEndpointURL ;
-    dcat:endpointDescription ?sEndpointDescription ;
-    dcat:servesDataset <\"\"\",STR(?dataset),\"\"\"> .
+dcterms:title ?sTitle ;
+dcterms:conformsTo ?sConformsTo ;
+dcat:endpointURL ?sEndpointURL ;
+dcat:endpointDescription ?sEndpointDescription ;
+dcatap:hvdCategory ?serviceHvdCategory ;
+dcatap:applicableLegislation ?serviceApplicableLegislation ;
+dcat:contactPoint ?serviceCp ;
+foaf:page ?serviceDocumentation;
+dcat:servesDataset <\"\"\",STR(?dataset),\"\"\"> .
+
+?serviceCp a ?serviceCpType;
+vcard:fn ?serviceCpfn ;
+vcard:hasEmail ?serviceCpemail .
 
 ?record a dcat:CatalogRecord;
-    foaf:primaryTopic <\"\"\",STR(?dataset),\"\"\"> ;
+foaf:primaryTopic <\"\"\",STR(?dataset),\"\"\"> ;
     dcterms:language ?rlanguage ;
     dcterms:conformsTo ?rconformsTo ;
     dcterms:source ?rsource .
@@ -997,40 +1011,49 @@ WHERE {
   } UNION { 
     <\"\"\",STR(?dataset),\"\"\"> dcat:distribution ?distribution .
 
-    ?distribution a dcat:Distribution ;
-        dcat:accessURL ?daURL .
+	?distribution a dcat:Distribution ;
+	dcat:accessURL ?daURL .
 
-    OPTIONAL {
-	  ?distribution leg:termsOfUse ?pu .
+	OPTIONAL {
+	?distribution leg:termsOfUse ?pu .
 
-  	  ?pu a leg:TermsOfUse ;
-    	leg:authorsWorkType ?touGeneral ;
-		leg:originalDatabaseType ?touDatabase ;
-    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-		leg:personalDataContainmentType ?touPersonalData .
-      
-      	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
-      	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
-    }
+	?pu a leg:TermsOfUse ;
+	leg:authorsWorkType ?touGeneral ;
+	leg:originalDatabaseType ?touDatabase ;
+	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+	leg:personalDataContainmentType ?touPersonalData .
 
-    OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
+	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
+	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
+	}
+
+	OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
 	OPTIONAL { ?distribution dcterms:license ?license . }
-    OPTIONAL { ?distribution dcterms:description ?ddescription . }
-    OPTIONAL { ?distribution dcterms:format ?dformat . }
-    OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
-    OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
-    OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
-    OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
-    OPTIONAL { ?distribution dcterms:title ?dtitle . }
-    OPTIONAL { 
-        ?distribution dcat:accessService ?dataService . 
-        ?dataService a dcat:DataService ;
-                    dcterms:title ?sTitle ;
-                    dcat:endpointURL ?sEndpointURL .
-        OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
-        OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
-    }
-  } UNION { ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> . 
+	OPTIONAL { ?distribution dcterms:description ?ddescription . }
+	OPTIONAL { ?distribution dcterms:format ?dformat . }
+	OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
+	OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
+	OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
+	OPTIONAL { ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation . }
+	OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
+	OPTIONAL { ?distribution dcterms:title ?dtitle . }
+	OPTIONAL {
+	?distribution dcat:accessService ?dataService .
+	?dataService a dcat:DataService ;
+	dcterms:title ?sTitle ;
+	dcat:endpointURL ?sEndpointURL .
+	OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
+	OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
+	OPTIONAL { ?dataService dcatap:hvdCategory ?serviceHvdCategory .}
+	OPTIONAL { ?dataService dcatap:applicableLegislation ?serviceApplicableLegislation .}
+	OPTIONAL { ?dataService foaf:page ?serviceDocumentation .}
+	OPTIONAL { ?dataService dcat:contactPoint ?serviceCp .
+	    ?serviceCp a ?serviceCpType.
+	    OPTIONAL { ?serviceCp vcard:fn ?serviceCpfn . }
+	    OPTIONAL { ?serviceCp vcard:hasEmail ?serviceCpemail . }
+	}
+	}
+	} UNION { ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> . 
   } UNION {
     ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> ;
             dcat:record ?record .
@@ -1050,8 +1073,12 @@ WHERE {
   } UNION { <\"\"\",STR(?dataset),\"\"\"> foaf:page ?page . 
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:conformsTo ?conformsTo . 
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:spatialResolutionInMeters ?spatialResolution . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:temporalResolution ?temporalResolution . 
-  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:isPartOf ?topDataset . 
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:temporalResolution ?temporalResolution .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:relation ?relation .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcatap:applicableLegislation ?applicableLegislation .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcatap:hvdCategory ?hvdCategory .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:landingPage ?landingPage .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:inSeries ?topDataset . 
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:identifier ?identifier . 
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:theme ?theme .
 	OPTIONAL { ?theme skos:inScheme ?scheme . }
@@ -1243,172 +1270,199 @@ PREFIX locn: <http://www.w3.org/ns/locn#>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcatap: <http://data.europa.eu/r5r/>
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-CONSTRUCT {
-?dataset a dcat:Dataset ;
-    dcterms:title ?title ;
-    dcterms:description ?description ;
+	CONSTRUCT {
+	?dataset a dcat:Dataset ;
+	dcterms:title ?title ;
+	dcterms:description ?description ;
 
-    dcterms:issued ?issued ;
-    dcterms:modified ?modified ;
-    dcat:landingPage ?landingPage ;
+	dcterms:issued ?issued ;
+	dcterms:modified ?modified ;
+	dcat:landingPage ?landingPage ;
 
-    dcterms:type ?type ;
+	dcterms:type ?type ;
 	dcat:theme ?theme ;
 	dcterms:accrualPeriodicity ?accrualPeriodicity ;
 	dcat:keyword ?keyword ;
-    dcterms:spatial ?spatial ;
-    dcterms:temporal ?temporal ;
+	dcterms:spatial ?spatial ;
+	dcterms:temporal ?temporal ;
 	dcat:contactPoint ?cp ;
-    #foaf:page ?page ;
-    dcterms:relation ?relation ;
-    dcterms:conformsTo ?conformsTo ;
-    dcat:spatialResolutionInMeters ?spatialResolution ;
-    dcat:temporalResolution ?temporalResolution ;
-    dcterms:isPartOf ?topDataset ;
-    dcterms:hasPart ?lowerDataset ;
-    dcterms:publisher ?publisher ;
+	#foaf:page ?page ;
+	dcterms:relation ?relation ;
+	dcterms:conformsTo ?conformsTo ;
+	dcat:spatialResolutionInMeters ?spatialResolution ;
+	dcat:temporalResolution ?temporalResolution ;
+	dcterms:relation ?relation ;
+	dcatap:applicableLegislation ?applicableLegislation ;
+	dcatap:hvdCategory ?hvdCategory ;
+	dcat:landingPage ?landingPage ;
+	dcat:inSeries ?topDataset ;
+	dcterms:hasPart ?lowerDataset ;
+	dcterms:publisher ?publisher ;
 	dcterms:identifier ?identifier ;
 	dcat:distribution ?distribution .
 
-?spatial a dcterms:Location ;
-    locn:geometry ?geo .
+	?spatial a dcterms:Location ;
+	locn:geometry ?geo .
 
-?cp a ?cptype; 
-    vcard:fn ?cpfn ;
-    vcard:hasEmail ?cpemail .
+	?cp a ?cptype;
+	vcard:fn ?cpfn ;
+	vcard:hasEmail ?cpemail .
 
-?publisher a foaf:Agent; 
+	?publisher a foaf:Agent;
 	foaf:name ?name ;
-    <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
+	<https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
 
-?temporal a dcterms:PeriodOfTime; 
-    dcat:startDate ?startDate ;
-    dcat:endDate ?endDate .
+	?temporal a dcterms:PeriodOfTime;
+	dcat:startDate ?startDate ;
+	dcat:endDate ?endDate .
 
-?theme skos:inScheme ?scheme .
+	?theme skos:inScheme ?scheme .
 
-?distribution a dcat:Distribution ;
-    dcat:downloadURL ?ddURL ;
-    dcat:accessURL ?daURL ;
-    dcterms:format ?dformat ;
+	?distribution a dcat:Distribution ;
+	dcat:downloadURL ?ddURL ;
+	dcat:accessURL ?daURL ;
+	dcterms:format ?dformat ;
 	dcat:mediaType ?dmimeType ;
 	dcterms:conformsTo ?dconformsTo ;
-    dcat:compressFormat ?dcompressFormat ;
-    dcat:packageFormat ?dpackageFormat ;
-    dcterms:title ?dtitle ;
+	dcat:compressFormat ?dcompressFormat ;
+	dcatap:applicableLegislation ?distributionApplicableLegislation ;
+	dcat:packageFormat ?dpackageFormat ;
+	dcterms:title ?dtitle ;
 	dcterms:license ?license .
-  
-  ?distribution leg:termsOfUse ?pu .
 
-  ?pu a leg:TermsOfUse ;
-    leg:authorsWorkType ?touGeneral ;
+	?distribution leg:termsOfUse ?pu .
+
+	?pu a leg:TermsOfUse ;
+	leg:authorsWorkType ?touGeneral ;
 	leg:originalDatabaseType ?touDatabase ;
-    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
 	leg:personalDataContainmentType ?touPersonalData ;
 	leg:authorName ?touGeneralAuthor ;
 	leg:originalDatabaseAuthorName ?touDatabaselAuthor .
 
-?distribution dcat:accessService ?dataService . 
-  
-?dataService a dcat:DataService ;
-    dcterms:title ?sTitle ;
-    dcterms:conformsTo ?sConformsTo ;
-    dcat:endpointURL ?sEndpointURL ;
-    dcat:endpointDescription ?sEndpointDescription ;
-    dcat:servesDataset ?dataset .
+	?distribution dcat:accessService ?dataService .
 
-?record a dcat:CatalogRecord;
-    foaf:primaryTopic ?dataset ;
-    dcterms:language ?rlanguage ;
-    dcterms:conformsTo ?rconformsTo ;
-    dcterms:source ?rsource .
-}
-WHERE {
+	?dataService a dcat:DataService ;
+	dcterms:title ?sTitle ;
+	dcterms:conformsTo ?sConformsTo ;
+	dcat:endpointURL ?sEndpointURL ;
+	dcat:endpointDescription ?sEndpointDescription ;
+	dcatap:hvdCategory ?serviceHvdCategory ;
+	dcatap:applicableLegislation ?serviceApplicableLegislation ;
+	dcat:contactPoint ?serviceCp ;
+	foaf:page ?serviceDocumentation;
+	dcat:servesDataset ?dataset .
+
+	?serviceCp a ?serviceCpType;
+	vcard:fn ?serviceCpfn ;
+	vcard:hasEmail ?serviceCpemail .
+
+	?record a dcat:CatalogRecord;
+	foaf:primaryTopic ?dataset ;
+	dcterms:language ?rlanguage ;
+	dcterms:conformsTo ?rconformsTo ;
+	dcterms:source ?rsource .
+	}
+	WHERE {
 	?dataset a dcat:Dataset ;
-        dcterms:title ?title ;
-        
-        #new
-        dcterms:issued ?issued;
-        dcterms:modified ?modified;    
-                
-        dcterms:publisher ?publisher . 
-	
-    ?publisher a foaf:Agent; 
-        foaf:name ?name .
-    
-    
-    
-    OPTIONAL {?publisher <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .}
-  {
-    ?dataset dcterms:description ?description .
-  } UNION {
-    ?dataset dcterms:type ?type .
-  } UNION { 
-    ?dataset dcat:distribution ?distribution .
+	dcterms:title ?title ;
 
-    ?distribution a dcat:Distribution ;
-        dcat:accessURL ?daURL .
-    
-    OPTIONAL {
-	  ?distribution leg:termsOfUse ?pu .
+	#new
+	dcterms:issued ?issued;
+	dcterms:modified ?modified;
 
-  	  ?pu a leg:TermsOfUse ;
-    	leg:authorsWorkType ?touGeneral ;
-		leg:originalDatabaseType ?touDatabase ;
-    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-		leg:personalDataContainmentType ?touPersonalData .
-      
-      	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
-      	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
-    }
+	dcterms:publisher ?publisher .
 
-    OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
+	?publisher a foaf:Agent;
+	foaf:name ?name .
+
+
+
+	OPTIONAL {?publisher <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .}
+	{
+	?dataset dcterms:description ?description .
+	} UNION {
+	?dataset dcterms:type ?type .
+	} UNION {
+	?dataset dcat:distribution ?distribution .
+
+	?distribution a dcat:Distribution ;
+	dcat:accessURL ?daURL .
+
+	OPTIONAL {
+	?distribution leg:termsOfUse ?pu .
+
+	?pu a leg:TermsOfUse ;
+	leg:authorsWorkType ?touGeneral ;
+	leg:originalDatabaseType ?touDatabase ;
+	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+	leg:personalDataContainmentType ?touPersonalData .
+
+	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
+	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
+	}
+
+	OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
 	OPTIONAL { ?distribution dcterms:license ?license . }
-    OPTIONAL { ?distribution dcterms:description ?ddescription . }
-    OPTIONAL { ?distribution dcterms:format ?dformat . }
-    OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
-    OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
-    OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
-    OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
-    OPTIONAL { ?distribution dcterms:title ?dtitle . }
-    OPTIONAL { 
-        ?distribution dcat:accessService ?dataService . 
-        ?dataService a dcat:DataService ;
-                    dcterms:title ?sTitle ;
-                    dcat:endpointURL ?sEndpointURL .
-        OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
-        OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
-    }
-  } UNION { ?dataset dcterms:hasPart ?lowerDataset . }
- #   UNION { ?dataset dcterms:hasPart ?lowerDataset .}
-    UNION { ?dataset dcterms:accrualPeriodicity ?accrualPeriodicity .   
-  } UNION { ?dataset dcat:keyword ?keyword .
- 
-  } UNION { ?dataset dcat:landingPage ?landingPage .
-        
-        
-  } UNION { ?dataset dcterms:spatial ?spatial .
-    OPTIONAL { ?spatial locn:geometry ?geometry . }
-  } UNION { ?dataset foaf:page ?page . 
-  } UNION { ?dataset dcterms:relation ?relation . 
-  } UNION { ?dataset dcat:spatialResolutionInMeters ?spatialResolution . 
-  } UNION { ?dataset dcat:temporalResolution ?temporalResolution . 
-  } UNION { ?dataset dcterms:isPartOf ?topDataset . 
-  } UNION { ?dataset dcterms:identifier ?identifier . 
-  } UNION { ?dataset dcat:theme ?theme .
+	OPTIONAL { ?distribution dcterms:description ?ddescription . }
+	OPTIONAL { ?distribution dcterms:format ?dformat . }
+	OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
+	OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
+	OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
+	OPTIONAL { ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation . }
+	OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
+	OPTIONAL { ?distribution dcterms:title ?dtitle . }
+	OPTIONAL {
+	?distribution dcat:accessService ?dataService .
+	?dataService a dcat:DataService ;
+	dcterms:title ?sTitle ;
+	dcat:endpointURL ?sEndpointURL .
+	OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
+	OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
+	OPTIONAL { ?dataService dcatap:hvdCategory ?serviceHvdCategory .}
+	OPTIONAL { ?dataService dcatap:applicableLegislation ?serviceApplicableLegislation .}
+	OPTIONAL { ?dataService foaf:page ?serviceDocumentation .}
+	OPTIONAL { ?dataService dcat:contactPoint ?serviceCp .
+	?serviceCp a ?serviceCpType.
+	OPTIONAL { ?serviceCp vcard:fn ?serviceCpfn . }
+	OPTIONAL { ?serviceCp vcard:hasEmail ?serviceCpemail . }
+	}
+	}
+	} UNION { ?dataset dcterms:hasPart ?lowerDataset . }
+	#   UNION { ?dataset dcterms:hasPart ?lowerDataset .}
+	UNION { ?dataset dcterms:accrualPeriodicity ?accrualPeriodicity .
+	} UNION { ?dataset dcat:keyword ?keyword .
+
+	} UNION { ?dataset dcat:landingPage ?landingPage .
+
+
+	} UNION { ?dataset dcterms:spatial ?spatial .
+	OPTIONAL { ?spatial locn:geometry ?geometry . }
+	} UNION { ?dataset foaf:page ?page .
+	} UNION { ?dataset dcterms:relation ?relation .
+	} UNION { ?dataset dcat:spatialResolutionInMeters ?spatialResolution .
+	} UNION { ?dataset dcterms:relation ?relation .
+	} UNION { ?dataset dcatap:applicableLegislation ?applicableLegislation .
+	} UNION { ?dataset dcatap:hvdCategory ?hvdCategory .
+	} UNION { ?dataset dcat:landingPage ?landingPage .
+	} UNION { ?dataset dcat:temporalResolution ?temporalResolution .
+	} UNION { ?dataset dcat:inSeries ?topDataset .
+	} UNION { ?dataset dcterms:identifier ?identifier .
+	} UNION { ?dataset dcat:theme ?theme .
 	OPTIONAL { ?theme skos:inScheme ?scheme . }
-  } UNION { ?dataset dcterms:temporal ?temporal . 
-    OPTIONAL { ?temporal dcat:startDate ?startDate . }
-    OPTIONAL { ?temporal dcat:endDate ?endDate . }
-  } UNION { ?dataset dcat:contactPoint ?cp . 
-?cp a ?cptype.
-    OPTIONAL { ?cp vcard:fn ?cpfn . }
-    OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
-  }
- }""";
-    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+	} UNION { ?dataset dcterms:temporal ?temporal .
+	OPTIONAL { ?temporal dcat:startDate ?startDate . }
+	OPTIONAL { ?temporal dcat:endDate ?endDate . }
+	} UNION { ?dataset dcat:contactPoint ?cp .
+	?cp a ?cptype.
+	OPTIONAL { ?cp vcard:fn ?cpfn . }
+	OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
+	}
+	}""";
+	<http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFail> false;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threads> 8;
@@ -1468,7 +1522,7 @@ INSERT {
 WHERE 
 {
   ?dataset a dcat:Dataset ;
-    dcterms:isPartOf ?upper .
+    dcat:inSeries ?upper .
 }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#softFail> false;
@@ -1754,152 +1808,187 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX schema: <http://schema.org/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX dcatap: <http://data.europa.eu/r5r/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
 CONSTRUCT {
   <\"\"\", STR(?catalog), \"\"\"> a dcat:Catalog ;
-    dcat:dataset ?dataset .
+  dcat:dataset ?dataset .
 
   ?dataset a dcat:Dataset ;
-    dcterms:title ?title ;
-    dcterms:description ?description ;
-    dcterms:type ?type ;
-    dcat:theme ?theme ;
-    dcterms:accrualPeriodicity ?accrualPeriodicity ;
-    dcat:keyword ?keyword ;
-    dcterms:spatial ?spatial ;
-    dcterms:temporal ?temporal ;
-    dcat:contactPoint ?cp ;
-    foaf:page ?page ;
-    dcterms:conformsTo ?conformsTo ;
-    dcat:spatialResolutionInMeters ?spatialResolution ;
-    dcat:temporalResolution ?temporalResolution ;
-    dcterms:isPartOf ?topDataset ;
-    dcterms:publisher ?publisher ;
-    dcat:distribution ?distribution .
+  dcterms:title ?title ;
+  dcterms:description ?description ;
+  dcterms:type ?type ;
+  dcat:theme ?theme ;
+  dcterms:accrualPeriodicity ?accrualPeriodicity ;
+  dcat:keyword ?keyword ;
+  dcterms:spatial ?spatial ;
+  dcterms:temporal ?temporal ;
+  dcterms:issued ?issued ;
+  dcterms:modified ?modified ;
+  dcat:contactPoint ?cp ;
+  foaf:page ?page ;
+  dcterms:conformsTo ?conformsTo ;
+  dcat:spatialResolutionInMeters ?spatialResolution ;
+  dcat:temporalResolution ?temporalResolution ;
+  dcat:inSeries ?topDataset ;
+  dcterms:publisher ?publisher ;
+  dcterms:relation ?relation ;
+  dcatap:applicableLegislation ?applicableLegislation ;
+  dcatap:hvdCategory ?hvdCategory ;
+  dcat:landingPage ?landingPage ;
+  dcat:inSeries ?topDataset ;
+  dcat:distribution ?distribution .
 
-  ?cp a ?cptype; 
-    vcard:fn ?cpfn ;
-    vcard:hasEmail ?cpemail .
+  ?cp a ?cptype;
+  vcard:fn ?cpfn ;
+  vcard:hasEmail ?cpemail .
 
-  ?temporal a dcterms:PeriodOfTime; 
-    dcat:startDate ?finalStartDate ;
-    dcat:endDate ?finalEndDate .
+  ?temporal a dcterms:PeriodOfTime;
+  dcat:startDate ?finalStartDate ;
+  dcat:endDate ?finalEndDate .
 
   ?distribution a dcat:Distribution ;
-    dcat:downloadURL ?ddURL ;
-    dcterms:license ?license ;
-    dcat:accessURL ?daURL ;
-    dcterms:format ?dformat ;
-    dcat:mediaType ?dmimeType ;
-    dcterms:conformsTo ?dconformsTo ;
-    dcat:compressFormat ?dcompressFormat ;
-    dcat:packageFormat ?dpackageFormat ;
-    dcterms:title ?dtitle .
+  dcat:downloadURL ?ddURL ;
+  dcterms:license ?license ;
+  dcat:accessURL ?daURL ;
+  dcterms:format ?dformat ;
+  dcat:mediaType ?dmimeType ;
+  dcterms:conformsTo ?dconformsTo ;
+  dcat:compressFormat ?dcompressFormat ;
+  dcatap:applicableLegislation ?distributionApplicableLegislation ;
+  dcat:packageFormat ?dpackageFormat ;
+  dcterms:title ?dtitle .
 
   ?distribution leg:termsOfUse ?pu .
 
   ?pu a leg:TermsOfUse ;
-    leg:authorsWorkType ?touGeneral ;
-	leg:originalDatabaseType ?touDatabase ;
-    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-	leg:personalDataContainmentType ?touPersonalData ;
-	leg:authorName ?touGeneralAuthor ;
-	leg:originalDatabaseAuthorName ?touDatabaselAuthor .
- 
-  ?distribution dcat:accessService ?dataService . 
+  leg:authorsWorkType ?touGeneral ;
+  leg:originalDatabaseType ?touDatabase ;
+  leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+  leg:personalDataContainmentType ?touPersonalData ;
+  leg:authorName ?touGeneralAuthor ;
+  leg:originalDatabaseAuthorName ?touDatabaselAuthor .
+
+  ?distribution dcat:accessService ?dataService .
 
   ?dataService a dcat:DataService ;
-    dcterms:title ?sTitle ;
-    dcterms:conformsTo ?sConformsTo ;
-    dcat:endpointURL ?sEndpointURL ;
-    dcat:endpointDescription ?sEndpointDescription .	
-}
-WHERE { 
+  dcterms:title ?sTitle ;
+  dcterms:conformsTo ?sConformsTo ;
+  dcat:endpointURL ?sEndpointURL ;
+  dcatap:hvdCategory ?serviceHvdCategory ;
+  dcatap:applicableLegislation ?serviceApplicableLegislation ;
+  foaf:page ?serviceDocumentation ;
+  dcat:contactPoint ?serviceCp ;
+  dcat:endpointDescription ?sEndpointDescription .
+
+  ?serviceCp a ?serviceCpType;
+  vcard:fn ?serviceCpfn ;
+  vcard:hasEmail ?serviceCpemail .
+
+  }
+  WHERE {
   ${VALUES}
 
   ?dataset a dcat:Dataset ;
-    dcterms:title ?title ;
-    dcterms:description ?description ;
-    dcat:theme ?theme ;
-    dcterms:accrualPeriodicity ?accrualPeriodicity ;
-    dcat:keyword ?keyword ;
-    dcterms:publisher ?publisher ;
-    dcterms:spatial ?spatial .
+  dcterms:title ?title ;
+  dcterms:description ?description ;
+  dcat:theme ?theme ;
+  dcterms:accrualPeriodicity ?accrualPeriodicity ;
+  dcat:keyword ?keyword ;
+  dcterms:publisher ?publisher ;
+  dcterms:spatial ?spatial .
 
   OPTIONAL {
-    ?dataset dcterms:temporal ?temporal . 
-    OPTIONAL { ?temporal dcat:startDate ?startDate . }
-    OPTIONAL { ?temporal dcat:endDate ?endDate . }
-    OPTIONAL { ?temporal schema:startDate ?schemaStartDate . }
-    OPTIONAL { ?temporal schema:endDate ?schemaEndDate . }
+  ?dataset dcterms:temporal ?temporal .
+  OPTIONAL { ?temporal dcat:startDate ?startDate . }
+  OPTIONAL { ?temporal dcat:endDate ?endDate . }
+  OPTIONAL { ?temporal schema:startDate ?schemaStartDate . }
+  OPTIONAL { ?temporal schema:endDate ?schemaEndDate . }
   }
 
   OPTIONAL {
-    ?dataset dcat:contactPoint ?cp . 
+  ?dataset dcat:contactPoint ?cp .
 
-    ?cp a ?cptype.
-    OPTIONAL { ?cp vcard:fn ?cpfn . }
-    OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
+  ?cp a ?cptype.
+  OPTIONAL { ?cp vcard:fn ?cpfn . }
+  OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
   }
 
   OPTIONAL { ?dataset foaf:page ?page . }
   OPTIONAL { ?dataset dcterms:type ?type . }
   OPTIONAL { ?dataset dcterms:conformsTo ?conformsTo . }
+  OPTIONAL { ?dataset dcterms:issued ?issued . }
+  OPTIONAL { ?dataset dcterms:modified ?modified . }
   OPTIONAL { ?dataset dcat:spatialResolutionInMeters ?spatialResolution . }
   OPTIONAL { ?dataset dcat:temporalResolution ?temporalResolution . }
-  OPTIONAL { ?dataset dcterms:isPartOf ?topDataset . }
+  OPTIONAL { ?dataset dcterms:relation ?relation . }
+  OPTIONAL { ?dataset dcatap:applicableLegislation ?applicableLegislation . }
+  OPTIONAL { ?dataset dcatap:hvdCategory ?hvdCategory . }
+  OPTIONAL { ?dataset dcat:landingPage ?landingPage . }
+  OPTIONAL { ?dataset dcat:inSeries ?topDatasetDcat3 . }
+  OPTIONAL { ?dataset dcterms:isPartOf ?topDatasetDcat2 . }
 
   OPTIONAL {
-    ?dataset dcat:distribution ?distribution .
-    FILTER(isIRI(?distribution))
+  ?dataset dcat:distribution ?distribution .
+  FILTER(isIRI(?distribution))
 
-    ?distribution a dcat:Distribution ;
-             dcat:accessURL ?daURL .
+  ?distribution a dcat:Distribution ;
+  dcat:accessURL ?daURL .
 
-    OPTIONAL {
-	  ?distribution leg:termsOfUse ?pu .
+  OPTIONAL {
+  ?distribution leg:termsOfUse ?pu .
 
-  	  ?pu a leg:TermsOfUse ;
-    	leg:authorsWorkType ?touGeneral ;
-		leg:originalDatabaseType ?touDatabase ;
-    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-		leg:personalDataContainmentType ?touPersonalData .
-      
-      	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
-      	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
-    }
+  ?pu a leg:TermsOfUse ;
+  leg:authorsWorkType ?touGeneral ;
+  leg:originalDatabaseType ?touDatabase ;
+  leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+  leg:personalDataContainmentType ?touPersonalData .
 
-	OPTIONAL { ?distribution dcterms:license ?license .}    
-	OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
-    OPTIONAL { ?distribution dcterms:format ?dformat . }
-    OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
-    OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
-    OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
-    OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
-    OPTIONAL { ?distribution dcterms:title ?dtitle . }
+  OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
+  OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
+  }
 
-    OPTIONAL { 
-      ?distribution dcat:accessService ?dataService . 
-      FILTER(isIRI(?dataService))
+  OPTIONAL { ?distribution dcterms:license ?license .}
+  OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
+  OPTIONAL { ?distribution dcterms:format ?dformat . }
+  OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
+  OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
+  OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
+  OPTIONAL { ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation . }
+  OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
+  OPTIONAL { ?distribution dcterms:title ?dtitle . }
 
-      ?dataService a dcat:DataService ;
-                    dcterms:title ?sTitle ;
-                    dcat:endpointURL ?sEndpointURL .
-      OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
-      OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
-    }
+  OPTIONAL {
+  ?distribution dcat:accessService ?dataService .
+  FILTER(isIRI(?dataService))
+
+  ?dataService a dcat:DataService ;
+  dcterms:title ?sTitle ;
+  dcat:endpointURL ?sEndpointURL .
+  OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
+  OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
+  OPTIONAL { ?dataService dcatap:hvdCategory ?serviceHvdCategory .}
+  OPTIONAL { ?dataService dcatap:applicableLegislation ?serviceApplicableLegislation .}
+  OPTIONAL { ?dataService foaf:page ?serviceDocumentation .}
+  OPTIONAL { ?dataService dcat:contactPoint ?serviceCp .
+  ?serviceCp a ?serviceCpType.
+  OPTIONAL { ?serviceCp vcard:fn ?serviceCpfn . }
+  OPTIONAL { ?serviceCp vcard:hasEmail ?serviceCpemail . }
+  }
+  }
   }
   BIND(IF(BOUND(?startDate), ?startDate, ?schemaStartDate) AS ?finalStartDate)
   BIND(IF(BOUND(?endDate), ?endDate, ?schemaEndDate) AS ?finalEndDate)
-}
-\"\"\") as ?query)
+  BIND (IF(BOUND(?topDatasetDcat3), ?topDatasetDcat3, ?topDatasetDcat2) AS ?topDataset)
+  }
+  \"\"\") as ?query)
 
-	BIND(CONCAT(REPLACE(STR(?catalog),\"[:/\\\\.]\",\"_\"),\".csv\") as ?filename)
-	BIND(UUID() as ?configiri)
-}""";
-    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
+  BIND(CONCAT(REPLACE(STR(?catalog),\"[:/\\\\.]\",\"_\"),\".csv\") as ?filename)
+  BIND(UUID() as ?configiri)
+  }""";
+  <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
 <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540020101841654002010184165400201018449/configuration> {
@@ -2313,76 +2402,92 @@ PREFIX schema: <http://schema.org/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX gr: <http://purl.org/goodrelations/v1#>
+PREFIX dcatap: <http://data.europa.eu/r5r/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
-CONSTRUCT {
+  CONSTRUCT {
   ?catalog dcat:dataset ?dataset_new .
 
   ?dataset_new a dcat:Dataset ;
-    dcterms:title ?title ;
-    dcterms:description ?description ;
-    dcterms:type ?type ;
-    dcat:theme ?theme ;
-    dcterms:accrualPeriodicity ?accrualPeriodicity ;
-    dcat:keyword ?keyword ;
-    dcterms:spatial ?spatial ;
-    dcterms:temporal ?temporal_new ;
-    dcat:contactPoint ?cp_new ;
-    foaf:page ?page ;
-    dcterms:conformsTo ?conformsTo ;
-    dcat:spatialResolutionInMeters ?spatialResolution ;
-    dcat:temporalResolution ?temporalResolution ;
-    dcterms:isPartOf ?topDatasetNew ;
-    dcat:distribution ?distribution_new ;
-    dcterms:publisher ?publisher ;
-    dcterms:identifier ?dataset_old_str .
+  dcterms:title ?title ;
+  dcterms:description ?description ;
+  dcterms:type ?type ;
+  dcat:theme ?theme ;
+  dcterms:accrualPeriodicity ?accrualPeriodicity ;
+  dcat:keyword ?keyword ;
+  dcterms:spatial ?spatial ;
+  dcterms:temporal ?temporal_new ;
+  dcterms:issued ?issued ;
+  dcterms:modified ?modified ;
+  dcat:contactPoint ?cp_new ;
+  foaf:page ?page ;
+  dcterms:conformsTo ?conformsTo ;
+  dcat:spatialResolutionInMeters ?spatialResolution ;
+  dcat:temporalResolution ?temporalResolution ;
+  dcat:inSeries ?topDatasetNew ;
+  dcat:distribution ?distribution_new ;
+  dcterms:publisher ?publisher ;
+  dcterms:relation ?relation ;
+  dcatap:applicableLegislation ?applicableLegislation ;
+  dcatap:hvdCategory ?hvdCategory ;
+  dcat:landingPage ?landingPage ;
+  dcterms:identifier ?dataset_old_str .
 
-  ?cp_new a ?cptype; 
-    vcard:fn ?cpfn ;
-    vcard:hasEmail ?cpemail .
+  ?cp_new a ?cptype;
+  vcard:fn ?cpfn ;
+  vcard:hasEmail ?cpemail .
 
   ?publisher a foaf:Agent;
-    foaf:name ?pname ;
-    <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
+  foaf:name ?pname ;
+  <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
 
-  ?temporal_new a dcterms:PeriodOfTime; 
-    dcat:startDate ?finalStartDate ;
-    dcat:endDate ?finalEndDate .
+  ?temporal_new a dcterms:PeriodOfTime;
+  dcat:startDate ?finalStartDate ;
+  dcat:endDate ?finalEndDate .
 
   ?distribution_new a dcat:Distribution ;
-    dcat:downloadURL ?ddURL ;
-    dcat:accessURL ?daURL ;
-    dcterms:format ?dformat ;
-    dcat:mediaType ?dmimeType ;
-    dcterms:conformsTo ?dconformsTo ;
-    dcat:compressFormat ?dcompressFormat ;
-    dcat:packageFormat ?dpackageFormat ;
-    dcterms:title ?dtitle ;
-    dcterms:license ?license .
-  
+  dcat:downloadURL ?ddURL ;
+  dcat:accessURL ?daURL ;
+  dcterms:format ?dformat ;
+  dcat:mediaType ?dmimeType ;
+  dcterms:conformsTo ?dconformsTo ;
+  dcat:compressFormat ?dcompressFormat ;
+  dcatap:applicableLegislation ?distributionApplicableLegislation ;
+  dcat:packageFormat ?dpackageFormat ;
+  dcterms:title ?dtitle ;
+  dcterms:license ?license .
+
   ?distribution_new leg:termsOfUse ?pu_new .
 
   ?pu_new a leg:TermsOfUse ;
-    leg:authorsWorkType ?touGeneral ;
-	leg:originalDatabaseType ?touDatabase ;
-    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-	leg:personalDataContainmentType ?touPersonalData ;
-	leg:authorName ?touGeneralAuthor ;
-	leg:originalDatabaseAuthorName ?touDatabaselAuthor .
+  leg:authorsWorkType ?touGeneral ;
+  leg:originalDatabaseType ?touDatabase ;
+  leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+  leg:personalDataContainmentType ?touPersonalData ;
+  leg:authorName ?touGeneralAuthor ;
+  leg:originalDatabaseAuthorName ?touDatabaselAuthor .
 
-  ?distribution_new dcat:accessService ?dataservice_new . 
+  ?distribution_new dcat:accessService ?dataservice_new .
 
   ?dataservice_new a dcat:DataService ;
-    dcterms:title ?sTitle ;
-    dcat:endpointURL ?sEndpointURL ;
-    dcterms:conformsTo ?sConformsTo ;
-    dcat:endpointDescription ?sEndpointDescription .
+  dcterms:title ?sTitle ;
+  dcat:endpointURL ?sEndpointURL ;
+  dcterms:conformsTo ?sConformsTo ;
+  dcatap:hvdCategory ?serviceHvdCategory ;
+  dcatap:applicableLegislation ?serviceApplicableLegislation ;
+  foaf:page ?serviceDocumentation ;
+  dcat:contactPoint ?dataservice_cp_new ;
+  dcat:endpointDescription ?sEndpointDescription .
+
+  ?dataservice_cp_new a ?serviceCpType;
+  vcard:fn ?serviceCpfn ;
+  vcard:hasEmail ?serviceCpemail .
 
   ?record_new a dcat:CatalogRecord;
-    dcterms:source ?dataset ;
-    foaf:primaryTopic ?dataset_new ;
-    dcterms:language <http://publications.europa.eu/resource/authority/language/SVK>,
+  dcterms:source ?dataset ;
+  foaf:primaryTopic ?dataset_new ;
+  dcterms:language <http://publications.europa.eu/resource/authority/language/SVK>,
       <http://publications.europa.eu/resource/authority/language/ENG> ;
     dcterms:conformsTo <https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211> .
 }
@@ -2402,79 +2507,100 @@ WHERE {
   ?publisher foaf:name ?pname .
   OPTIONAL {?publisher <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype . }
 
-  OPTIONAL { ?dataset dcterms:temporal ?temporal . 
-    OPTIONAL { ?temporal dcat:startDate ?startDate . }
-    OPTIONAL { ?temporal dcat:endDate ?endDate . }
-    OPTIONAL { ?temporal schema:startDate ?schemaStartDate . }
-    OPTIONAL { ?temporal schema:endDate ?schemaEndDate . }
-    BIND(IF(BOUND(?startDate), ?startDate, ?schemaStartDate) AS ?finalStartDate)
-    BIND(IF(BOUND(?endDate), ?endDate, ?schemaEndDate) AS ?finalEndDate)
+  OPTIONAL { ?dataset dcterms:temporal ?temporal .
+  OPTIONAL { ?temporal dcat:startDate ?startDate . }
+  OPTIONAL { ?temporal dcat:endDate ?endDate . }
+  OPTIONAL { ?temporal schema:startDate ?schemaStartDate . }
+  OPTIONAL { ?temporal schema:endDate ?schemaEndDate . }
+  BIND(IF(BOUND(?startDate), ?startDate, ?schemaStartDate) AS ?finalStartDate)
+  BIND(IF(BOUND(?endDate), ?endDate, ?schemaEndDate) AS ?finalEndDate)
   }
 
-  OPTIONAL { ?dataset dcat:contactPoint ?cp . 
-    ?cp a ?cptype.
-    OPTIONAL { ?cp vcard:fn ?cpfn . }
-    OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
+  OPTIONAL { ?dataset dcat:contactPoint ?cp .
+  ?cp a ?cptype.
+  OPTIONAL { ?cp vcard:fn ?cpfn . }
+  OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
   }
 
   OPTIONAL { ?dataset foaf:page ?page . }
   OPTIONAL { ?dataset dcterms:type ?type . }
   OPTIONAL { ?dataset dcterms:conformsTo ?conformsTo . }
+  OPTIONAL { ?dataset dcterms:issued ?issued . }
+  OPTIONAL { ?dataset dcterms:modified ?modified . }
   OPTIONAL { ?dataset dcat:spatialResolutionInMeters ?spatialResolution . }
   OPTIONAL { ?dataset dcat:temporalResolution ?temporalResolution . }
-  OPTIONAL { ?dataset dcterms:isPartOf ?topDataset . }
+  OPTIONAL { ?dataset dcterms:relation ?relation . }
+  OPTIONAL { ?dataset dcatap:applicableLegislation ?applicableLegislation . }
+  OPTIONAL { ?dataset dcatap:hvdCategory ?hvdCategory . }
+  OPTIONAL { ?dataset dcat:landingPage ?landingPage . }
+  OPTIONAL { ?dataset dcat:inSeries ?topDatasetDcat3 . }
+  OPTIONAL { ?dataset dcterms:isPartOf ?topDatasetDcat2 . }
 
   OPTIONAL {
-    ?dataset dcat:distribution ?distribution .
-    ?distribution a dcat:Distribution ;
-             dcat:accessURL ?daURL .
-    
-    OPTIONAL {
-	  ?distribution leg:termsOfUse ?pu .
+  ?dataset dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution ;
+  dcat:accessURL ?daURL .
 
-  	  ?pu a leg:TermsOfUse ;
-    	leg:authorsWorkType ?touGeneral ;
-		leg:originalDatabaseType ?touDatabase ;
-    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-		leg:personalDataContainmentType ?touPersonalData .
-      
-      	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
-      	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
-    }
+  OPTIONAL {
+  ?distribution leg:termsOfUse ?pu .
 
-    OPTIONAL { ?distribution dcterms:license ?license . }
-    OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
-    OPTIONAL { ?distribution dcterms:format ?dformat . }
-    OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
-    OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
-    OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
-    OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
-    OPTIONAL { ?distribution dcterms:title ?dtitle . }
+  ?pu a leg:TermsOfUse ;
+  leg:authorsWorkType ?touGeneral ;
+  leg:originalDatabaseType ?touDatabase ;
+  leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+  leg:personalDataContainmentType ?touPersonalData .
 
-    OPTIONAL { 
-      ?distribution dcat:accessService ?dataService . 
-      ?dataService a dcat:DataService ;
-                    dcterms:title ?sTitle ;
-                    dcat:endpointURL ?sEndpointURL .
+  OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
+  OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
+  }
 
-      OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
-      OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
-    }
+  OPTIONAL { ?distribution dcterms:license ?license . }
+  OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
+  OPTIONAL { ?distribution dcterms:format ?dformat . }
+  OPTIONAL { ?distribution dcat:mediaType ?dmimeType . }
+  OPTIONAL { ?distribution dcterms:conformsTo ?dconformsTo . }
+  OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
+  OPTIONAL { ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation . }
+  OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
+  OPTIONAL { ?distribution dcterms:title ?dtitle . }
+
+  OPTIONAL {
+  ?distribution dcat:accessService ?dataService .
+  ?dataService a dcat:DataService ;
+  dcterms:title ?sTitle ;
+  dcat:endpointURL ?sEndpointURL .
+
+  OPTIONAL { ?dataService dcat:endpointDescription ?sEndpointDescription .}
+  OPTIONAL { ?dataService dcterms:conformsTo ?sConformsTo .}
+  OPTIONAL { ?dataService dcatap:hvdCategory ?serviceHvdCategory .}
+  OPTIONAL { ?dataService dcatap:applicableLegislation ?serviceApplicableLegislation .}
+  OPTIONAL { ?dataService foaf:page ?serviceDocumentation .}
+  OPTIONAL { ?dataService dcatap:hvdCategory ?serviceHvdCategory .}
+  OPTIONAL { ?dataService dcatap:applicableLegislation ?serviceApplicableLegislation .}
+  OPTIONAL { ?dataService foaf:page ?serviceDocumentation .}
+  OPTIONAL { ?dataService dcat:contactPoint ?serviceCp .
+  ?serviceCp a ?serviceCpType.
+  OPTIONAL { ?serviceCp vcard:fn ?serviceCpfn . }
+  OPTIONAL { ?serviceCp vcard:hasEmail ?serviceCpemail . }
+  }
+  }
   }
 
   BIND (STRDT(STR(?dataset), xsd:anyURI) AS ?dataset_old_str)
   BIND (\"https://data.gov.sk/set/\" AS ?new_IRI_base)
   BIND (MD5(CONCAT(STR(?dataset), STR(?publisher))) AS ?datasetID)
   BIND (IRI(CONCAT(?new_IRI_base, ?datasetID)) as ?dataset_new)
+  BIND (IF(BOUND(?topDatasetDcat3), ?topDatasetDcat3, ?topDatasetDcat2) AS ?topDataset)
   BIND (IRI(CONCAT(?new_IRI_base, MD5(CONCAT(STR(?topDataset), STR(?publisher))))) as ?topDatasetNew)
   BIND (IRI(CONCAT(STR(?dataset_new), \"/resource/\", MD5(STR(?distribution)))) as ?distribution_new)
   BIND (IRI(CONCAT(STR(?distribution_new), \"/data-service/\", MD5(CONCAT(STR(?dataService), STR(?publisher))))) as ?dataservice_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/record\")) as ?record_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/contact-point\")) as ?cp_new)
+  BIND (IRI(CONCAT(STR(?dataservice_new),\"/contact-point\")) as ?dataservice_cp_new)
   BIND (IRI(CONCAT(STR(?distribution_new),\"/terms-of-use\")) as ?pu_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/temporal\")) as ?temporal_new)
-}""";
-    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+  }""";
+  <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFail> false;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threads> 8;
@@ -2634,76 +2760,91 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX schema: <http://schema.org/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcatap: <http://data.europa.eu/r5r/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
-CONSTRUCT {
+  CONSTRUCT {
   ?catalog dcat:dataset ?dataset_new .
 
   ?dataset_new a dcat:Dataset ;
-    dcterms:title ?title ;
-    dcterms:description ?description ;
-    dcterms:type ?type ;
-    dcat:theme ?theme ;
-    dcterms:accrualPeriodicity ?accrualPeriodicity ;
-    dcat:keyword ?keyword ;
-    dcterms:spatial ?spatial ;
-    dcterms:temporal ?temporal_new ;
-    dcat:contactPoint ?cp_new ;
-    foaf:page ?page ;
-    dcterms:issued ?issued ;
-    dcterms:conformsTo ?conformsTo ;
-    dcat:spatialResolutionInMeters ?spatialResolution ;
-    dcat:temporalResolution ?temporalResolution ;
-    dcterms:isPartOf ?topDatasetNew ;
-    dcat:distribution ?distribution_new ;
-    dcterms:publisher ?publisher ;
-    dcterms:identifier ?dataset_old_str .
+  dcterms:title ?title ;
+  dcterms:description ?description ;
+  dcterms:type ?type ;
+  dcat:theme ?theme ;
+  dcterms:accrualPeriodicity ?accrualPeriodicity ;
+  dcat:keyword ?keyword ;
+  dcterms:spatial ?spatial ;
+  dcterms:temporal ?temporal_new ;
+  dcat:contactPoint ?cp_new ;
+  foaf:page ?page ;
+  dcterms:issued ?issued ;
+  dcterms:modified ?modified ;
+  dcterms:conformsTo ?conformsTo ;
+  dcat:spatialResolutionInMeters ?spatialResolution ;
+  dcat:temporalResolution ?temporalResolution ;
+  dcterms:relation ?relation ;
+  dcatap:applicableLegislation ?applicableLegislation ;
+  dcatap:hvdCategory ?hvdCategory ;
+  dcat:landingPage ?landingPage ;
+  dcat:inSeries ?topDatasetNew ;
+  dcat:distribution ?distribution_new ;
+  dcterms:publisher ?publisher ;
+  dcterms:identifier ?dataset_old_str .
 
-  ?cp_new a ?cptype; 
-    vcard:fn ?cpfn ;
-    vcard:hasEmail ?cpemail .
+  ?cp_new a ?cptype;
+  vcard:fn ?cpfn ;
+  vcard:hasEmail ?cpemail .
 
-  ?temporal_new a dcterms:PeriodOfTime; 
-    dcat:startDate ?finalStartDate ;
-    dcat:endDate ?finalEndDate .
+  ?temporal_new a dcterms:PeriodOfTime;
+  dcat:startDate ?finalStartDate ;
+  dcat:endDate ?finalEndDate .
 
   ?publisher a foaf:Agent;
-    foaf:name ?pname ;
-    <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
+  foaf:name ?pname ;
+  <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .
 
   ?distribution_new a dcat:Distribution ;
-    dcat:downloadURL ?ddURL ;
-    dcat:accessURL ?daURL ;
-    dcterms:format ?dformat ;
-    dcat:mediaType ?dmimeType ;
-    dcterms:conformsTo ?dconformsTo ;
-    dcat:compressFormat ?dcompressFormat ;
-    dcat:packageFormat ?dpackageFormat ;
-    dcterms:title ?dtitle ;
-    dcterms:license ?license .
-  
+  dcat:downloadURL ?ddURL ;
+  dcat:accessURL ?daURL ;
+  dcterms:format ?dformat ;
+  dcat:mediaType ?dmimeType ;
+  dcterms:conformsTo ?dconformsTo ;
+  dcat:compressFormat ?dcompressFormat ;
+  dcatap:applicableLegislation ?distributionApplicableLegislation ;
+  dcat:packageFormat ?dpackageFormat ;
+  dcterms:title ?dtitle ;
+  dcterms:license ?license .
+
   ?distribution_new leg:termsOfUse ?pu_new .
 
   ?pu_new a leg:TermsOfUse ;
-    leg:authorsWorkType ?touGeneral ;
-	leg:originalDatabaseType ?touDatabase ;
-    leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-	leg:personalDataContainmentType ?touPersonalData ;
-	leg:authorName ?touGeneralAuthor ;
-	leg:originalDatabaseAuthorName ?touDatabaselAuthor .
+  leg:authorsWorkType ?touGeneral ;
+  leg:originalDatabaseType ?touDatabase ;
+  leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+  leg:personalDataContainmentType ?touPersonalData ;
+  leg:authorName ?touGeneralAuthor ;
+  leg:originalDatabaseAuthorName ?touDatabaselAuthor .
 
-  ?distribution_new dcat:accessService ?dataservice_new . 
+  ?distribution_new dcat:accessService ?dataservice_new .
   ?dataservice_new a dcat:DataService ;
-    dcterms:title ?sTitle ;
-    dcterms:conformsTo ?sConformsTo ;
-    dcat:endpointURL ?sEndpointURL ;
-    dcat:endpointDescription ?sEndpointDescription .
+  dcterms:title ?sTitle ;
+  dcterms:conformsTo ?sConformsTo ;
+  dcat:endpointURL ?sEndpointURL ;
+  dcatap:hvdCategory ?serviceHvdCategory ;
+  dcatap:applicableLegislation ?serviceApplicableLegislation ;
+  foaf:page ?serviceDocumentation ;
+  dcat:contactPoint ?dataservice_cp_new ;
+  dcat:endpointDescription ?sEndpointDescription .
+
+  ?dataservice_cp_new a ?serviceCpType;
+  vcard:fn ?serviceCpfn ;
+  vcard:hasEmail ?serviceCpemail .
 
   ?record_new a dcat:CatalogRecord;
-    dcterms:source ?dataset ;
-    foaf:primaryTopic ?dataset_new ;
-    dcterms:language <http://publications.europa.eu/resource/authority/language/SVK>, <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcterms:source ?dataset ;
+  foaf:primaryTopic ?dataset_new ;
+  dcterms:language <http://publications.europa.eu/resource/authority/language/SVK>, <http://publications.europa.eu/resource/authority/language/ENG> ;
     dcterms:conformsTo <https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211> .
 }
 WHERE {
@@ -2739,110 +2880,148 @@ WHERE {
     OPTIONAL { 
       ?temporal schema:endDate ?schemaEndDate . 
       FILTER(REGEX(STR(?schemaEndDate), \"[0-9]{4}-[0-9]{2}-[0-9]{2}\") && DATATYPE(?schemaEndDate) = xsd:date)
-    }
-    BIND(IF(BOUND(?startDate), ?startDate, ?schemaStartDate) AS ?finalStartDate)
-    BIND(IF(BOUND(?endDate), ?endDate, ?schemaEndDate) AS ?finalEndDate)
+  }
+  BIND(IF(BOUND(?startDate), ?startDate, ?schemaStartDate) AS ?finalStartDate)
+  BIND(IF(BOUND(?endDate), ?endDate, ?schemaEndDate) AS ?finalEndDate)
   }
 
-  OPTIONAL { ?dataset dcat:contactPoint ?cp . 
-    ?cp a ?cptype.
-    OPTIONAL { ?cp vcard:fn ?cpfn . }
-    OPTIONAL { 
-      ?cp vcard:hasEmail ?cpemail . 
-      FILTER(isIRI(?cpemail))
-    }
+  OPTIONAL { ?dataset dcat:contactPoint ?cp .
+  ?cp a ?cptype.
+  OPTIONAL { ?cp vcard:fn ?cpfn . }
+  OPTIONAL {
+  ?cp vcard:hasEmail ?cpemail .
   }
-
-  OPTIONAL { 
-    ?dataset dcterms:type ?type . 
-    FILTER(isIRI(?type))
-  }
-  OPTIONAL { 
-    ?dataset foaf:page ?page . 
-    FILTER(isIRI(?page))
-  }
-  OPTIONAL { 
-    ?dataset dcterms:conformsTo ?conformsTo . 
-    FILTER(isIRI(?conformsTo))
-  }
-  OPTIONAL { ?dataset dcat:spatialResolutionInMeters ?spatialResolution . }
-  OPTIONAL { ?dataset dcat:temporalResolution ?temporalResolution . }
-  OPTIONAL { 
-    ?dataset dcterms:isPartOf ?topDataset . 
-    FILTER(isIRI(?topDataset))
   }
 
   OPTIONAL {
-    ?dataset dcat:distribution ?distribution .
-    ?distribution a dcat:Distribution ;
-             dcat:accessURL ?daURL .
-    
-    OPTIONAL {
-	  ?distribution leg:termsOfUse ?pu .
+  ?dataset dcterms:issued ?issued .
+  }
 
-  	  ?pu a leg:TermsOfUse ;
-    	leg:authorsWorkType ?touGeneral ;
-		leg:originalDatabaseType ?touDatabase ;
-    	leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
-		leg:personalDataContainmentType ?touPersonalData .
-      
-      	OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
-      	OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
-    }
-             
-    OPTIONAL { ?distribution dcterms:license ?license . }
-    OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
-    OPTIONAL { 
-      ?distribution dcterms:format ?dformat . 
-      FILTER(isIRI(?dformat))
-    }
-    OPTIONAL { 
-      ?distribution dcat:mediaType ?dmimeType . 
-      FILTER(isIRI(?dmimeType))
-    }
-    OPTIONAL { 
-      ?distribution dcterms:conformsTo ?dconformsTo . 
-      FILTER(isIRI(?dconformsTo))
-    }
-    OPTIONAL { 
-      ?distribution dcat:compressFormat ?dcompressFormat . 
-      FILTER(isIRI(?dcompressFormat))
-    }
-    OPTIONAL { 
-      ?distribution dcat:packageFormat ?dpackageFormat . 
-      FILTER(isIRI(?dpackageFormat))
-    }
-    OPTIONAL { ?distribution dcterms:title ?dtitle . }  
-    OPTIONAL { 
-      ?distribution dcat:accessService ?dataService . 
-      ?dataService a dcat:DataService ;
-                    dcterms:title ?sTitle ;
-                    dcat:endpointURL ?sEndpointURL .
-      OPTIONAL { 
-        ?dataService dcat:endpointDescription ?sEndpointDescription .
-        FILTER(isIRI(?sEndpointDescription))
-      }
-      OPTIONAL { 
-        ?dataService dcterms:conformsTo ?sConformsTo .
-        FILTER(isIRI(?sConformsTo))
-      }
-      FILTER(isIRI(?sEndpointURL))
-    }
+  OPTIONAL {
+  ?dataset dcterms:modified ?modified .
+  }
+
+  OPTIONAL {
+  ?dataset dcterms:type ?type .
+  FILTER(isIRI(?type))
+  }
+  OPTIONAL {
+  ?dataset foaf:page ?page .
+  FILTER(isIRI(?page))
+  }
+  OPTIONAL {
+  ?dataset dcterms:conformsTo ?conformsTo .
+  FILTER(isIRI(?conformsTo))
+  }
+  OPTIONAL { ?dataset dcat:spatialResolutionInMeters ?spatialResolution . }
+  OPTIONAL { ?dataset dcat:temporalResolution ?temporalResolution . }
+  OPTIONAL { ?dataset dcterms:relation ?relation . }
+  OPTIONAL { ?dataset dcatap:applicableLegislation ?applicableLegislation . }
+  OPTIONAL { ?dataset dcatap:hvdCategory ?hvdCategory . }
+  OPTIONAL { ?dataset dcat:landingPage ?landingPage . }
+  OPTIONAL {
+  ?dataset dcat:inSeries ?topDatasetDcat3 .
+  FILTER(isIRI(?topDatasetDcat3))
+  }
+  OPTIONAL {
+  ?dataset dcterms:isPartOf ?topDatasetDcat2 .
+  FILTER(isIRI(?topDatasetDcat2))
+  }
+
+  OPTIONAL {
+  ?dataset dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution ;
+  dcat:accessURL ?daURL .
+
+  OPTIONAL {
+  ?distribution leg:termsOfUse ?pu .
+
+  ?pu a leg:TermsOfUse ;
+  leg:authorsWorkType ?touGeneral ;
+  leg:originalDatabaseType ?touDatabase ;
+  leg:databaseProtectedBySpecialRightsType ?touDatabaseExtra ;
+  leg:personalDataContainmentType ?touPersonalData .
+
+  OPTIONAL { ?pu leg:authorName ?touGeneralAuthor . }
+  OPTIONAL { ?pu leg:originalDatabaseAuthorName ?touDatabaselAuthor .}
+  }
+
+  OPTIONAL { ?distribution dcterms:license ?license . }
+  OPTIONAL { ?distribution dcat:downloadURL ?ddURL . }
+  OPTIONAL {
+  ?distribution dcterms:format ?dformat .
+  FILTER(isIRI(?dformat))
+  }
+  OPTIONAL {
+  ?distribution dcat:mediaType ?dmimeType .
+  FILTER(isIRI(?dmimeType))
+  }
+  OPTIONAL {
+  ?distribution dcterms:conformsTo ?dconformsTo .
+  FILTER(isIRI(?dconformsTo))
+  }
+  OPTIONAL {
+  ?distribution dcat:compressFormat ?dcompressFormat .
+  FILTER(isIRI(?dcompressFormat))
+  }
+  OPTIONAL {
+  ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation .
+  FILTER(isIRI(?distributionApplicableLegislation))
+  }
+  OPTIONAL {
+  ?distribution dcat:packageFormat ?dpackageFormat .
+  FILTER(isIRI(?dpackageFormat))
+  }
+  OPTIONAL { ?distribution dcterms:title ?dtitle . }
+  OPTIONAL {
+  ?distribution dcat:accessService ?dataService .
+  ?dataService a dcat:DataService ;
+  dcterms:title ?sTitle ;
+  dcat:endpointURL ?sEndpointURL .
+  OPTIONAL {
+  ?dataService dcat:endpointDescription ?sEndpointDescription .
+  FILTER(isIRI(?sEndpointDescription))
+  }
+  OPTIONAL {
+  ?dataService dcatap:hvdCategory ?serviceHvdCategory .
+  FILTER(isIRI(?serviceHvdCategory))
+  }
+  OPTIONAL {
+  ?dataService dcatap:applicableLegislation ?serviceApplicableLegislation .
+  FILTER(isIRI(?serviceApplicableLegislation))
+  }
+  OPTIONAL { ?dataService dcat:contactPoint ?serviceCp .
+  ?serviceCp a ?serviceCpType.
+  OPTIONAL { ?serviceCp vcard:fn ?serviceCpfn . }
+  OPTIONAL { ?serviceCp vcard:hasEmail ?serviceCpemail . }
+  }
+  OPTIONAL {
+  ?dataService foaf:page ?serviceDocumentation .
+  FILTER(isIRI(?serviceDocumentation))
+  }
+  OPTIONAL {
+  ?dataService dcterms:conformsTo ?sConformsTo .
+  FILTER(isIRI(?sConformsTo))
+  }
+  FILTER(isIRI(?sEndpointURL))
+  }
   }
 
   BIND (STRDT(STR(?dataset), xsd:anyURI) AS ?dataset_old_str)
   BIND (\"https://data.gov.sk/set/\" AS ?new_IRI_base)
   BIND (MD5(CONCAT(STR(?dataset), STR(?publisher))) AS ?datasetID)
   BIND (IRI(CONCAT(?new_IRI_base, ?datasetID)) as ?dataset_new)
+  BIND (IF(BOUND(?topDatasetDcat3), ?topDatasetDcat3, ?topDatasetDcat2) AS ?topDataset)
   BIND (IRI(CONCAT(?new_IRI_base, MD5(CONCAT(STR(?topDataset), STR(?publisher))))) as ?topDatasetNew)
   BIND (IRI(CONCAT(STR(?dataset_new), \"/resource/\", MD5(STR(?distribution)))) as ?distribution_new)
   BIND (IRI(CONCAT(STR(?distribution_new), \"/data-service/\", MD5(CONCAT(STR(?dataService), STR(?publisher))))) as ?dataservice_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/record\")) as ?record_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/contact-point\")) as ?cp_new)
+  BIND (IRI(CONCAT(STR(?dataservice_new),\"/contact-point\")) as ?dataservice_cp_new)
   BIND (IRI(CONCAT(STR(?distribution_new),\"/terms-of-use\")) as ?pu_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/temporal\")) as ?temporal_new)
-}""";
-    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+  }""";
+  <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFail> false;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFailControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#threads> 8;
