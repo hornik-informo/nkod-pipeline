@@ -880,21 +880,23 @@ PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 CONSTRUCT 
 {
 <https://localhost/nkod-task> a srtfl:Task ;
-    srtfl:fileName \"nkod.trig\" ;
-    srtfl:fileFormat \"application/trig\" ;
-    srtfl:hasTaskQuery ?tqIRI .
+srtfl:fileName \"nkod.trig\" ;
+srtfl:fileFormat \"application/trig\" ;
+srtfl:hasTaskQuery ?tqIRI .
 
 ?tqIRI a srtfl:TaskQuery ;
-    srtfl:outputGraph ?dataset ;
-    srtfl:query ?query .
-} 
+srtfl:outputGraph ?dataset ;
+srtfl:query ?query .
+}
 
-WHERE 
-{ 
-?dataset a dcat:Dataset .
+WHERE
+{
+?dataset a ?datasetTypeUnion .
+
+FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 
 BIND(UUID() as ?tqIRI)
-  #Dataset is generated as a constant becasue using VALUES has way longer execution time
+#Dataset is generated as a constant becasue using VALUES has way longer execution time
 BIND(CONCAT(\"\"\"
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -910,7 +912,7 @@ CONSTRUCT {
 ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> ;
          dcat:record ?record.
 
-<\"\"\",STR(?dataset),\"\"\"> a dcat:Dataset ;
+<\"\"\",STR(?dataset),\"\"\"> a <\"\"\",STR(?datasetTypeUnion),\"\"\"> ;
 dcterms:title ?title ;
 dcterms:description ?description ;
 dcterms:issued ?issued ;
@@ -998,7 +1000,7 @@ foaf:primaryTopic <\"\"\",STR(?dataset),\"\"\"> ;
 }
 WHERE {
   {
-	<\"\"\",STR(?dataset),\"\"\"> a dcat:Dataset ;
+	<\"\"\",STR(?dataset),\"\"\"> a <\"\"\",STR(?datasetTypeUnion),\"\"\"> ;
         dcterms:title ?title .
   } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:description ?description .
@@ -1816,7 +1818,7 @@ CONSTRUCT {
   <\"\"\", STR(?catalog), \"\"\"> a dcat:Catalog ;
   dcat:dataset ?dataset .
 
-  ?dataset a dcat:Dataset ;
+  ?dataset a ?datasetTypeUnion ;
   dcterms:title ?title ;
   dcterms:description ?description ;
   dcterms:type ?type ;
@@ -1891,7 +1893,7 @@ CONSTRUCT {
   WHERE {
   ${VALUES}
 
-  ?dataset a dcat:Dataset ;
+  ?dataset a ?datasetTypeUnion ;
   dcterms:title ?title ;
   dcterms:description ?description ;
   dcat:theme ?theme ;
@@ -1899,6 +1901,8 @@ CONSTRUCT {
   dcat:keyword ?keyword ;
   dcterms:publisher ?publisher ;
   dcterms:spatial ?spatial .
+
+  FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 
   OPTIONAL {
   ?dataset dcterms:temporal ?temporal .
@@ -2083,7 +2087,9 @@ CONSTRUCT {
 <\"\"\", STR(?catalog), \"\"\"> dcat:endpointURL \\\"\"\"\",?uritext,\"\"\"\\\"^^xsd:anyURI ;
 dcat:dataset ?dataset .
 } WHERE {
-?dataset a dcat:Dataset .
+?dataset a ?datasetTypeUnion .
+
+FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 }\"\"\") as ?query)
 }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
@@ -2409,7 +2415,7 @@ PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
   CONSTRUCT {
   ?catalog dcat:dataset ?dataset_new .
 
-  ?dataset_new a dcat:Dataset ;
+  ?dataset_new a ?datasetTypeUnion ;
   dcterms:title ?title ;
   dcterms:description ?description ;
   dcterms:type ?type ;
@@ -2495,7 +2501,7 @@ WHERE {
   ?catalog a dcat:Catalog ;
     dcat:dataset ?dataset .
 
-  ?dataset a dcat:Dataset ;
+  ?dataset a ?datasetTypeUnion ;
              dcterms:title ?title ;
              dcterms:description ?description ;
              dcat:theme ?theme ;
@@ -2503,6 +2509,8 @@ WHERE {
              dcat:keyword ?keyword ;
              dcterms:spatial ?spatial ;
     		 dcterms:publisher ?publisher .
+			 
+FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 
   ?publisher foaf:name ?pname .
   OPTIONAL {?publisher <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype . }
@@ -2621,7 +2629,9 @@ WHERE
 { 
   ?record a dcat:CatalogRecord;
           foaf:primaryTopic ?dataset .
-  ?dataset a dcat:Dataset ;
+  ?dataset a ?datasetTypeUnion ;
+  
+  FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlUpdateChunked#softFail> false;
@@ -2767,7 +2777,7 @@ PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
   CONSTRUCT {
   ?catalog dcat:dataset ?dataset_new .
 
-  ?dataset_new a dcat:Dataset ;
+  ?dataset_new a ?datasetTypeUnion ;
   dcterms:title ?title ;
   dcterms:description ?description ;
   dcterms:type ?type ;
@@ -2851,7 +2861,7 @@ WHERE {
   ?catalog a dcat:Catalog ;
              dcat:dataset ?dataset .
 
-  ?dataset a dcat:Dataset ;
+    ?dataset a ?datasetTypeUnion ;
              dcterms:title ?title ;
              dcterms:description ?description ;
              dcat:theme ?theme ;
@@ -2859,6 +2869,8 @@ WHERE {
              dcat:keyword ?keyword ;
              dcterms:spatial ?spatial ;
              dcterms:publisher ?publisher .
+			 
+	FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 
   ?publisher foaf:name ?pname .
   OPTIONAL {?publisher <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype . }
