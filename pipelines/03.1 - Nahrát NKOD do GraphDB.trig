@@ -342,7 +342,8 @@ CONSTRUCT {
        gsp:graph ?dataset .
 } 
 WHERE { 
-GRAPH ?dataset {?dataset a dcat:Dataset} 
+GRAPH ?dataset {?dataset a ?datasetTypeUnion} 
+FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 }""";
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
@@ -390,7 +391,9 @@ CONSTRUCT
 
 WHERE
 {
-?dataset a dcat:Dataset .
+?dataset a ?datasetTypeUnion .
+
+FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 
 	BIND(IRI(CONCAT(STR(?dataset), \"/query\")) as ?queryIRI)
 	BIND(CONCAT(REPLACE(STR(?dataset),\"[:/\\\\\\\\?=]\",\"-\"), \".ttl\") as ?fileName)
@@ -410,7 +413,7 @@ CONSTRUCT {
 ?catalog dcat:dataset <\"\"\",STR(?dataset),\"\"\"> ;
          dcat:record ?record.
 
-<\"\"\",STR(?dataset),\"\"\"> a dcat:Dataset ;
+<\"\"\",STR(?dataset),\"\"\"> a ?datasetTypeUnion ;
     dcterms:title ?title ;
     dcterms:description ?description ;
     dcterms:issued ?issued ;
@@ -499,8 +502,10 @@ CONSTRUCT {
 }
 WHERE {
   {
-	<\"\"\",STR(?dataset),\"\"\"> a dcat:Dataset ;
+	<\"\"\",STR(?dataset),\"\"\"> a ?datasetTypeUnion ;
         dcterms:title ?title .
+
+    FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
   } UNION {
     <\"\"\",STR(?dataset),\"\"\"> dcterms:description ?description .
   } UNION {
