@@ -1276,7 +1276,7 @@ PREFIX dcatap: <http://data.europa.eu/r5r/>
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	CONSTRUCT {
-	?dataset a dcat:Dataset ;
+	?dataset a ?datasetTypeUnion ;
 	dcterms:title ?title ;
 	dcterms:description ?description ;
 
@@ -1291,12 +1291,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	dcterms:spatial ?spatial ;
 	dcterms:temporal ?temporal ;
 	dcat:contactPoint ?cp ;
-	#foaf:page ?page ;
+	foaf:page ?page ;
 	dcterms:relation ?relation ;
 	dcterms:conformsTo ?conformsTo ;
 	dcat:spatialResolutionInMeters ?spatialResolution ;
 	dcat:temporalResolution ?temporalResolution ;
 	dcterms:relation ?relation ;
+	dcterms:conformsTo ?conformsTo ;
 	dcatap:applicableLegislation ?applicableLegislation ;
 	dcatap:hvdCategory ?hvdCategory ;
 	dcat:landingPage ?landingPage ;
@@ -1369,19 +1370,18 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	dcterms:source ?rsource .
 	}
 	WHERE {
-	?dataset a dcat:Dataset ;
+	?dataset a ?datasetTypeUnion ;
 	dcterms:title ?title ;
-
-	#new
-	dcterms:issued ?issued;
-	dcterms:modified ?modified;
 
 	dcterms:publisher ?publisher .
 
 	?publisher a foaf:Agent;
 	foaf:name ?name .
 
+  FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
 
+  OPTIONAL { ?dataset dcterms:issued ?issued . }
+  OPTIONAL { ?dataset dcterms:modified ?modified . }
 
 	OPTIONAL {?publisher <https://data.gov.sk/def/ontology/legal-subject/legalFormType> ?ptype .}
 	{
@@ -1451,8 +1451,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	} UNION { ?dataset dcatap:hvdCategory ?hvdCategory .
 	} UNION { ?dataset dcat:landingPage ?landingPage .
 	} UNION { ?dataset dcat:temporalResolution ?temporalResolution .
-	} UNION { ?dataset dcat:inSeries ?topDataset .
+	} UNION { ?dataset dcat:inSeries ?topDatasetDcat3 .
+	} UNION { ?dataset dcterms:isPartOf ?topDatasetDcat2 .
 	} UNION { ?dataset dcterms:identifier ?identifier .
+	} UNION { ?dataset dcterms:conformsTo ?conformsTo .
 	} UNION { ?dataset dcat:theme ?theme .
 	OPTIONAL { ?theme skos:inScheme ?scheme . }
 	} UNION { ?dataset dcterms:temporal ?temporal .
@@ -1463,6 +1465,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	OPTIONAL { ?cp vcard:fn ?cpfn . }
 	OPTIONAL { ?cp vcard:hasEmail ?cpemail . }
 	}
+  BIND(IRI(CONCAT(STR(?dataset),\"/record\")) as ?record)
+  BIND(IF(BOUND(?topDatasetDcat3), ?topDatasetDcat3, ?topDatasetDcat2) AS ?topDataset)
 	}""";
 	<http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFail> false;
