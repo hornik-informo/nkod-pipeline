@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "06 - Kvalita metadatových záznamů v NKOD DQV";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T14:49:44.547"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2023-02-16T18:00:52.09657339"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2026-09-29T13:48:53.892541321"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "4";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/profile/default> .
   
@@ -13,6 +13,59 @@
     <http://linkedpipes.com/ontology/rdfRepositoryPolicy> <http://linkedpipes.com/ontology/repository/PerInputRepository>;
     <http://linkedpipes.com/ontology/rdfRepositoryType> <http://linkedpipes.com/ontology/repository/NativeStore>;
     <http://etl.linkedpipes.com/ontology/logRetentionPolicy> <http://linkedpipes.com/resources/Keep> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct";
+    <http://purl.org/dc/terms/description> "Agregácia metrík na úrovni datasetov";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd/configuration>;
+    <http://linkedpipes.com/ontology/x> "444"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "566"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlConstruct/0.0.0> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "NKOD SPARQL endpoint";
+    <http://purl.org/dc/terms/description> "Indikátory kvality na úrovni datasetov";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b/configuration>;
+    <http://linkedpipes.com/ontology/x> "12"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "384"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <https://sk-nkod.opendata.cz/etl/resources/components/1652271093527-1fc20dd0-cb2b-4728-92f4-4e5969e7f83d> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Union";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194/configuration>;
+    <http://linkedpipes.com/ontology/x> "1240"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "432"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-singleGraphUnion/0.0.0> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "NKOD SPARQL endpoint";
+    <http://purl.org/dc/terms/description> "Väzby medzi datasetmi a poskytovateľmi";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration>;
+    <http://linkedpipes.com/ontology/x> "12"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "297"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <https://sk-nkod.opendata.cz/etl/resources/components/1652271093527-1fc20dd0-cb2b-4728-92f4-4e5969e7f83d> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct";
+    <http://purl.org/dc/terms/description> "Agregácia kvality na úroveň poskytovateľa";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration>;
+    <http://linkedpipes.com/ontology/x> "447"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "448"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlConstruct/0.0.0> .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13>
+    a <http://linkedpipes.com/ontology/Component>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct";
+    <http://purl.org/dc/terms/description> "Agregácia metrík poskytovateľa";
+    <http://linkedpipes.com/ontology/configurationGraph> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13/configuration>;
+    <http://linkedpipes.com/ontology/x> "837"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/y> "275"^^<http://www.w3.org/2001/XMLSchema#int>;
+    <http://linkedpipes.com/ontology/template> <http://etl.linkedpipes.com/resources/components/t-sparqlConstruct/0.0.0> .
   
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454710> a <http://linkedpipes.com/ontology/Component>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL construct";
@@ -387,6 +440,90 @@ spočítaných přes poskytovatele""";
     <http://linkedpipes.com/ontology/y> "-1330"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/template> <https://sk-nkod.opendata.cz/etl/resources/components/1652271093527-1fc20dd0-cb2b-4728-92f4-4e5969e7f83d> .
   
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/078d-928e>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/1f26-8544>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/35ed-8201>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/5e26-a0fb>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/752e-91a6>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/7c3e-8ebb>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/bf45-9c60>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/c490-9fc3>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/e46f-87e4>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/e9ab-907f>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/f8b3-8575>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/connection/fd42-a7e7>
+    a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547101> a <http://linkedpipes.com/ontology/Connection>;
     <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454796>;
     <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
@@ -484,181 +621,2027 @@ spočítaných přes poskytovatele""";
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   
   <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454729> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454730>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454731> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454732>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454733> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454735> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454736>;
-    <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454737>;
-    <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454738> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454714>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845473>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454739> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454740>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845473fd9-81bd> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547110>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845473>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845474> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845475>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454741> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454730>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454742> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454719>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454745> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454746>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454747> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454748> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454723>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454751> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454752>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454754> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454755>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454756> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454757>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454758> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454759>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845475>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454760> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454714>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454710>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454761> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454762>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputFiles";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454736>;
-    <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454763> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454764>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454765> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454766>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454768> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputFile";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454769>;
-    <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845477> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845478>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454771> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputFile";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454770>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454772> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454728>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputFile";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454767>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454775> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454715>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454777> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454778>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454779> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454723>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454728>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454781> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
-    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
-    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845475>;
-    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
-  
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454782> a <http://linkedpipes.com/ontology/Connection>;
-    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753> .
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4a6f-94bd/configuration>
+    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+PREFIX hvd: <http://publications.europa.eu/resource/authority/dataset-type/HVD>
+
+CONSTRUCT {
+  ?metric a dqv:Metric ;
+    skos:definition ?definition ;
+    dqv:expectedDataType xsd:boolean .
+
+  ?dataset dqv:hasQualityMeasurement ?measurement .
+
+  ?measurement a qb:Observation, dqv:QualityMeasurement ;
+    dqv:computedOn ?dataset ;
+    dqv:isMeasurementOf ?metric ;
+    dqv:value ?value .
+}
+WHERE {
+  {
+    SELECT ?dataset ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?valid) (COUNT(?value) AS ?total) WHERE
+    {
+       nkod: dcat:dataset ?dataset .
+
+       VALUES (?sourceMetric)
+       {
+         (:vyplnenyPopisDatasetu)
+         (:vyplnenaTemaDatasetu)
+          (:vyplnenaPeriodicitaAktualizacieDatasetu)
+          (:vyplneneKlucoveSlovoDatasetu)
+          (:vyplneneUzemnePokrytieDatasetu)
+          (:vyplnenyOdkazNaStiahnutie)
+          (:vyplnenaLicencia)
+          (:vyplnenyFormat)
+          (:vyplnenyTypMedia)
+          (:vyplnenyPravnyPredpisHvdDatasetu)
+          (:vyplnenaKategoriaHvdDatasetu)
+          (:vyplnenyPravnyPredpisHvdDistribucie)
+          (:vyplnenyNazovDatovejSluzbyHvdDatasetu)
+          (:vyplnenyPristupovyBodDatovejSluzbyHvdDatasetu)
+          (:vyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetu)
+          (:vyplnenyKontaktnyBodDatovejSluzbyHvdDatasetu)
+          (:vyplnenyNazovDatovejSluzbyDatasetuMimoHvd)
+          (:vyplnenyPristupovyBodDatovejSluzbyDatasetuMimoHvd)
+       }
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf ?sourceMetric ;
+               dqv:value ?value .
+        }
+
+        BIND(IF(BOUND(?value) && ?value, 1, 0) AS ?obs)
+        BIND(\"vyplneniePovinnychMetadat\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola na vyplnenie povinných metadát\" AS ?definitionTemplate)
+    } GROUP BY ?dataset ?aggregatedMetricId ?definitionTemplate  
+  } 
+  UNION 
+  {
+    SELECT ?dataset ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?valid) (COUNT(?value) AS ?total) WHERE
+    {
+       nkod: dcat:dataset ?dataset .
+
+       VALUES (?sourceMetric)
+       {
+         (:vyplneneCasovePokrytieDatasetu)
+        (:vyplnenyKontaktnyBodDatasetu)
+      (:vyplnenyDatumVytvoreniaDatasetu)
+      (:vyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvd)
+      (:vyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvd)
+       }
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf ?sourceMetric ;
+               dqv:value ?value .
+        }
+
+        BIND(IF(BOUND(?value) && ?value, 1, 0) AS ?obs)
+        BIND(\"vyplnenieOdporucanychMetadat\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola na vyplnenie odporúčaných metadát\" AS ?definitionTemplate)
+    } GROUP BY ?dataset ?aggregatedMetricId ?definitionTemplate  
+  }
+
+  BIND((?valid = ?total) AS ?value)
+  BIND(\"https://data.gov.sk/set/observation/data-quality/\" as ?prefix)  
+  BIND(IRI(CONCAT(STR(:), ?aggregatedMetricId)) as ?metric)
+  BIND(IRI(CONCAT(?prefix, ?aggregatedMetricId, \"/\", SHA256(STR(?dataset)))) as ?measurement)
+}""";
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/4fac-b94b/configuration>
+    a <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#defaultGraphControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdf> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdfControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpoint> "http://localhost:7200/repositories/nodc";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpointControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidData> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidDataControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#headerAcceptControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX dcatap: <http://data.europa.eu/r5r/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+PREFIX hvdLeg: <http://data.europa.eu/eli/reg_impl/2023/138/oj>
+PREFIX hvd: <http://publications.europa.eu/resource/authority/dataset-type/HVD>
+
+CONSTRUCT {
+  ?metric a dqv:Metric ;
+    skos:definition ?definition ;
+    dqv:expectedDataType xsd:boolean .
+
+  ?dataset dqv:hasQualityMeasurement ?measurement .
+
+  ?measurement a qb:Observation, dqv:QualityMeasurement ;
+    dqv:computedOn ?dataset ;
+    dqv:isMeasurementOf ?metric ;
+    dqv:value ?value .
+}
+WHERE {
+  SELECT ?dataset ?metric ?measurement ?definition ?value WHERE {
+    {
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dct:description ?obj .
+            FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+          }
+      
+          BIND(\"vyplnenyPopisDatasetu\" AS ?metricId)
+          BIND(\"Kontrola ...\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dcat:theme ?obj
+          }
+      
+          BIND(\"vyplnenaTemaDatasetu\" AS ?metricId)
+          BIND(\"Kontrola ...\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dct:accrualPeriodicity ?obj
+          }
+      
+          BIND(\"vyplnenaPeriodicitaAktualizacieDatasetu\" AS ?metricId)
+          BIND(\"Kontrola ...\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dcat:keyword ?obj .
+            FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+          }
+      
+          BIND(\"vyplneneKlucoveSlovoDatasetu\" AS ?metricId)
+          BIND(\"Kontrola ...\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dct:spatial ?obj .
+          }
+      
+          BIND(\"vyplneneUzemnePokrytieDatasetu\" AS ?metricId)
+          BIND(\"Kontrola ...\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          FILTER(EXISTS { ?dataset dcat:distribution ?anyDistribution })
+
+          FILTER(EXISTS { 
+            ?dataset dcat:distribution ?anyDistribution .
+
+            OPTIONAL {
+              ?anyDistribution dcat:accessService ?accessService
+            }
+            FILTER(!BOUND(?accessService))
+          })
+
+          BIND((!(
+            EXISTS {  
+              ?dataset dcat:distribution ?distribution .
+
+              OPTIONAL {
+                ?distribution dcat:accessService ?accessService
+              }
+
+              OPTIONAL {
+                ?distribution dcat:downloadURL ?downloadURL
+              }
+
+              FILTER(!BOUND(?accessService) && !BOUND(?downloadURL))
+            })) AS ?value)
+          BIND(\"vyplnenyOdkazNaStiahnutie\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {    
+        nkod: dcat:dataset ?dataset .
+        ?dataset dcat:distribution ?anyDistribution .
+
+        BIND((
+          NOT EXISTS {
+            ?dataset dcat:distribution ?distribution .
+            OPTIONAL {
+              ?distribution leg:termsOfUse ?terms .
+
+              OPTIONAL {
+                ?terms leg:authorsWorkType ?authorsWorkType .
+              }
+              OPTIONAL {
+                ?terms leg:databaseProtectedBySpecialRightsType ?databaseProtectedBySpecialRightsType .
+              }
+              OPTIONAL {
+                ?terms leg:originalDatabaseType ?originalDatabaseType .
+              }
+              OPTIONAL {
+                ?terms leg:personalDataContainmentType ?personalDataContainmentType .
+              }
+            }
+            FILTER(!(BOUND(?authorsWorkType) && BOUND(?originalDatabaseType) && BOUND(?databaseProtectedBySpecialRightsType) && BOUND(?personalDataContainmentType)))
+          }) AS ?value)
+        BIND(\"vyplnenaLicencia\" AS ?metricId)
+        BIND(\"Kontrola na vyplnenie licencie distribúcií.\"@sk AS ?definition)
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dcat:distribution ?anyDistribution .
+          ?anyDistribution dcat:downloadURL ?anyDownloadUrl .
+
+          BIND((!(
+            EXISTS {  
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:downloadURL ?downloadUrl .
+              OPTIONAL {
+                ?distribution dct:format ?format .
+                FILTER(ISIRI(?format))
+              }
+
+              FILTER(!BOUND(?format))
+            })) AS ?value)
+          BIND(\"vyplnenyFormat\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dcat:distribution ?anyDistribution .
+          ?anyDistribution dcat:downloadURL ?anyDownloadUrl .
+
+          BIND((!(
+            EXISTS {  
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:downloadURL ?downloadUrl .
+              OPTIONAL {
+                ?distribution dcat:mediaType ?mediaType .
+                FILTER(ISIRI(?mediaType))
+              }
+
+              FILTER(!BOUND(?mediaType))
+            })) AS ?value)
+          BIND(\"vyplnenyTypMedia\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((EXISTS { ?dataset dcatap:applicableLegislation hvdLeg: }) AS ?value) 
+          BIND(\"vyplnenyPravnyPredpisHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((EXISTS { ?dataset dcatap:hvdCategory ?hvdCategory }) AS ?value) 
+          BIND(\"vyplnenaKategoriaHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+          ?dataset dcat:distribution ?anyDistribution .
+          
+          BIND((!(EXISTS { 
+            ?dataset dcat:distribution ?distribution .
+            FILTER NOT EXISTS { ?distribution dcatap:applicableLegislation hvdLeg: }
+          })) AS ?value) 
+          BIND(\"vyplnenyPravnyPredpisHvdDistribucie\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((EXISTS { 
+            ?dataset dcat:distribution ?distribution .
+            ?distribution dcat:accessService [] .
+          }) AS ?value) 
+          BIND(\"vyplnenaDatovaSluzbaHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dct:title ?obj .
+                FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyNazovDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dcat:endpointURL ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyPristupovyBodDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                 ?service foaf:page ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+
+              OPTIONAL {
+                ?service dcat:contactPoint ?contactPoint .
+                OPTIONAL {
+                  ?contactPoint vcard:hasEmail ?obj .
+                  FILTER(ISIRI(?obj))
+                }
+              }
+
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyKontaktnyBodDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dct:title ?obj .
+                FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyNazovDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dcat:endpointURL ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyPristupovyBodDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                 ?service foaf:page ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+
+              OPTIONAL {
+                ?service dcat:contactPoint ?contactPoint .
+                OPTIONAL {
+                  ?contactPoint vcard:hasEmail ?obj .
+                  FILTER(ISIRI(?obj))
+                }
+              }
+
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          OPTIONAL { 
+            ?dataset dct:temporal ?temporal .
+            OPTIONAL {
+              ?temporal dcat:startDate ?startDate ;
+            }
+            OPTIONAL {
+              ?temporal dcat:endDate ?endDate ;
+            }
+          }
+
+          BIND((BOUND(?startDate) || BOUND(?endDate)) AS ?value) 
+          BIND(\"vyplneneCasovePokrytieDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          OPTIONAL { 
+            ?dataset dct:issued ?obj .
+          }
+
+          BIND(BOUND(?obj) AS ?value) 
+          BIND(\"vyplnenyDatumVytvoreniaDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          OPTIONAL {
+            ?dataset dcat:contactPoint ?contactPoint .
+            ?contactPoint vcard:hasEmail ?obj .
+            FILTER(ISIRI(?obj))
+          }
+
+          BIND(BOUND(?obj) AS ?value) 
+          BIND(\"vyplnenyKontaktnyBodDatasetu\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          BIND((EXISTS { ?dataset a dcat:DatasetSeries }) AS ?value) 
+          BIND(\"jeDatovouSeriou\" AS ?metricId)
+          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        {
+          SELECT ?dataset (MAX(?kvalitaDistribucie) AS ?kvalita) WHERE {
+            nkod: dcat:dataset ?dataset .
+            ?dataset dcat:distribution ?distribution .
+            ?distribution dct:format ?format .
+
+            VALUES (?format ?kvalitaDistribucie) {
+                (<http://publications.europa.eu/resource/authority/file-type/RDF> 5)
+                (<http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> 5)
+                (<http://publications.europa.eu/resource/authority/file-type/RDF_XML> 5)
+                (<http://publications.europa.eu/resource/authority/file-type/JSON_LD> 5)
+
+                (<http://publications.europa.eu/resource/authority/file-type/XML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/GEOJSON> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/CSV> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/JSON> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/ODS> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/SCHEMA_XML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/ATOM> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/csv> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/GML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/xml> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/KML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/GPKG> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/json> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/WFS_SRVC> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/HDF> 3)
+
+                (<http://publications.europa.eu/resource/authority/file-type/XLSX> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/ZIP> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/XLS> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/xlsx> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/SHP> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/xls> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/GDB> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/XLSM> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/TAR> 2)
+
+                (<http://publications.europa.eu/resource/authority/file-type/PDF> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/HTML> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/XHTML> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/WMS_SRVC> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/pdf> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/TIFF> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/DOCX> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/DOC> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/RAR> 1)
+            }
+          } GROUP BY ?dataset
+        }
+        
+        BIND(true AS ?value) 
+        BIND(CONCAT(\"kvalitaDatasetu\", STR(?kvalita)) AS ?metricId)
+        BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+      }
+      UNION
+      {
+        {
+          SELECT ?dataset (SUM(?otvorena) AS ?o) (SUM(?zatvorena) AS ?z) WHERE {
+            {
+              SELECT ?dataset ?licencia WHERE {
+                {
+                  SELECT ?dataset ?licencia WHERE {
+                    nkod: dcat:dataset ?dataset .
+                    ?dataset dcat:distribution ?distribution .
+                    ?distribution leg:termsOfUse ?terms .
+                    ?terms leg:authorsWorkType ?licencia
+                  }
+                }
+                UNION
+                {
+                  SELECT ?dataset ?licencia WHERE {
+                    nkod: dcat:dataset ?dataset .
+                    ?dataset dcat:distribution ?distribution .
+                    ?distribution leg:termsOfUse ?terms .
+                    ?terms leg:originalDatabaseType ?licencia
+                  }
+                }
+                UNION
+                {
+                  SELECT ?dataset ?licencia WHERE {
+                    nkod: dcat:dataset ?dataset .
+                    ?dataset dcat:distribution ?distribution .
+                    ?distribution leg:termsOfUse ?terms .
+                    ?terms leg:databaseProtectedBySpecialRightsType ?licencia
+                  }
+                }
+              }
+            }
+
+            OPTIONAL {
+            VALUES (?licencia ?licenciaDistribucieJeOtvorena) {
+              (<http://publications.europa.eu/resource/authority/licence/0BSD> true)
+                (<http://publications.europa.eu/resource/authority/licence/AFL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/AGPL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/AGPL_3_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/APACHE_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/APACHE_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/APL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/APSL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ARTISTIC_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ARTISTIC_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_2_CLAUSE> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSECLEAR> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE_LBNL> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_PLUS_PATENT> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CATOSL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_2_5> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0_AT> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0_NL> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_PDM_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CDDL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CECILL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/CECILL_B_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CECILL_C_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CLARIN_ACA_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CNRI_PYTHON> true)
+                (<http://publications.europa.eu/resource/authority/licence/COM_REUSE> true)
+                (<http://publications.europa.eu/resource/authority/licence/CPAL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DFSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DLDE_BY_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DLDE_BY_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DLDE_ZERO_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ECL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ECL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ECOS_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EFL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EFL_2> true)
+                (<http://publications.europa.eu/resource/authority/licence/ENTESSA> true)
+                (<http://publications.europa.eu/resource/authority/licence/EPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ETALAB_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_2> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUROGEO_2022> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUROGEO_2024> true)
+                (<http://publications.europa.eu/resource/authority/licence/EU_DATAGRID> true)
+                (<http://publications.europa.eu/resource/authority/licence/FAIR> true)
+                (<http://publications.europa.eu/resource/authority/licence/FRAMEWORX_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_2> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_2_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_3_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/HPND> true)
+                (<http://publications.europa.eu/resource/authority/licence/HROD> true)
+                (<http://publications.europa.eu/resource/authority/licence/IODL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/IODL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/IPA> true)
+                (<http://publications.europa.eu/resource/authority/licence/IPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ISA_OML_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/ISC> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_2_1_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_3_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/LILIQ_P_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LILIQ_RPLUS_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LILIQ_R_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/LPL_1_02> true)
+                (<http://publications.europa.eu/resource/authority/licence/LPPL_1_3C> true)
+                (<http://publications.europa.eu/resource/authority/licence/MIROS> true)
+                (<http://publications.europa.eu/resource/authority/licence/MIT> true)
+                (<http://publications.europa.eu/resource/authority/licence/MOTOSOTO> true)
+                (<http://publications.europa.eu/resource/authority/licence/MPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/MPL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/MPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/MS_PL> true)
+                (<http://publications.europa.eu/resource/authority/licence/MS_RL> true)
+                (<http://publications.europa.eu/resource/authority/licence/MULTICS> true)
+                (<http://publications.europa.eu/resource/authority/licence/NASA_1_3> true)
+                (<http://publications.europa.eu/resource/authority/licence/NAUMEN> true)
+                (<http://publications.europa.eu/resource/authority/licence/NCSA> true)
+                (<http://publications.europa.eu/resource/authority/licence/NGPL> true)
+                (<http://publications.europa.eu/resource/authority/licence/NLOD_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/NLOD_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/NOKIA> true)
+                (<http://publications.europa.eu/resource/authority/licence/NTP> true)
+                (<http://publications.europa.eu/resource/authority/licence/OCLC_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ODC_BL> true)
+                (<http://publications.europa.eu/resource/authority/licence/ODC_BY> true)
+                (<http://publications.europa.eu/resource/authority/licence/ODC_PDDL> true)
+                (<http://publications.europa.eu/resource/authority/licence/OFL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_ROU_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGTSL> true)
+                (<http://publications.europa.eu/resource/authority/licence/OPL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/OSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OSL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/OSL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/PHP_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/POSTGRE_SQL> true)
+                (<http://publications.europa.eu/resource/authority/licence/PSEUL> true)
+                (<http://publications.europa.eu/resource/authority/licence/PYTHON_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/QPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/RPL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/RPL_1_5> true)
+                (<http://publications.europa.eu/resource/authority/licence/RPSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/RSCPL> true)
+                (<http://publications.europa.eu/resource/authority/licence/SIMPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/SLEEPYCAT> true)
+                (<http://publications.europa.eu/resource/authority/licence/SODL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/SPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/UCL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/UNLICENCE> true)
+                (<http://publications.europa.eu/resource/authority/licence/UPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/VSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/W3C> true)
+                (<http://publications.europa.eu/resource/authority/licence/WATCOM_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/WXWINDOWS> true)
+                (<http://publications.europa.eu/resource/authority/licence/XNET> true)
+                (<http://publications.europa.eu/resource/authority/licence/ZLIB> true)
+                (<http://publications.europa.eu/resource/authority/licence/ZPL_2_0> true)
+            }
+            }
+
+            BIND(IF(BOUND(?licenciaDistribucieJeOtvorena), 1, 0) AS ?otvorena)
+            BIND(IF(!BOUND(?licenciaDistribucieJeOtvorena), 1, 0) AS ?zatvorena)
+          } GROUP BY ?dataset
+        }
+
+        BIND((?o > 0 && ?z = 0) AS ?value)
+        BIND(\"sOtvorenouLicenciou\" AS ?metricId)
+        BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
+      }
+    }
+
+    BIND(\"https://data.gov.sk/set/observation/data-quality/\" AS ?prefix)
+    BIND(IRI(CONCAT(STR(:), ?metricId)) AS ?metric)
+    BIND(IRI(CONCAT(?prefix, ?metricId, \"/\", SHA256(STR(?dataset)))) AS ?measurement)
+  }
+}""";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthenticationControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepository> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepositoryControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#userNameControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194/configuration> {
+  <http://etl.linkedpipes.com/resources/components/t-singleGraphUnion/0.0.0/configuration/1>
+    a <http://plugins.linkedpipes.com/ontology/t-singleGraphUnion#Configuration> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration>
+    a <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#defaultGraphControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdf> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdfControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpoint> "http://localhost:7200/repositories/nodc";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpointControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidData> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidDataControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#headerAcceptControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+
+CONSTRUCT {
+  nkod: dcat:dataset ?dataset .
+  ?dataset a ?class .
+  ?dataset dct:type ?type .
+  ?dataset dct:publisher ?publisher .
+  ?dataset dcat:distribution ?distribution .
+}
+WHERE {
+  nkod: dcat:dataset ?dataset .
+  OPTIONAL { ?dataset a ?class . }
+  OPTIONAL { ?dataset dct:type ?type . }
+  OPTIONAL { ?dataset dct:publisher ?publisher . }
+  OPTIONAL { ?dataset dcat:distribution ?distribution . }
+}""";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthenticationControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepository> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepositoryControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#userNameControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration>
+    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX leg: <https://data.gov.sk/def/ontology/legislation/> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX dcatap: <http://data.europa.eu/r5r/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+PREFIX hvdLeg: <http://data.europa.eu/eli/reg_impl/2023/138/oj>
+PREFIX hvd: <http://publications.europa.eu/resource/authority/dataset-type/HVD>
+
+CONSTRUCT {
+  ?metric a dqv:Metric ;
+    skos:definition ?definition ;
+    dqv:expectedDataType xsd:boolean .
+
+  ?dataset dqv:hasQualityMeasurement ?measurement .
+
+  ?measurement a qb:Observation, dqv:QualityMeasurement ;
+    dqv:computedOn ?dataset ;
+    dqv:isMeasurementOf ?metric ;
+    dqv:value ?value .
+}
+WHERE {
+  SELECT ?dataset ?metric ?measurement ?definition ?value WHERE {
+    {
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dct:description ?obj .
+            FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+          }
+      
+          BIND(\"vyplnenyPopisDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia popisu datasetu dct:title\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dcat:theme ?obj
+          }
+      
+          BIND(\"vyplnenaTemaDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia témy datasetu dcat:theme\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dct:accrualPeriodicity ?obj
+          }
+      
+          BIND(\"vyplnenaPeriodicitaAktualizacieDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia periodicity aktualizácie datasetu dct:accrualPeriodicity\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dcat:keyword ?obj .
+            FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+          }
+      
+          BIND(\"vyplneneKlucoveSlovoDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia kľúčového slova datasetu dcat:keyword\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          OPTIONAL {
+            ?dataset dct:spatial ?obj .
+          }
+      
+          BIND(\"vyplneneUzemnePokrytieDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia územného pokrytia datasetu dct:spatial\"@sk AS ?definition)
+          BIND(BOUND(?obj) AS ?value)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+
+          FILTER(EXISTS { ?dataset dcat:distribution ?anyDistribution })
+
+          FILTER(EXISTS { 
+            ?dataset dcat:distribution ?anyDistribution .
+
+            OPTIONAL {
+              ?anyDistribution dcat:accessService ?accessService
+            }
+            FILTER(!BOUND(?accessService))
+          })
+
+          BIND((!(
+            EXISTS {  
+              ?dataset dcat:distribution ?distribution .
+
+              OPTIONAL {
+                ?distribution dcat:accessService ?accessService
+              }
+
+              OPTIONAL {
+                ?distribution dcat:downloadURL ?downloadURL
+              }
+
+              FILTER(!BOUND(?accessService) && !BOUND(?downloadURL))
+            })) AS ?value)
+          BIND(\"vyplnenyOdkazNaStiahnutie\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia odkazu na stiahnutie datasetu dcat:downloadURL\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {    
+        nkod: dcat:dataset ?dataset .
+        ?dataset dcat:distribution ?anyDistribution .
+
+        BIND((
+          NOT EXISTS {
+            ?dataset dcat:distribution ?distribution .
+            OPTIONAL {
+              ?distribution leg:termsOfUse ?terms .
+
+              OPTIONAL {
+                ?terms leg:authorsWorkType ?authorsWorkType .
+              }
+              OPTIONAL {
+                ?terms leg:databaseProtectedBySpecialRightsType ?databaseProtectedBySpecialRightsType .
+              }
+              OPTIONAL {
+                ?terms leg:originalDatabaseType ?originalDatabaseType .
+              }
+              OPTIONAL {
+                ?terms leg:personalDataContainmentType ?personalDataContainmentType .
+              }
+            }
+            FILTER(!(BOUND(?authorsWorkType) && BOUND(?originalDatabaseType) && BOUND(?databaseProtectedBySpecialRightsType) && BOUND(?personalDataContainmentType)))
+          }) AS ?value)
+        BIND(\"vyplnenaLicencia\" AS ?metricId)
+        BIND(\"Kontrola na vyplnenie licencie distribúcií\"@sk AS ?definition)
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dcat:distribution ?anyDistribution .
+          ?anyDistribution dcat:downloadURL ?anyDownloadUrl .
+
+          BIND((!(
+            EXISTS {  
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:downloadURL ?downloadUrl .
+              OPTIONAL {
+                ?distribution dct:format ?format .
+                FILTER(ISIRI(?format))
+              }
+
+              FILTER(!BOUND(?format))
+            })) AS ?value)
+          BIND(\"vyplnenyFormat\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia formátu dcat:mediaType\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dcat:distribution ?anyDistribution .
+          ?anyDistribution dcat:downloadURL ?anyDownloadUrl .
+
+          BIND((!(
+            EXISTS {  
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:downloadURL ?downloadUrl .
+              OPTIONAL {
+                ?distribution dcat:mediaType ?mediaType .
+                FILTER(ISIRI(?mediaType))
+              }
+
+              FILTER(!BOUND(?mediaType))
+            })) AS ?value)
+          BIND(\"vyplnenyTypMedia\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia typu média dcat:mediaType\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((EXISTS { ?dataset dcatap:applicableLegislation hvdLeg: }) AS ?value) 
+          BIND(\"vyplnenyPravnyPredpisHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia HVD legislatívy datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((EXISTS { ?dataset dcatap:hvdCategory ?hvdCategory }) AS ?value) 
+          BIND(\"vyplnenaKategoriaHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia kategórie HVD datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+          ?dataset dcat:distribution ?anyDistribution .
+          
+          BIND((!(EXISTS { 
+            ?dataset dcat:distribution ?distribution .
+            FILTER NOT EXISTS { ?distribution dcatap:applicableLegislation hvdLeg: }
+          })) AS ?value) 
+          BIND(\"vyplnenyPravnyPredpisHvdDistribucie\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia HVD legislatívy distribúcie\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((EXISTS { 
+            ?dataset dcat:distribution ?distribution .
+            ?distribution dcat:accessService [] .
+          }) AS ?value) 
+          BIND(\"vyplnenaDatovaSluzbaHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia HVD dátovej služby\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dct:title ?obj .
+                FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyNazovDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia názvu dátovej služby HVD datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dcat:endpointURL ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyPristupovyBodDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia prístupového bodu dátovej služby HVD datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                 ?service foaf:page ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia dokumentácie dátovej služby HVD datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+
+              OPTIONAL {
+                ?service dcat:contactPoint ?contactPoint .
+                OPTIONAL {
+                  ?contactPoint vcard:hasEmail ?obj .
+                  FILTER(ISIRI(?obj))
+                }
+              }
+
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyKontaktnyBodDatovejSluzbyHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia kontaktu dátovej služby HVD datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dct:title ?obj .
+                FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyNazovDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia názvu dátovej služby datasetu mimo HVD\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                ?service dcat:endpointURL ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyPristupovyBodDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia prístupového bodu dátovej služby datasetu mimo HVD\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+              OPTIONAL {
+                 ?service foaf:page ?obj .
+                FILTER(ISIRI(?obj))
+              }
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia dokumentácie dátovej služby datasetu mimo HVD\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
+
+          FILTER(EXISTS {
+            ?dataset dcat:distribution ?anyDistribution .
+            ?anyDistribution dcat:accessService ?service .
+          })
+
+          BIND((
+            NOT EXISTS {
+              ?dataset dcat:distribution ?distribution .
+              ?distribution dcat:accessService ?service .
+
+              OPTIONAL {
+                ?service dcat:contactPoint ?contactPoint .
+                OPTIONAL {
+                  ?contactPoint vcard:hasEmail ?obj .
+                  FILTER(ISIRI(?obj))
+                }
+              }
+
+              FILTER(!BOUND(?obj))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia kontaktu dátovej služby datasetu mimo HVD\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          OPTIONAL { 
+            ?dataset dct:temporal ?temporal .
+            OPTIONAL {
+              ?temporal dcat:startDate ?startDate ;
+            }
+            OPTIONAL {
+              ?temporal dcat:endDate ?endDate ;
+            }
+          }
+
+          BIND((BOUND(?startDate) || BOUND(?endDate)) AS ?value) 
+          BIND(\"vyplneneCasovePokrytieDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia časového pokrytia datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          OPTIONAL { 
+            ?dataset dct:issued ?obj .
+          }
+
+          BIND(BOUND(?obj) AS ?value) 
+          BIND(\"vyplnenyDatumVytvoreniaDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia dátumu vydania datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          OPTIONAL {
+            ?dataset dcat:contactPoint ?contactPoint .
+            ?contactPoint vcard:hasEmail ?obj .
+            FILTER(ISIRI(?obj))
+          }
+
+          BIND(BOUND(?obj) AS ?value) 
+          BIND(\"vyplnenyKontaktnyBodDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia kontaktu datasetu\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          
+          BIND((EXISTS { ?dataset a dcat:DatasetSeries }) AS ?value) 
+          BIND(\"jeDatovouSeriou\" AS ?metricId)
+          BIND(\"Atribút dátovej série\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        {
+          SELECT ?dataset (MAX(?kvalitaDistribucie) AS ?kvalita) WHERE {
+            nkod: dcat:dataset ?dataset .
+            ?dataset dcat:distribution ?distribution .
+            ?distribution dct:format ?format .
+
+            VALUES (?format ?kvalitaDistribucie) {
+                (<http://publications.europa.eu/resource/authority/file-type/RDF> 5)
+                (<http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> 5)
+                (<http://publications.europa.eu/resource/authority/file-type/RDF_XML> 5)
+                (<http://publications.europa.eu/resource/authority/file-type/JSON_LD> 5)
+
+                (<http://publications.europa.eu/resource/authority/file-type/XML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/GEOJSON> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/CSV> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/JSON> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/ODS> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/SCHEMA_XML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/ATOM> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/csv> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/GML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/xml> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/KML> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/GPKG> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/json> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/WFS_SRVC> 3)
+                (<http://publications.europa.eu/resource/authority/file-type/HDF> 3)
+
+                (<http://publications.europa.eu/resource/authority/file-type/XLSX> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/ZIP> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/XLS> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/xlsx> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/SHP> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/xls> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/GDB> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/XLSM> 2)
+                (<http://publications.europa.eu/resource/authority/file-type/TAR> 2)
+
+                (<http://publications.europa.eu/resource/authority/file-type/PDF> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/HTML> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/XHTML> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/WMS_SRVC> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/pdf> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/TIFF> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/DOCX> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/DOC> 1)
+                (<http://publications.europa.eu/resource/authority/file-type/RAR> 1)
+            }
+          } GROUP BY ?dataset
+        }
+        
+        BIND(true AS ?value) 
+        BIND(CONCAT(\"kvalitaDatasetu\", STR(?kvalita)) AS ?metricId)
+        BIND(\"Kvalita datasetu\"@sk AS ?definition)
+      }
+      UNION
+      {
+        {
+          SELECT ?dataset (SUM(?otvorena) AS ?o) (SUM(?zatvorena) AS ?z) WHERE {
+            {
+              SELECT ?dataset ?licencia WHERE {
+                {
+                  SELECT ?dataset ?licencia WHERE {
+                    nkod: dcat:dataset ?dataset .
+                    ?dataset dcat:distribution ?distribution .
+                    ?distribution leg:termsOfUse ?terms .
+                    ?terms leg:authorsWorkType ?licencia
+                  }
+                }
+                UNION
+                {
+                  SELECT ?dataset ?licencia WHERE {
+                    nkod: dcat:dataset ?dataset .
+                    ?dataset dcat:distribution ?distribution .
+                    ?distribution leg:termsOfUse ?terms .
+                    ?terms leg:originalDatabaseType ?licencia
+                  }
+                }
+                UNION
+                {
+                  SELECT ?dataset ?licencia WHERE {
+                    nkod: dcat:dataset ?dataset .
+                    ?dataset dcat:distribution ?distribution .
+                    ?distribution leg:termsOfUse ?terms .
+                    ?terms leg:databaseProtectedBySpecialRightsType ?licencia
+                  }
+                }
+              }
+            }
+
+            OPTIONAL {
+            VALUES (?licencia ?licenciaDistribucieJeOtvorena) {
+              (<http://publications.europa.eu/resource/authority/licence/0BSD> true)
+                (<http://publications.europa.eu/resource/authority/licence/AFL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/AGPL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/AGPL_3_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/APACHE_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/APACHE_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/APL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/APSL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ARTISTIC_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ARTISTIC_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_2_CLAUSE> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSECLEAR> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE_LBNL> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSD_PLUS_PATENT> true)
+                (<http://publications.europa.eu/resource/authority/licence/BSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CATOSL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_2_5> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0_AT> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0_NL> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CC_PDM_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CDDL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CECILL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/CECILL_B_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CECILL_C_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CLARIN_ACA_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CNRI_PYTHON> true)
+                (<http://publications.europa.eu/resource/authority/licence/COM_REUSE> true)
+                (<http://publications.europa.eu/resource/authority/licence/CPAL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/CPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DFSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DLDE_BY_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DLDE_BY_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/DLDE_ZERO_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ECL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ECL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ECOS_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EFL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EFL_2> true)
+                (<http://publications.europa.eu/resource/authority/licence/ENTESSA> true)
+                (<http://publications.europa.eu/resource/authority/licence/EPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ETALAB_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_2> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUROGEO_2022> true)
+                (<http://publications.europa.eu/resource/authority/licence/EUROGEO_2024> true)
+                (<http://publications.europa.eu/resource/authority/licence/EU_DATAGRID> true)
+                (<http://publications.europa.eu/resource/authority/licence/FAIR> true)
+                (<http://publications.europa.eu/resource/authority/licence/FRAMEWORX_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_2> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3> true)
+                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_2_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/GPL_3_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/HPND> true)
+                (<http://publications.europa.eu/resource/authority/licence/HROD> true)
+                (<http://publications.europa.eu/resource/authority/licence/IODL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/IODL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/IPA> true)
+                (<http://publications.europa.eu/resource/authority/licence/IPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ISA_OML_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/ISC> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_2_1_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/LGPL_3_0_OR_LATER> true)
+                (<http://publications.europa.eu/resource/authority/licence/LILIQ_P_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LILIQ_RPLUS_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LILIQ_R_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/LPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/LPL_1_02> true)
+                (<http://publications.europa.eu/resource/authority/licence/LPPL_1_3C> true)
+                (<http://publications.europa.eu/resource/authority/licence/MIROS> true)
+                (<http://publications.europa.eu/resource/authority/licence/MIT> true)
+                (<http://publications.europa.eu/resource/authority/licence/MOTOSOTO> true)
+                (<http://publications.europa.eu/resource/authority/licence/MPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/MPL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/MPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/MS_PL> true)
+                (<http://publications.europa.eu/resource/authority/licence/MS_RL> true)
+                (<http://publications.europa.eu/resource/authority/licence/MULTICS> true)
+                (<http://publications.europa.eu/resource/authority/licence/NASA_1_3> true)
+                (<http://publications.europa.eu/resource/authority/licence/NAUMEN> true)
+                (<http://publications.europa.eu/resource/authority/licence/NCSA> true)
+                (<http://publications.europa.eu/resource/authority/licence/NGPL> true)
+                (<http://publications.europa.eu/resource/authority/licence/NLOD_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/NLOD_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/NOKIA> true)
+                (<http://publications.europa.eu/resource/authority/licence/NTP> true)
+                (<http://publications.europa.eu/resource/authority/licence/OCLC_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/ODC_BL> true)
+                (<http://publications.europa.eu/resource/authority/licence/ODC_BY> true)
+                (<http://publications.europa.eu/resource/authority/licence/ODC_PDDL> true)
+                (<http://publications.europa.eu/resource/authority/licence/OFL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGL_ROU_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OGTSL> true)
+                (<http://publications.europa.eu/resource/authority/licence/OPL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/OSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/OSL_2_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/OSL_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/PHP_3_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/POSTGRE_SQL> true)
+                (<http://publications.europa.eu/resource/authority/licence/PSEUL> true)
+                (<http://publications.europa.eu/resource/authority/licence/PYTHON_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/QPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/RPL_1_1> true)
+                (<http://publications.europa.eu/resource/authority/licence/RPL_1_5> true)
+                (<http://publications.europa.eu/resource/authority/licence/RPSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/RSCPL> true)
+                (<http://publications.europa.eu/resource/authority/licence/SIMPL_2_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/SLEEPYCAT> true)
+                (<http://publications.europa.eu/resource/authority/licence/SODL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/SPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/UCL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/UNLICENCE> true)
+                (<http://publications.europa.eu/resource/authority/licence/UPL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/VSL_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/W3C> true)
+                (<http://publications.europa.eu/resource/authority/licence/WATCOM_1_0> true)
+                (<http://publications.europa.eu/resource/authority/licence/WXWINDOWS> true)
+                (<http://publications.europa.eu/resource/authority/licence/XNET> true)
+                (<http://publications.europa.eu/resource/authority/licence/ZLIB> true)
+                (<http://publications.europa.eu/resource/authority/licence/ZPL_2_0> true)
+            }
+            }
+
+            BIND(IF(BOUND(?licenciaDistribucieJeOtvorena), 1, 0) AS ?otvorena)
+            BIND(IF(!BOUND(?licenciaDistribucieJeOtvorena), 1, 0) AS ?zatvorena)
+          } GROUP BY ?dataset
+        }
+
+        BIND((?o > 0 && ?z = 0) AS ?value)
+        BIND(\"sOtvorenouLicenciou\" AS ?metricId)
+        BIND(\"Otvorenosť licencie datasetu\"@sk AS ?definition)
+      }
+    }
+
+    BIND(\"https://data.gov.sk/set/observation/data-quality/\" AS ?prefix)
+    BIND(IRI(CONCAT(STR(:), ?metricId)) AS ?metric)
+    BIND(IRI(CONCAT(?prefix, ?metricId, \"/\", SHA256(STR(?dataset)))) AS ?measurement)
+  }
+}""";
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/f69b-8b13/configuration>
+    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+PREFIX hvd: <http://publications.europa.eu/resource/authority/dataset-type/HVD>
+
+CONSTRUCT {
+  ?metric a dqv:Metric ;
+    skos:definition ?definitionTemplate ;
+    dqv:expectedDataType xsd:integer .    
+
+  ?publisher dqv:hasQualityMeasurement ?measurment .
+
+  ?measurment a qb:Observation, dqv:QualityMeasurement ;
+    dqv:computedOn ?publisher ;
+    dqv:isMeasurementOf ?metric ;
+    dqv:value ?value .
+}
+WHERE {
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+       [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?publisher ;
+               dqv:isMeasurementOf [:isRequired true ; :type \"all\" ] ;
+               dqv:value ?obs .
+
+        BIND(\"pocetKontrolNaVyplneniePovinnychMetadat\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola na vyplnenie povinných metadát (počet kontrol)\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  } 
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+       [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?publisher ;
+               dqv:isMeasurementOf [:isRequired true ; :type \"valid\" ] ;
+               dqv:value ?obs .
+
+        BIND(\"pocetSplnenychKontrolNaVyplneniePovinnychMetadat\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola na vyplnenie povinných metadát (počet splnených kontrol)\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+       [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?publisher ;
+               dqv:isMeasurementOf [:isRequired false ; :type \"all\" ] ;
+               dqv:value ?obs .
+
+        BIND(\"pocetKontrolNaVyplnenieOdporucanychMetadat\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola na vyplnenie odporúčaných metadát (počet kontrol)\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  } 
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+       [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?publisher ;
+               dqv:isMeasurementOf [:isRequired false ; :type \"valid\" ] ;
+               dqv:value ?obs .
+
+        BIND(\"pocetSplnenychKontrolNaVyplnenieOdporucanychMetadat\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola na vyplnenie odporúčaných metadát (počet splnených kontrol)\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+        
+        BIND(1 as ?obs)
+        BIND(\"pocetDatasetovPoskytovatela\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov poskytovateľa\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+          
+        BIND(IF(EXISTS { ?dataset a dcat:DatasetSeries }, 1, 0) as ?obs)
+        BIND(\"pocetDatovychSeriiPoskytovatela\" AS ?aggregatedMetricId)
+        BIND(\"Počet dátových sérií poskytovateľa\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+                  
+        BIND(IF(EXISTS { ?dataset dct:type <https://data.gov.sk/def/dataset-type/1> }, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovPublikacnehoMinimaPoskytovatela\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov publikačného minima\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+                  
+        BIND(IF(EXISTS { ?dataset dct:type hvd: }, 1, 0) as ?obs)
+        BIND(\"pocetHvdDatasetovPoskytovatela\" AS ?aggregatedMetricId)
+        BIND(\"Počet HVD datasetov\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+                  
+        BIND(IF(EXISTS { ?dataset dct:type <https://data.gov.sk/def/dataset-type/3> }, 1, 0) as ?obs)
+        BIND(\"pocetNajziadanejsichDatasetovPoskytovatela\" AS ?aggregatedMetricId)
+        BIND(\"Počet najžiadanejších datasetov\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf :sOtvorenouLicenciou ;
+               dqv:value ?observedLicence .     
+        }
+        
+        BIND(IF(BOUND(?observedLicence) && ?observedLicence, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovSOtvorenouLicenciou\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov s otvorenou licenciou\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf :kvalitaDatasetu1 ;
+               dqv:value ?observedQuality .   
+        }
+        
+        BIND(IF(BOUND(?observedQuality) && ?observedQuality, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovSKvalitou1\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov s kvalitou 1*\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf :kvalitaDatasetu2 ;
+               dqv:value ?observedQuality .   
+        }
+        
+        BIND(IF(BOUND(?observedQuality) && ?observedQuality, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovSKvalitou2\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov s kvalitou 2*\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf :kvalitaDatasetu3 ;
+               dqv:value ?observedQuality .   
+        }
+        
+        BIND(IF(BOUND(?observedQuality) && ?observedQuality, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovSKvalitou3\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov s kvalitou 3*\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf :kvalitaDatasetu4 ;
+               dqv:value ?observedQuality .   
+        }
+        
+        BIND(IF(BOUND(?observedQuality) && ?observedQuality, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovSKvalitou4\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov s kvalitou 4*\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+  UNION
+  {
+    SELECT ?publisher ?aggregatedMetricId ?definitionTemplate (SUM(?obs) AS ?value) WHERE
+    {
+        nkod: dcat:dataset ?dataset .
+        ?dataset dct:publisher ?publisher .
+
+        OPTIONAL {
+          [] a qb:Observation, dqv:QualityMeasurement ;
+               dqv:computedOn ?dataset ;
+               dqv:isMeasurementOf :kvalitaDatasetu5 ;
+               dqv:value ?observedQuality .   
+        }
+        
+        BIND(IF(BOUND(?observedQuality) && ?observedQuality, 1, 0) as ?obs)
+        BIND(\"pocetDatasetovSKvalitou5\" AS ?aggregatedMetricId)
+        BIND(\"Počet datasetov s kvalitou 5*\" AS ?definitionTemplate)
+    } GROUP BY ?publisher ?aggregatedMetricId ?definitionTemplate  
+  }
+
+  BIND(\"https://data.gov.sk/set/observation/data-quality/\" as ?prefix)  
+  BIND(IRI(CONCAT(STR(:), ?aggregatedMetricId)) as ?metric)
+  BIND(IRI(CONCAT(?prefix, ?aggregatedMetricId, \"/\", SHA256(STR(?publisher)))) as ?measurment)
+}""";
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
 
 <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454710/configuration> {
@@ -3343,8 +5326,182 @@ WHERE {
 }
 
 <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454782> <http://linkedpipes.com/ontology/sourceBinding>
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454729> <http://linkedpipes.com/ontology/sourceBinding>
       "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454730>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454731> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454732>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454733> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454735> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454736>;
+    <http://linkedpipes.com/ontology/sourceBinding> "FilesOutput";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454737>;
+    <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454738> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454714>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845473>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454739> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454740>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845473fd9-81bd> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547110>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845473>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845474> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845475>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454741> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454730>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454742> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454719>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454745> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454746>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454747> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454734>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454748> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454723>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454751> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454752>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454754> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454755>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454756> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454757>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454758> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454759>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845475>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454760> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454714>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454710>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454761> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454762>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputFiles";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454736>;
+    <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454763> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454764>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454765> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454766>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454768> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputFile";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454769>;
+    <http://linkedpipes.com/ontology/targetBinding> "FilesInput" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845477> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845478>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454771> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454720>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputFile";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454770>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454772> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454728>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputFile";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454767>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputFiles" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454775> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454715>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454777> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454778>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845476>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454779> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454723>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454728>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454781> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
+    <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/16540877845475>;
+    <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
+  
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454782> a <http://linkedpipes.com/ontology/Connection>;
+    <http://linkedpipes.com/ontology/sourceComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454753>;
+    <http://linkedpipes.com/ontology/sourceBinding> "OutputRdf";
     <http://linkedpipes.com/ontology/targetComponent> <https://sk-nkod.opendata.cz/etl/resources/pipelines/165408778454719>;
     <http://linkedpipes.com/ontology/targetBinding> "InputRdf" .
   

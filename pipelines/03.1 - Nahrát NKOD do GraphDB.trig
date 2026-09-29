@@ -338,12 +338,11 @@ jako RDF Turtle""";
 PREFIX gsp: <http://plugins.linkedpipes.com/ontology/x-graphStorePurger#>
 
 CONSTRUCT { 
-?dataset a gsp:Task ;
-       gsp:graph ?dataset .
-} 
-WHERE { 
-GRAPH ?dataset {?dataset a ?datasetTypeUnion} 
-FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSeries)
+?g a gsp:Task ;
+       gsp:graph  ?g .
+} WHERE {
+    GRAPH ?g {?s ?p ?o}
+    FILTER(?g = <https://data.gov.sk/set/combined>)
 }""";
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
@@ -362,7 +361,7 @@ PREFIX gsp: <http://plugins.linkedpipes.com/ontology/l-graphStoreProtocol#>
 CONSTRUCT { 
   ?dataset a gsp:Entry ;
     gsp:fileName ?fileName ;
-    gsp:graph ?dataset .
+    gsp:graph <https://data.gov.sk/set/combined> .
 } 
 WHERE { 
   ?dataset a srtfl:Task ;
@@ -385,7 +384,7 @@ CONSTRUCT
     srtfl:hasTaskQuery ?queryIRI .
 
 ?queryIRI a srtfl:TaskQuery ;
-    srtfl:outputGraph ?dataset ;
+    srtfl:outputGraph <https://data.gov.sk/set/combined> ;
     srtfl:query ?query .
 }
 
