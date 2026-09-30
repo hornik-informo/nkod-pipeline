@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "06 - Kvalita metadatových záznamů v NKOD DQV";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T14:49:44.547"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2026-09-29T13:48:53.892541321"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2026-09-30T09:42:51.69514735"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "4";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/profile/default> .
   
@@ -669,6 +669,7 @@ WHERE {
           (:vyplnenyPravnyPredpisHvdDatasetu)
           (:vyplnenaKategoriaHvdDatasetu)
           (:vyplnenyPravnyPredpisHvdDistribucie)
+          (:vyplnenaDatovaSluzbaHvdDatasetu)
           (:vyplnenyNazovDatovejSluzbyHvdDatasetu)
           (:vyplnenyPristupovyBodDatovejSluzbyHvdDatasetu)
           (:vyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetu)
@@ -739,860 +740,6 @@ WHERE {
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#headerAcceptControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
     <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX dqv: <http://www.w3.org/ns/dqv#>
-PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX leg: <https://data.gov.sk/def/ontology/legislation/> 
-PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX dcatap: <http://data.europa.eu/r5r/>
-PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
-PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
-PREFIX hvdLeg: <http://data.europa.eu/eli/reg_impl/2023/138/oj>
-PREFIX hvd: <http://publications.europa.eu/resource/authority/dataset-type/HVD>
-
-CONSTRUCT {
-  ?metric a dqv:Metric ;
-    skos:definition ?definition ;
-    dqv:expectedDataType xsd:boolean .
-
-  ?dataset dqv:hasQualityMeasurement ?measurement .
-
-  ?measurement a qb:Observation, dqv:QualityMeasurement ;
-    dqv:computedOn ?dataset ;
-    dqv:isMeasurementOf ?metric ;
-    dqv:value ?value .
-}
-WHERE {
-  SELECT ?dataset ?metric ?measurement ?definition ?value WHERE {
-    {
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-
-          OPTIONAL {
-            ?dataset dct:description ?obj .
-            FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
-          }
-      
-          BIND(\"vyplnenyPopisDatasetu\" AS ?metricId)
-          BIND(\"Kontrola ...\"@sk AS ?definition)
-          BIND(BOUND(?obj) AS ?value)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-
-          OPTIONAL {
-            ?dataset dcat:theme ?obj
-          }
-      
-          BIND(\"vyplnenaTemaDatasetu\" AS ?metricId)
-          BIND(\"Kontrola ...\"@sk AS ?definition)
-          BIND(BOUND(?obj) AS ?value)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-
-          OPTIONAL {
-            ?dataset dct:accrualPeriodicity ?obj
-          }
-      
-          BIND(\"vyplnenaPeriodicitaAktualizacieDatasetu\" AS ?metricId)
-          BIND(\"Kontrola ...\"@sk AS ?definition)
-          BIND(BOUND(?obj) AS ?value)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-
-          OPTIONAL {
-            ?dataset dcat:keyword ?obj .
-            FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
-          }
-      
-          BIND(\"vyplneneKlucoveSlovoDatasetu\" AS ?metricId)
-          BIND(\"Kontrola ...\"@sk AS ?definition)
-          BIND(BOUND(?obj) AS ?value)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-
-          OPTIONAL {
-            ?dataset dct:spatial ?obj .
-          }
-      
-          BIND(\"vyplneneUzemnePokrytieDatasetu\" AS ?metricId)
-          BIND(\"Kontrola ...\"@sk AS ?definition)
-          BIND(BOUND(?obj) AS ?value)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-
-          FILTER(EXISTS { ?dataset dcat:distribution ?anyDistribution })
-
-          FILTER(EXISTS { 
-            ?dataset dcat:distribution ?anyDistribution .
-
-            OPTIONAL {
-              ?anyDistribution dcat:accessService ?accessService
-            }
-            FILTER(!BOUND(?accessService))
-          })
-
-          BIND((!(
-            EXISTS {  
-              ?dataset dcat:distribution ?distribution .
-
-              OPTIONAL {
-                ?distribution dcat:accessService ?accessService
-              }
-
-              OPTIONAL {
-                ?distribution dcat:downloadURL ?downloadURL
-              }
-
-              FILTER(!BOUND(?accessService) && !BOUND(?downloadURL))
-            })) AS ?value)
-          BIND(\"vyplnenyOdkazNaStiahnutie\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {    
-        nkod: dcat:dataset ?dataset .
-        ?dataset dcat:distribution ?anyDistribution .
-
-        BIND((
-          NOT EXISTS {
-            ?dataset dcat:distribution ?distribution .
-            OPTIONAL {
-              ?distribution leg:termsOfUse ?terms .
-
-              OPTIONAL {
-                ?terms leg:authorsWorkType ?authorsWorkType .
-              }
-              OPTIONAL {
-                ?terms leg:databaseProtectedBySpecialRightsType ?databaseProtectedBySpecialRightsType .
-              }
-              OPTIONAL {
-                ?terms leg:originalDatabaseType ?originalDatabaseType .
-              }
-              OPTIONAL {
-                ?terms leg:personalDataContainmentType ?personalDataContainmentType .
-              }
-            }
-            FILTER(!(BOUND(?authorsWorkType) && BOUND(?originalDatabaseType) && BOUND(?databaseProtectedBySpecialRightsType) && BOUND(?personalDataContainmentType)))
-          }) AS ?value)
-        BIND(\"vyplnenaLicencia\" AS ?metricId)
-        BIND(\"Kontrola na vyplnenie licencie distribúcií.\"@sk AS ?definition)
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dcat:distribution ?anyDistribution .
-          ?anyDistribution dcat:downloadURL ?anyDownloadUrl .
-
-          BIND((!(
-            EXISTS {  
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:downloadURL ?downloadUrl .
-              OPTIONAL {
-                ?distribution dct:format ?format .
-                FILTER(ISIRI(?format))
-              }
-
-              FILTER(!BOUND(?format))
-            })) AS ?value)
-          BIND(\"vyplnenyFormat\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dcat:distribution ?anyDistribution .
-          ?anyDistribution dcat:downloadURL ?anyDownloadUrl .
-
-          BIND((!(
-            EXISTS {  
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:downloadURL ?downloadUrl .
-              OPTIONAL {
-                ?distribution dcat:mediaType ?mediaType .
-                FILTER(ISIRI(?mediaType))
-              }
-
-              FILTER(!BOUND(?mediaType))
-            })) AS ?value)
-          BIND(\"vyplnenyTypMedia\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          BIND((EXISTS { ?dataset dcatap:applicableLegislation hvdLeg: }) AS ?value) 
-          BIND(\"vyplnenyPravnyPredpisHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          BIND((EXISTS { ?dataset dcatap:hvdCategory ?hvdCategory }) AS ?value) 
-          BIND(\"vyplnenaKategoriaHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-          ?dataset dcat:distribution ?anyDistribution .
-          
-          BIND((!(EXISTS { 
-            ?dataset dcat:distribution ?distribution .
-            FILTER NOT EXISTS { ?distribution dcatap:applicableLegislation hvdLeg: }
-          })) AS ?value) 
-          BIND(\"vyplnenyPravnyPredpisHvdDistribucie\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          BIND((EXISTS { 
-            ?dataset dcat:distribution ?distribution .
-            ?distribution dcat:accessService [] .
-          }) AS ?value) 
-          BIND(\"vyplnenaDatovaSluzbaHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-              OPTIONAL {
-                ?service dct:title ?obj .
-                FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
-              }
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyNazovDatovejSluzbyHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-              OPTIONAL {
-                ?service dcat:endpointURL ?obj .
-                FILTER(ISIRI(?obj))
-              }
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyPristupovyBodDatovejSluzbyHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-              OPTIONAL {
-                 ?service foaf:page ?obj .
-                FILTER(ISIRI(?obj))
-              }
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-
-              OPTIONAL {
-                ?service dcat:contactPoint ?contactPoint .
-                OPTIONAL {
-                  ?contactPoint vcard:hasEmail ?obj .
-                  FILTER(ISIRI(?obj))
-                }
-              }
-
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyKontaktnyBodDatovejSluzbyHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-              OPTIONAL {
-                ?service dct:title ?obj .
-                FILTER(ISLITERAL(?obj) && STRLEN(?obj) > 0 && (LANG(?obj) = \"sk\" || LANG(?obj) = \"\"))
-              }
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyNazovDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-              OPTIONAL {
-                ?service dcat:endpointURL ?obj .
-                FILTER(ISIRI(?obj))
-              }
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyPristupovyBodDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-              OPTIONAL {
-                 ?service foaf:page ?obj .
-                FILTER(ISIRI(?obj))
-              }
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          FILTER(NOT EXISTS { ?dataset dct:type hvd: })
-
-          FILTER(EXISTS {
-            ?dataset dcat:distribution ?anyDistribution .
-            ?anyDistribution dcat:accessService ?service .
-          })
-
-          BIND((
-            NOT EXISTS {
-              ?dataset dcat:distribution ?distribution .
-              ?distribution dcat:accessService ?service .
-
-              OPTIONAL {
-                ?service dcat:contactPoint ?contactPoint .
-                OPTIONAL {
-                  ?contactPoint vcard:hasEmail ?obj .
-                  FILTER(ISIRI(?obj))
-                }
-              }
-
-              FILTER(!BOUND(?obj))
-            }
-          ) AS ?value) 
-          BIND(\"vyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvd\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          OPTIONAL { 
-            ?dataset dct:temporal ?temporal .
-            OPTIONAL {
-              ?temporal dcat:startDate ?startDate ;
-            }
-            OPTIONAL {
-              ?temporal dcat:endDate ?endDate ;
-            }
-          }
-
-          BIND((BOUND(?startDate) || BOUND(?endDate)) AS ?value) 
-          BIND(\"vyplneneCasovePokrytieDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          OPTIONAL { 
-            ?dataset dct:issued ?obj .
-          }
-
-          BIND(BOUND(?obj) AS ?value) 
-          BIND(\"vyplnenyDatumVytvoreniaDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          OPTIONAL {
-            ?dataset dcat:contactPoint ?contactPoint .
-            ?contactPoint vcard:hasEmail ?obj .
-            FILTER(ISIRI(?obj))
-          }
-
-          BIND(BOUND(?obj) AS ?value) 
-          BIND(\"vyplnenyKontaktnyBodDatasetu\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          
-          BIND((EXISTS { ?dataset a dcat:DatasetSeries }) AS ?value) 
-          BIND(\"jeDatovouSeriou\" AS ?metricId)
-          BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        {
-          SELECT ?dataset (MAX(?kvalitaDistribucie) AS ?kvalita) WHERE {
-            nkod: dcat:dataset ?dataset .
-            ?dataset dcat:distribution ?distribution .
-            ?distribution dct:format ?format .
-
-            VALUES (?format ?kvalitaDistribucie) {
-                (<http://publications.europa.eu/resource/authority/file-type/RDF> 5)
-                (<http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> 5)
-                (<http://publications.europa.eu/resource/authority/file-type/RDF_XML> 5)
-                (<http://publications.europa.eu/resource/authority/file-type/JSON_LD> 5)
-
-                (<http://publications.europa.eu/resource/authority/file-type/XML> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/GEOJSON> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/CSV> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/JSON> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/ODS> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/SCHEMA_XML> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/ATOM> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/csv> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/GML> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/xml> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/KML> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/GPKG> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/json> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/WFS_SRVC> 3)
-                (<http://publications.europa.eu/resource/authority/file-type/HDF> 3)
-
-                (<http://publications.europa.eu/resource/authority/file-type/XLSX> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/ZIP> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/XLS> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/xlsx> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/SHP> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/xls> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/GDB> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/XLSM> 2)
-                (<http://publications.europa.eu/resource/authority/file-type/TAR> 2)
-
-                (<http://publications.europa.eu/resource/authority/file-type/PDF> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/HTML> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/XHTML> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/WMS_SRVC> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/pdf> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/TIFF> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/DOCX> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/DOC> 1)
-                (<http://publications.europa.eu/resource/authority/file-type/RAR> 1)
-            }
-          } GROUP BY ?dataset
-        }
-        
-        BIND(true AS ?value) 
-        BIND(CONCAT(\"kvalitaDatasetu\", STR(?kvalita)) AS ?metricId)
-        BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-      }
-      UNION
-      {
-        {
-          SELECT ?dataset (SUM(?otvorena) AS ?o) (SUM(?zatvorena) AS ?z) WHERE {
-            {
-              SELECT ?dataset ?licencia WHERE {
-                {
-                  SELECT ?dataset ?licencia WHERE {
-                    nkod: dcat:dataset ?dataset .
-                    ?dataset dcat:distribution ?distribution .
-                    ?distribution leg:termsOfUse ?terms .
-                    ?terms leg:authorsWorkType ?licencia
-                  }
-                }
-                UNION
-                {
-                  SELECT ?dataset ?licencia WHERE {
-                    nkod: dcat:dataset ?dataset .
-                    ?dataset dcat:distribution ?distribution .
-                    ?distribution leg:termsOfUse ?terms .
-                    ?terms leg:originalDatabaseType ?licencia
-                  }
-                }
-                UNION
-                {
-                  SELECT ?dataset ?licencia WHERE {
-                    nkod: dcat:dataset ?dataset .
-                    ?dataset dcat:distribution ?distribution .
-                    ?distribution leg:termsOfUse ?terms .
-                    ?terms leg:databaseProtectedBySpecialRightsType ?licencia
-                  }
-                }
-              }
-            }
-
-            OPTIONAL {
-            VALUES (?licencia ?licenciaDistribucieJeOtvorena) {
-              (<http://publications.europa.eu/resource/authority/licence/0BSD> true)
-                (<http://publications.europa.eu/resource/authority/licence/AFL_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/AGPL_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/AGPL_3_0_OR_LATER> true)
-                (<http://publications.europa.eu/resource/authority/licence/APACHE_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/APACHE_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/APL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/APSL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ARTISTIC_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ARTISTIC_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/BSD_2_CLAUSE> true)
-                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE> true)
-                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSECLEAR> true)
-                (<http://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE_LBNL> true)
-                (<http://publications.europa.eu/resource/authority/licence/BSD_PLUS_PATENT> true)
-                (<http://publications.europa.eu/resource/authority/licence/BSL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CATOSL_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_2_5> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0_AT> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_3_0_NL> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CC_PDM_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CDDL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CECILL_2_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/CECILL_B_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CECILL_C_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CLARIN_ACA_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CNRI_PYTHON> true)
-                (<http://publications.europa.eu/resource/authority/licence/COM_REUSE> true)
-                (<http://publications.europa.eu/resource/authority/licence/CPAL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/CPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/DFSL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/DLDE_BY_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/DLDE_BY_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/DLDE_ZERO_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ECL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ECL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ECOS_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/EFL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/EFL_2> true)
-                (<http://publications.europa.eu/resource/authority/licence/ENTESSA> true)
-                (<http://publications.europa.eu/resource/authority/licence/EPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/EPL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ETALAB_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/EUPL_1_2> true)
-                (<http://publications.europa.eu/resource/authority/licence/EUROGEO_2022> true)
-                (<http://publications.europa.eu/resource/authority/licence/EUROGEO_2024> true)
-                (<http://publications.europa.eu/resource/authority/licence/EU_DATAGRID> true)
-                (<http://publications.europa.eu/resource/authority/licence/FAIR> true)
-                (<http://publications.europa.eu/resource/authority/licence/FRAMEWORX_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_2> true)
-                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3> true)
-                (<http://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3_OR_LATER> true)
-                (<http://publications.europa.eu/resource/authority/licence/GPL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/GPL_2_0_OR_LATER> true)
-                (<http://publications.europa.eu/resource/authority/licence/GPL_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/GPL_3_0_OR_LATER> true)
-                (<http://publications.europa.eu/resource/authority/licence/HPND> true)
-                (<http://publications.europa.eu/resource/authority/licence/HROD> true)
-                (<http://publications.europa.eu/resource/authority/licence/IODL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/IODL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/IPA> true)
-                (<http://publications.europa.eu/resource/authority/licence/IPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ISA_OML_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/ISC> true)
-                (<http://publications.europa.eu/resource/authority/licence/LGPL_2_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/LGPL_2_1_OR_LATER> true)
-                (<http://publications.europa.eu/resource/authority/licence/LGPL_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/LGPL_3_0_OR_LATER> true)
-                (<http://publications.europa.eu/resource/authority/licence/LILIQ_P_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/LILIQ_RPLUS_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/LILIQ_R_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/LPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/LPL_1_02> true)
-                (<http://publications.europa.eu/resource/authority/licence/LPPL_1_3C> true)
-                (<http://publications.europa.eu/resource/authority/licence/MIROS> true)
-                (<http://publications.europa.eu/resource/authority/licence/MIT> true)
-                (<http://publications.europa.eu/resource/authority/licence/MOTOSOTO> true)
-                (<http://publications.europa.eu/resource/authority/licence/MPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/MPL_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/MPL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/MS_PL> true)
-                (<http://publications.europa.eu/resource/authority/licence/MS_RL> true)
-                (<http://publications.europa.eu/resource/authority/licence/MULTICS> true)
-                (<http://publications.europa.eu/resource/authority/licence/NASA_1_3> true)
-                (<http://publications.europa.eu/resource/authority/licence/NAUMEN> true)
-                (<http://publications.europa.eu/resource/authority/licence/NCSA> true)
-                (<http://publications.europa.eu/resource/authority/licence/NGPL> true)
-                (<http://publications.europa.eu/resource/authority/licence/NLOD_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/NLOD_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/NOKIA> true)
-                (<http://publications.europa.eu/resource/authority/licence/NTP> true)
-                (<http://publications.europa.eu/resource/authority/licence/OCLC_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/ODC_BL> true)
-                (<http://publications.europa.eu/resource/authority/licence/ODC_BY> true)
-                (<http://publications.europa.eu/resource/authority/licence/ODC_PDDL> true)
-                (<http://publications.europa.eu/resource/authority/licence/OFL_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/OGL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/OGL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/OGL_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/OGL_ROU_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/OGTSL> true)
-                (<http://publications.europa.eu/resource/authority/licence/OPL_2_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/OSL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/OSL_2_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/OSL_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/PHP_3_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/POSTGRE_SQL> true)
-                (<http://publications.europa.eu/resource/authority/licence/PSEUL> true)
-                (<http://publications.europa.eu/resource/authority/licence/PYTHON_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/QPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/RPL_1_1> true)
-                (<http://publications.europa.eu/resource/authority/licence/RPL_1_5> true)
-                (<http://publications.europa.eu/resource/authority/licence/RPSL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/RSCPL> true)
-                (<http://publications.europa.eu/resource/authority/licence/SIMPL_2_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/SLEEPYCAT> true)
-                (<http://publications.europa.eu/resource/authority/licence/SODL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/SPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/UCL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/UNLICENCE> true)
-                (<http://publications.europa.eu/resource/authority/licence/UPL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/VSL_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/W3C> true)
-                (<http://publications.europa.eu/resource/authority/licence/WATCOM_1_0> true)
-                (<http://publications.europa.eu/resource/authority/licence/WXWINDOWS> true)
-                (<http://publications.europa.eu/resource/authority/licence/XNET> true)
-                (<http://publications.europa.eu/resource/authority/licence/ZLIB> true)
-                (<http://publications.europa.eu/resource/authority/licence/ZPL_2_0> true)
-            }
-            }
-
-            BIND(IF(BOUND(?licenciaDistribucieJeOtvorena), 1, 0) AS ?otvorena)
-            BIND(IF(!BOUND(?licenciaDistribucieJeOtvorena), 1, 0) AS ?zatvorena)
-          } GROUP BY ?dataset
-        }
-
-        BIND((?o > 0 && ?z = 0) AS ?value)
-        BIND(\"sOtvorenouLicenciou\" AS ?metricId)
-        BIND(\"Kontrola na vyplnenie ...\"@sk AS ?definition)
-      }
-    }
-
-    BIND(\"https://data.gov.sk/set/observation/data-quality/\" AS ?prefix)
-    BIND(IRI(CONCAT(STR(:), ?metricId)) AS ?metric)
-    BIND(IRI(CONCAT(?prefix, ?metricId, \"/\", SHA256(STR(?dataset)))) AS ?measurement)
-  }
-}""";
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthenticationControl>
-      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepository> false;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepositoryControl>
-      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#userNameControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit> .
-}
-
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194/configuration> {
-  <http://etl.linkedpipes.com/resources/components/t-singleGraphUnion/0.0.0/configuration/1>
-    a <http://plugins.linkedpipes.com/ontology/t-singleGraphUnion#Configuration> .
-}
-
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration>
-    a <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#defaultGraphControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdf> false;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdfControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpoint> "http://localhost:7200/repositories/nodc";
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpointControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidData> false;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidDataControl>
-      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#headerAcceptControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX dqv: <http://www.w3.org/ns/dqv#>
-PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
-
-CONSTRUCT {
-  nkod: dcat:dataset ?dataset .
-  ?dataset a ?class .
-  ?dataset dct:type ?type .
-  ?dataset dct:publisher ?publisher .
-  ?dataset dcat:distribution ?distribution .
-}
-WHERE {
-  nkod: dcat:dataset ?dataset .
-  OPTIONAL { ?dataset a ?class . }
-  OPTIONAL { ?dataset dct:type ?type . }
-  OPTIONAL { ?dataset dct:publisher ?publisher . }
-  OPTIONAL { ?dataset dcat:distribution ?distribution . }
-}""";
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthenticationControl>
-      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepository> false;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepositoryControl>
-      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
-    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#userNameControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit> .
-}
-
-<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration> {
-  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration>
-    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
-    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX qb: <http://purl.org/linked-data/cube#>
@@ -1849,6 +996,25 @@ WHERE {
           }) AS ?value) 
           BIND(\"vyplnenaDatovaSluzbaHvdDatasetu\" AS ?metricId)
           BIND(\"Kontrola vyplnenia HVD dátovej služby\"@sk AS ?definition)
+        }
+      }
+      UNION
+      {
+        SELECT ?dataset ?value ?definition ?metricId WHERE {
+          nkod: dcat:dataset ?dataset .
+          ?dataset dct:type hvd: .
+
+          BIND((
+            EXISTS {
+              OPTIONAL {
+                ?dataset dcat:distribution ?distribution .
+                ?distribution dcat:accessService ?service .
+              }
+              FILTER(BOUND(?service))
+            }
+          ) AS ?value) 
+          BIND(\"vyplnenaDatovaSluzbaHvdDatasetu\" AS ?metricId)
+          BIND(\"Kontrola vyplnenia dátovej služby HVD datasetu\"@sk AS ?definition)
         }
       }
       UNION
@@ -2381,6 +1547,165 @@ WHERE {
     BIND(IRI(CONCAT(STR(:), ?metricId)) AS ?metric)
     BIND(IRI(CONCAT(?prefix, ?metricId, \"/\", SHA256(STR(?dataset)))) AS ?measurement)
   }
+}""";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthenticationControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepository> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepositoryControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#userNameControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/8d03-b194/configuration> {
+  <http://etl.linkedpipes.com/resources/components/t-singleGraphUnion/0.0.0/configuration/1>
+    a <http://plugins.linkedpipes.com/ontology/t-singleGraphUnion#Configuration> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/9102-9bcb/configuration>
+    a <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#defaultGraphControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdf> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#encodeRdfControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpoint> "http://localhost:7200/repositories/nodc";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#endpointControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidData> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#handleInvalidDataControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#headerAcceptControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#passwordControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+
+CONSTRUCT {
+  nkod: dcat:dataset ?dataset .
+  ?dataset a ?class .
+  ?dataset dct:type ?type .
+  ?dataset dct:publisher ?publisher .
+  ?dataset dcat:distribution ?distribution .
+}
+WHERE {
+  nkod: dcat:dataset ?dataset .
+  OPTIONAL { ?dataset a ?class . }
+  OPTIONAL { ?dataset dct:type ?type . }
+  OPTIONAL { ?dataset dct:publisher ?publisher . }
+  OPTIONAL { ?dataset dcat:distribution ?distribution . }
+}""";
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthentication> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useAuthenticationControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepository> false;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#useTolerantRepositoryControl>
+      <http://plugins.linkedpipes.com/resource/configuration/Inherit>;
+    <http://plugins.linkedpipes.com/ontology/e-sparqlEndpoint#userNameControl> <http://plugins.linkedpipes.com/resource/configuration/Inherit> .
+}
+
+<https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration> {
+  <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654087784547/component/c95d-8548/configuration>
+    a <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#Configuration>;
+    <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query> """PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX nkod: <https://data.gov.sk/set/catalog/nkod>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://data.gov.sk/def/observation/data-quality/metrics/>
+
+CONSTRUCT {
+  ?allMetric a dqv:Metric ;
+    skos:definition ?definitionTemplate ;
+    :isRequired ?isRequired ;
+    :type \"all\" ;
+    dqv:expectedDataType xsd:integer .    
+
+ ?validMetric a dqv:Metric ;
+    skos:definition ?definitionTemplate ;
+    :isRequired ?isRequired;
+    :type \"valid\" ;
+    dqv:expectedDataType xsd:integer .    
+
+  ?publisher dqv:hasQualityMeasurement ?allMeasurment .
+  ?publisher dqv:hasQualityMeasurement ?validMeasurment .
+
+  ?allMeasurment a qb:Observation, dqv:QualityMeasurement ;
+    dqv:computedOn ?publisher ;
+    dqv:isMeasurementOf ?allMetric ;
+    dqv:value ?all .
+
+  ?validMeasurment a qb:Observation, dqv:QualityMeasurement ;
+    dqv:computedOn ?publisher ;
+    dqv:isMeasurementOf ?validMetric ;
+    dqv:value ?valid .
+}
+WHERE {
+ {
+ SELECT ?publisher ?isOptional ?aggregatedMetricId ?aggegatedMetricValidId ?definitionTemplate (SUM(?matched) AS ?all) (SUM(?matchedValid) AS ?valid)
+  WHERE {
+    VALUES (?sourceMetric ?isOptional ?aggregatedMetricId ?aggegatedMetricValidId ?definitionTemplate)
+    {
+      (:vyplnenyPopisDatasetu false \"pocetKontrolPopisDatasetuPoskytovatela\" \"pocetSplnenychKontrolPopisDatasetuPoskytovatela\" \"Kontrola na vyplnenie popisu datasetov poskytovateľa dct:description\")
+      (:vyplnenaTemaDatasetu false \"pocetKontrolTemaDatasetuPoskytovatela\" \"pocetSplnenychKontrolTemaDatasetuPoskytovatela\" \"Kontrola poskytovateľa dcat:theme\")
+      (:vyplnenaPeriodicitaAktualizacieDatasetu false \"pocetKontrolPeriodicitaAktualizacieDatasetuPoskytovatela\" \"pocetSplnenychKontrolPeriodicitaAktualizacieDatasetuPoskytovatela\" \"Kontrola poskytovateľa dct:accrualPeriodicity\")
+      (:vyplneneKlucoveSlovoDatasetu false \"pocetKontrolKlucoveSlovoDatasetuPoskytovatela\" \"pocetSplnenychKontrolKlucoveSlovoDatasetuPoskytovatela\" \"Kontrola poskytovateľa dcat:keyword\")
+      (:vyplneneUzemnePokrytieDatasetu false \"pocetKontrolUzemnePokrytieDatasetuPoskytovatela\" \"pocetSplnenychKontrolUzemnePokrytieDatasetuPoskytovatela\" \"Kontrola poskytovateľa dct:spatial\")
+      (:vyplnenyOdkazNaStiahnutie false \"pocetKontrolOdkazNaStiahnutieDatasetuPoskytovatela\" \"pocetSplnenychKontrolOdkazNaStiahnutieDatasetuPoskytovatela\" \"Kontrola poskytovateľa dcat:downloadURL\")
+      (:vyplnenaLicencia false \"pocetKontrolVyplnenaLicenciaDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenaLicenciaDatasetuPoskytovatela\" \"Kontrola poskytovateľa leg:termsOfUse\")
+      (:vyplnenyFormat false \"pocetKontrolVyplnenyFormatDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyFormatDatasetuPoskytovatela\" \"Kontrola poskytovateľa dct:format\")
+      (:vyplnenyTypMedia false \"pocetKontrolVyplnenyTypMediaDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyTypMediaDatasetuPoskytovatela\" \"Kontrola poskytovateľa dcat:mediaType\")
+      (:vyplnenyPravnyPredpisHvdDatasetu false \"pocetKontrolVyplnenyPravnyPredpisHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyPravnyPredpisHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa dcatap:applicableLegislation na úrovni datasetu\")
+      (:vyplnenaKategoriaHvdDatasetu false \"pocetKontrolVyplnenaKategoriaHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenaKategoriaHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa dcatap:hvdCategory\")
+      (:vyplnenyPravnyPredpisHvdDistribucie false \"pocetKontrolVyplnenyPravnyPredpisHvdDistribuciePoskytovatela\" \"pocetSplnenychKontrolVyplnenyPravnyPredpisHvdDistribuciePoskytovatela\" \"Kontrola poskytovateľa dcatap:applicableLegislation na úrovni distribúcie\")
+      (:vyplnenaDatovaSluzbaHvdDatasetu false \"pocetKontrolVyplnenaDatovaSluzbaHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenaDatovaSluzbaHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa dátovej služby HVD\")
+      (:vyplnenyNazovDatovejSluzbyHvdDatasetu false \"pocetKontrolVyplnenyNazovDatovejSluzbyHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyNazovDatovejSluzbyHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa názov dátovej služby HVD\")
+      (:vyplnenyPristupovyBodDatovejSluzbyHvdDatasetu false \"pocetKontrolVyplnenyPristupovyBodDatovejSluzbyHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyPristupovyBodDatovejSluzbyHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa prístupový bod dátovej služby HVD\")
+      (:vyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetu false \"pocetKontrolVyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyOdkazNaDokumentaciuDatovejSluzbyHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa dokumentácie dátovej služby HVD\")
+      (:vyplnenyKontaktnyBodDatovejSluzbyHvdDatasetu false \"pocetKontrolVyplnenyKontaktnyBodDatovejSluzbyHvdDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyKontaktnyBodDatovejSluzbyHvdDatasetuPoskytovatela\" \"Kontrola poskytovateľa kontakt dátovej služby HVD\")
+
+      (:vyplnenyNazovDatovejSluzbyDatasetuMimoHvd false \"pocetKontrolVyplnenyNazovDatovejSluzbyDatasetovMimoHvdPoskytovatela\" \"pocetSplnenychKontrolVyplnenyNazovDatovejSluzbyDatasetovMimoHvdPoskytovatela\" \"Kontrola poskytovateľa názov dátovej služby mimo HVD\")
+      (:vyplnenyPristupovyBodDatovejSluzbyDatasetuMimoHvd false \"pocetKontrolVyplnenyPristupovyBodDatovejSluzbyDatasetovMimoHvdPoskytovatela\" \"pocetSplnenychKontrolVyplnenyPristupovyBodDatovejSluzbyDatasetovMimoHvdPoskytovatela\" \"Kontrola poskytovateľa prístupový bod mimo dátovej služby HVD\")
+
+      (:vyplneneCasovePokrytieDatasetu true \"pocetKontrolVyplneneCasovePokrytieDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplneneCasovePokrytieDatasetuPoskytovatela\" \"Kontrola poskytovateľa časové pokrytie\")
+      (:vyplnenyKontaktnyBodDatasetu true \"pocetKontrolVyplnenyKontaktnyBodDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyKontaktnyBodDatasetuPoskytovatela\" \"Kontrola poskytovateľa kontakt datasetu\")
+      (:vyplnenyDatumVytvoreniaDatasetu true \"pocetKontrolVyplnenyDatumVytvoreniaDatasetuPoskytovatela\" \"pocetSplnenychKontrolVyplnenyDatumVytvoreniaDatasetuPoskytovatela\" \"Kontrola poskytovateľa dátum vytvorenia datasetu\")
+      (:vyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvd true \"pocetKontrolVyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvdPoskytovatela\" \"pocetSplnenychKontrolVyplnenyOdkazNaDokumentaciuDatovejSluzbyDatasetuMimoHvdPoskytovatela\" \"Kontrola poskytovateľa dokumentácie dátovej služby mimo HVD\")
+      (:vyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvd true \"pocetKontrolVyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvdPoskytovatela\" \"pocetSplnenychKontrolVyplnenyKontaktnyBodDatovejSluzbyDatasetuMimoHvdPoskytovatela\" \"Kontrola poskytovateľa kontakt dátovej služby mimo HVD\")
+    }
+
+    nkod: dcat:dataset ?dataset .
+    ?dataset dct:publisher ?publisher .
+
+    OPTIONAL {
+      ?observation a qb:Observation, dqv:QualityMeasurement ;
+        dqv:computedOn ?dataset ;
+        dqv:isMeasurementOf ?sourceMetric ;
+        dqv:value ?obsValue .
+    }
+
+    BIND(IF(BOUND(?observation), 1, 0) AS ?matched)
+    BIND(IF(BOUND(?observation) && ?obsValue = true, 1, 0) AS ?matchedValid)
+  }
+  GROUP BY ?publisher ?isOptional ?aggregatedMetricId ?aggegatedMetricValidId ?definitionTemplate
+ }
+
+  BIND(\"https://data.gov.sk/set/observation/data-quality/\" as ?prefix)
+  
+  BIND(IRI(CONCAT(STR(:), ?aggregatedMetricId)) as ?allMetric)
+  BIND(IRI(CONCAT(?prefix, ?aggregatedMetricId, \"/\", SHA256(STR(?publisher)))) as ?allMeasurment)
+
+  BIND(IRI(CONCAT(STR(:), ?aggegatedMetricValidId)) as ?validMetric)
+  BIND(IRI(CONCAT(?prefix, ?aggegatedMetricValidId, \"/\", SHA256(STR(?publisher)))) as ?validMeasurment)
+
+  BIND((IF(BOUND(?isOptional), !?isOptional, true)) AS ?isRequired)
 }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None> .
 }
