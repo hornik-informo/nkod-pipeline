@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "03.1 - Nahrát NKOD do GraphDB";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T08:42:39.929"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2024-02-08T20:47:05.040576985"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2026-10-01T12:58:17.514986395"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "3";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654065759929/profile/default> .
   
@@ -465,6 +465,7 @@ CONSTRUCT {
     dcat:compressFormat ?dcompressFormat ;
     dcat:packageFormat ?dpackageFormat ;
     dcterms:title ?dtitle ;
+    dcterms:language ?language ;
     dcatap:applicableLegislation ?dApplicableLegislation ;
 	leg:termsOfUse ?pu .
 
@@ -542,6 +543,7 @@ WHERE {
     OPTIONAL { ?distribution dcat:compressFormat ?dcompressFormat . }
     OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
     OPTIONAL { ?distribution dcterms:title ?dtitle . }
+    OPTIONAL { ?distribution dcterms:language ?language . }
     OPTIONAL {
         ?distribution dcat:accessService ?dataService .
         ?dataService a dcat:DataService ;
