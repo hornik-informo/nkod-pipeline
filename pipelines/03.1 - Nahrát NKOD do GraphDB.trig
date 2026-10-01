@@ -4,7 +4,7 @@
     <http://www.w3.org/2004/02/skos/core#prefLabel> "03.1 - Nahrát NKOD do GraphDB";
     <http://etl.linkedpipes.com/ontology/version> "5"^^<http://www.w3.org/2001/XMLSchema#int>;
     <http://linkedpipes.com/ontology/events/created> "2022-06-01T08:42:39.929"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-    <http://linkedpipes.com/ontology/lastUpdate> "2026-10-01T12:58:17.514986395"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://linkedpipes.com/ontology/lastUpdate> "2026-10-01T14:12:09.105286617"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
     <http://etl.linkedpipes.com/ontology/tag> "3";
     <http://linkedpipes.com/ontology/profile> <https://sk-nkod.opendata.cz/etl/resources/pipelines/1654065759929/profile/default> .
   
@@ -405,6 +405,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX locn: <http://www.w3.org/ns/locn#>
 PREFIX dcatap: <http://data.europa.eu/r5r/>
+PREFIX sk-ds: <https://data.gov.sk/def/ontology/dataset/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
@@ -437,7 +438,19 @@ CONSTRUCT {
     dcterms:hasPart ?lowerDataset ;
     dcterms:publisher ?publisher ;
 	dcterms:identifier ?identifier ;
+    sk-ds:mapPage ?mapPage ;
+    sk-ds:embedMap ?embeddableMap ;
 	dcat:distribution ?distribution .
+
+?embeddableMap a sk-ds:EmbeddableMap ;
+    sk-ds:embedURL ?mapEmbedUrl ;
+    sk-ds:minWidth ?mapMinWidth ;
+    sk-ds:maxWidth ?mapMaxWidth ;
+    sk-ds:minHeight ?mapMinHeight ;
+    sk-ds:maxHeight ?mapMaxHeight ;
+    sk-ds:recommendedWidth ?mapRecommendedWidth ;
+    sk-ds:recommendedHeight ?mapRecommendedHeight ;
+    sk-ds:recommendedAspectRatio ?mapRecommendedAspectRatio .
 
 ?spatial a dcterms:Location ;
     locn:geometry ?geo .
@@ -587,6 +600,16 @@ WHERE {
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcatap:applicableLegislation ?applicableLegislation .
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcatap:hvdCategory ?hvdCategory .
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:inSeries ?topDataset .
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> sk-ds:mapPage ?mapPage . 
+  } UNION { <\"\"\",STR(?dataset),\"\"\"> sk-ds:embedMap ?embeddableMap . 
+    ?embeddableMap sk-ds:embedURL ?mapEmbedUrl .
+    OPTIONAL { ?embeddableMap sk-ds:minWidth ?mapMinWidth . }
+    OPTIONAL { ?embeddableMap sk-ds:maxWidth ?mapMaxWidth . }
+    OPTIONAL { ?embeddableMap sk-ds:minHeight ?mapMinHeight . }
+    OPTIONAL { ?embeddableMap sk-ds:maxHeight ?mapMaxHeight . }
+    OPTIONAL { ?embeddableMap sk-ds:recommendedWidth ?mapRecommendedWidth . }
+    OPTIONAL { ?embeddableMap sk-ds:recommendedHeight ?mapRecommendedHeight . }
+    OPTIONAL { ?embeddableMap sk-ds:recommendedAspectRatio ?mapRecommendedAspectRatio . }
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcterms:identifier ?identifier .
   } UNION { <\"\"\",STR(?dataset),\"\"\"> dcat:theme ?theme .
 	OPTIONAL { ?theme skos:inScheme ?scheme . }
