@@ -639,7 +639,7 @@ PREFIX hvd: <http://publications.europa.eu/resource/authority/dataset-type/HVD>
 
 CONSTRUCT {
   ?metric a dqv:Metric ;
-    skos:definition ?definition ;
+    skos:definition ?definitionTemplate ;
     dqv:expectedDataType xsd:boolean .
 
   ?dataset dqv:hasQualityMeasurement ?measurement .
@@ -779,7 +779,7 @@ WHERE {
           }
       
           BIND(\"vyplnenyPopisDatasetu\" AS ?metricId)
-          BIND(\"Kontrola vyplnenia popisu datasetu dct:title\"@sk AS ?definition)
+          BIND(\"Kontrola vyplnenia popisu datasetu dct:description\"@sk AS ?definition)
           BIND(BOUND(?obj) AS ?value)
         }
       }
@@ -922,7 +922,7 @@ WHERE {
               FILTER(!BOUND(?format))
             })) AS ?value)
           BIND(\"vyplnenyFormat\" AS ?metricId)
-          BIND(\"Kontrola vyplnenia formátu dcat:mediaType\"@sk AS ?definition)
+          BIND(\"Kontrola vyplnenia formátu dct:format\"@sk AS ?definition)
         }
       }
       UNION
@@ -982,20 +982,6 @@ WHERE {
           })) AS ?value) 
           BIND(\"vyplnenyPravnyPredpisHvdDistribucie\" AS ?metricId)
           BIND(\"Kontrola vyplnenia HVD legislatívy distribúcie\"@sk AS ?definition)
-        }
-      }
-      UNION
-      {
-        SELECT ?dataset ?value ?definition ?metricId WHERE {
-          nkod: dcat:dataset ?dataset .
-          ?dataset dct:type hvd: .
-
-          BIND((EXISTS { 
-            ?dataset dcat:distribution ?distribution .
-            ?distribution dcat:accessService [] .
-          }) AS ?value) 
-          BIND(\"vyplnenaDatovaSluzbaHvdDatasetu\" AS ?metricId)
-          BIND(\"Kontrola vyplnenia HVD dátovej služby\"@sk AS ?definition)
         }
       }
       UNION
