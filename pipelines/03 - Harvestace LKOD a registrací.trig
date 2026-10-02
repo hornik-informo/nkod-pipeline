@@ -1842,6 +1842,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX schema: <http://schema.org/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX dcatap: <http://data.europa.eu/r5r/>
+PREFIX sk-ds: <https://data.gov.sk/def/ontology/dataset/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
@@ -1872,7 +1873,19 @@ CONSTRUCT {
   dcatap:hvdCategory ?hvdCategory ;
   dcat:landingPage ?landingPage ;
   dcat:inSeries ?topDataset ;
+  sk-ds:mapPage ?mapPage ;
+  sk-ds:embedMap ?embedMap ;
   dcat:distribution ?distribution .
+
+  ?embedMap a sk-ds:EmbeddableMap ;
+  sk-ds:embedURL ?mapEmbedUrl ;
+  sk-ds:minWidth ?mapMinWidth ;
+  sk-ds:maxWidth ?mapMaxWidth ;
+  sk-ds:minHeight ?mapMinHeight ;
+  sk-ds:maxHeight ?mapMaxHeight ;
+  sk-ds:recommendedWidth ?mapRecommendedWidth ;
+  sk-ds:recommendedHeight ?mapRecommendedHeight ;
+  sk-ds:recommendedAspectRatio ?mapRecommendedAspectRatio .
 
   ?cp a ?cptype;
   vcard:fn ?cpfn ;
@@ -1892,6 +1905,7 @@ CONSTRUCT {
   dcat:compressFormat ?dcompressFormat ;
   dcatap:applicableLegislation ?distributionApplicableLegislation ;
   dcat:packageFormat ?dpackageFormat ;
+  dcterms:language ?language ;
   dcterms:title ?dtitle .
 
   ?distribution leg:termsOfUse ?pu .
@@ -1965,6 +1979,19 @@ CONSTRUCT {
   OPTIONAL { ?dataset dcat:inSeries ?topDatasetDcat3 . }
   OPTIONAL { ?dataset dcterms:isPartOf ?topDatasetDcat2 . }
 
+  OPTIONAL { ?dataset sk-ds:mapPage ?mapPage . }
+  OPTIONAL {
+  ?dataset sk-ds:embedMap ?embedMap .
+  ?embedMap sk-ds:embedURL ?mapEmbedUrl .
+  OPTIONAL { ?embedMap sk-ds:minWidth ?mapMinWidth . }
+  OPTIONAL { ?embedMap sk-ds:maxWidth ?mapMaxWidth . }
+  OPTIONAL { ?embedMap sk-ds:minHeight ?mapMinHeight . }
+  OPTIONAL { ?embedMap sk-ds:maxHeight ?mapMaxHeight . }
+  OPTIONAL { ?embedMap sk-ds:recommendedWidth ?mapRecommendedWidth . }
+  OPTIONAL { ?embedMap sk-ds:recommendedHeight ?mapRecommendedHeight . }
+  OPTIONAL { ?embedMap sk-ds:recommendedAspectRatio ?mapRecommendedAspectRatio . }
+  }
+
   OPTIONAL {
   ?dataset dcat:distribution ?distribution .
   FILTER(isIRI(?distribution))
@@ -1994,6 +2021,10 @@ CONSTRUCT {
   OPTIONAL { ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation . }
   OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
   OPTIONAL { ?distribution dcterms:title ?dtitle . }
+  OPTIONAL {
+  ?distribution dcterms:language ?language .
+  FILTER(isIRI(?language))
+  }
 
   OPTIONAL {
   ?distribution dcat:accessService ?dataService .
@@ -2440,6 +2471,7 @@ PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX gr: <http://purl.org/goodrelations/v1#>
 PREFIX dcatap: <http://data.europa.eu/r5r/>
+PREFIX sk-ds: <https://data.gov.sk/def/ontology/dataset/>
 
 PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
 
@@ -2469,7 +2501,19 @@ PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
   dcatap:applicableLegislation ?applicableLegislation ;
   dcatap:hvdCategory ?hvdCategory ;
   dcat:landingPage ?landingPage ;
+  sk-ds:mapPage ?mapPage ;
+  sk-ds:embedMap ?embeddable_map_new ;
   dcterms:identifier ?dataset_old_str .
+
+  ?embeddable_map_new a sk-ds:EmbeddableMap ;
+  sk-ds:embedURL ?mapEmbedUrl ;
+  sk-ds:minWidth ?mapMinWidth ;
+  sk-ds:maxWidth ?mapMaxWidth ;
+  sk-ds:minHeight ?mapMinHeight ;
+  sk-ds:maxHeight ?mapMaxHeight ;
+  sk-ds:recommendedWidth ?mapRecommendedWidth ;
+  sk-ds:recommendedHeight ?mapRecommendedHeight ;
+  sk-ds:recommendedAspectRatio ?mapRecommendedAspectRatio .
 
   ?cp_new a ?cptype;
   vcard:fn ?cpfn ;
@@ -2493,7 +2537,8 @@ PREFIX leg: <https://data.gov.sk/def/ontology/legislation/>
   dcatap:applicableLegislation ?distributionApplicableLegislation ;
   dcat:packageFormat ?dpackageFormat ;
   dcterms:title ?dtitle ;
-  dcterms:license ?license .
+  dcterms:license ?license ;
+  dcterms:language ?language .
 
   ?distribution_new leg:termsOfUse ?pu_new .
 
@@ -2575,6 +2620,19 @@ FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSerie
   OPTIONAL { ?dataset dcat:inSeries ?topDatasetDcat3 . }
   OPTIONAL { ?dataset dcterms:isPartOf ?topDatasetDcat2 . }
 
+  OPTIONAL { ?dataset sk-ds:mapPage ?mapPage . }
+  OPTIONAL {
+  ?dataset sk-ds:embedMap ?embedMap .
+  ?embedMap sk-ds:embedURL ?mapEmbedUrl .
+  OPTIONAL { ?embedMap sk-ds:minWidth ?mapMinWidth . }
+  OPTIONAL { ?embedMap sk-ds:maxWidth ?mapMaxWidth . }
+  OPTIONAL { ?embedMap sk-ds:minHeight ?mapMinHeight . }
+  OPTIONAL { ?embedMap sk-ds:maxHeight ?mapMaxHeight . }
+  OPTIONAL { ?embedMap sk-ds:recommendedWidth ?mapRecommendedWidth . }
+  OPTIONAL { ?embedMap sk-ds:recommendedHeight ?mapRecommendedHeight . }
+  OPTIONAL { ?embedMap sk-ds:recommendedAspectRatio ?mapRecommendedAspectRatio . }
+  }
+
   OPTIONAL {
   ?dataset dcat:distribution ?distribution .
   ?distribution a dcat:Distribution ;
@@ -2602,6 +2660,10 @@ FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSerie
   OPTIONAL { ?distribution dcatap:applicableLegislation ?distributionApplicableLegislation . }
   OPTIONAL { ?distribution dcat:packageFormat ?dpackageFormat . }
   OPTIONAL { ?distribution dcterms:title ?dtitle . }
+  OPTIONAL {
+  ?distribution dcterms:language ?language .
+  FILTER(isIRI(?language))
+  }
 
   OPTIONAL {
   ?distribution dcat:accessService ?dataService .
@@ -2638,6 +2700,7 @@ FILTER(?datasetTypeUnion = dcat:Dataset || ?datasetTypeUnion = dcat:DatasetSerie
   BIND (IRI(CONCAT(STR(?dataservice_new),\"/contact-point\")) as ?dataservice_cp_new)
   BIND (IRI(CONCAT(STR(?distribution_new),\"/terms-of-use\")) as ?pu_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/temporal\")) as ?temporal_new)
+  BIND (IF(BOUND(?mapEmbedUrl), IRI(CONCAT(STR(?dataset_new),\"/map\")), ?unbound) as ?embeddable_map_new)
   }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFail> false;
@@ -3095,7 +3158,7 @@ WHERE {
   BIND (IRI(CONCAT(STR(?dataservice_new),\"/contact-point\")) as ?dataservice_cp_new)
   BIND (IRI(CONCAT(STR(?distribution_new),\"/terms-of-use\")) as ?pu_new)
   BIND (IRI(CONCAT(STR(?dataset_new),\"/temporal\")) as ?temporal_new)
-  BIND (IRI(CONCAT(STR(?dataset_new), \"/map\")) as ?embeddable_map_new)
+  BIND (IF(BOUND(?mapEmbedUrl), IRI(CONCAT(STR(?dataset_new),\"/map\")), ?unbound) as ?embeddable_map_new)
   }""";
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl> <http://plugins.linkedpipes.com/resource/configuration/None>;
     <http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#softFail> false;
