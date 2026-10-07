@@ -849,8 +849,8 @@ WHERE {
         }
 
         BIND(IF(BOUND(?value) && ?value, 1, 0) AS ?obs)
-        BIND(\"metrikaDostupnostiDatasetu\" AS ?aggregatedMetricId)
-        BIND(\"Kontrola dostupnosti datasetu\" AS ?definitionTemplate)
+        BIND(\"metrikaDostupnostiCorsDatasetu\" AS ?aggregatedMetricId)
+        BIND(\"Kontrola dostupnosti datasetu CORS\" AS ?definitionTemplate)
     } GROUP BY ?dataset ?aggregatedMetricId ?definitionTemplate  
   } 
 
