@@ -3180,7 +3180,7 @@ CONSTRUCT {
     dcterms:description \"Národný katalóg otvorených dát\"@sk ;
     dcterms:publisher <https://data.gov.sk/id/legal-subject/50349287> ;
     dcterms:modified ?datumTeď .
-  <http://data.gov.sk/id/legal-subject/50349287> a foaf:Agent ;
+  <https://data.gov.sk/id/legal-subject/50349287> a foaf:Agent ;
   	foaf:name \"Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky\"@sk .
 } 
 WHERE { 

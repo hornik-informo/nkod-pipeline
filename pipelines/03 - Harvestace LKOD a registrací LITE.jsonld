@@ -7306,7 +7306,7 @@
         ],
         "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query": [
           {
-            "@value": "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX dcat: <http://www.w3.org/ns/dcat#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX dcterms: <http://purl.org/dc/terms/>\nCONSTRUCT { \n  <https://data.gov.sk/set/catalog/nkod> a dcat:Catalog ;\n    dcterms:title \"Národný katalóg otvorených dát\"@sk ;\n    dcterms:description \"Národný katalóg otvorených dát\"@sk ;\n    dcterms:publisher <http://data.gov.sk/id/legal-subject/50349287> ;\n    dcterms:modified ?datumTeď .\n  <http://data.gov.sk/id/legal-subject/50349287> a foaf:Agent ;\n  \tfoaf:name \"Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky\"@sk .\n} \nWHERE { \n  BIND(STRDT(SUBSTR(STR(NOW()), 1, 10), xsd:date) AS ?datumTeď)\n}"
+            "@value": "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX dcat: <http://www.w3.org/ns/dcat#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX dcterms: <http://purl.org/dc/terms/>\nCONSTRUCT { \n  <https://data.gov.sk/set/catalog/nkod> a dcat:Catalog ;\n    dcterms:title \"Národný katalóg otvorených dát\"@sk ;\n    dcterms:description \"Národný katalóg otvorených dát\"@sk ;\n    dcterms:publisher <https://data.gov.sk/id/legal-subject/50349287> ;\n    dcterms:modified ?datumTeď .\n  <https://data.gov.sk/id/legal-subject/50349287> a foaf:Agent ;\n  \tfoaf:name \"Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky\"@sk .\n} \nWHERE { \n  BIND(STRDT(SUBSTR(STR(NOW()), 1, 10), xsd:date) AS ?datumTeď)\n}"
           }
         ],
         "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl": [
